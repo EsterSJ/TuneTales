@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* fuentes */
+@font-face {
+    font-family: 'FuenteTuneTales';
+    src: url(assets/fonts/DINNeuzeitGroteskLT-Light.ttf);
+}
+
+/* variables */
+:root{
+    --colorMoradoOscuro: #6C4B8D;
+    --colorMoradoClaro: #CE9CFF;
+    --colorFondo: #000000;
+    --colorBlanco: #FFFFFF;
+}
+
+/* limpiadores */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: FuenteTuneTales;
+}
+
+body{
+    background-color: var(--colorFondo);
+}
