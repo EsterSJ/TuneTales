@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primarycolor: black;
+    --secundarycolor: white;
+    --font-family-system: var(--font-family-system);
+}
+
+.formulario{
+    border: 3px solid red;
+    display:flex;
+    flex-direction: column;
+    width: 40%;
+    height:410px;
+    align-items: center;
+    padding-top: 30px;
+    
+}
+
+.casillas{
+    border: 3px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 200px;
+}
+
+.casillas input{
+    height: 50px;
+}
+
+.boton{
+    width: 120px;
+    height:30px;
+    border-radius: 15px;
+    border: 1px;
+
+}
+
+.texto-peq{
+    display: flex;
+}
