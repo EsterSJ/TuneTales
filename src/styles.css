@@ -19,6 +19,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: FuenteTuneTales;
+    color: var(--colorBlanco);
 }
 
 body{
