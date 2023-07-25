@@ -10,6 +10,10 @@
     --colorMoradoClaro: #CE9CFF;
     --colorFondo: #000000;
     --colorBlanco: #FFFFFF;
+    --colorGris: #393e46;
+
+    --anchoBoton: 150px;
+    --altoBoton: 34px;
 }
 
 /* limpiadores */
