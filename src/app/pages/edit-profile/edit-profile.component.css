@@ -1,0 +1,67 @@
+.contenedor_editProfile{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    height: 100vh;
+    padding: 6%;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+img{
+    margin-bottom: 80px;
+    width: 240px;
+    height: 240px;
+}
+
+p{
+    margin-left: -268px ;
+    margin-bottom: -18px;
+    color: var(--colorGris);
+    font-weight: bold;
+}
+
+input, textarea{
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+    width: 400px;
+}
+
+    ::placeholder{
+        color: white;
+        font-size: 14px;
+    }
+
+    input[type="date"]{
+        color: white;
+        font-size: 14px;
+    }
+
+    textarea{
+        border-top: 1px solid white;
+        border-bottom: none;
+    }
+
+label{
+    font-size: 14px;
+    margin-bottom: -18px;
+    margin-left: -320px;
+}
+
+.boton{
+    width: var(--anchoBoton);
+    height: var(--altoBoton);
+    border-radius: 15px;
+    border: 1px;
+    background-color: var(--colorGris);
+}
+
+    .boton:hover{
+        background-color: var(--colorMoradoClaro);
+    }
