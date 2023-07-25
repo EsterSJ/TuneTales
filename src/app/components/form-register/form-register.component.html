@@ -8,26 +8,44 @@
 </head>
 <body>
 
+<div class="contenedor">
+    <div class="logoGrande">
+        <img src="../../../assets/img/Group 1.png" alt="">
+        <img class="letrasLogo" src="../../../assets/img/REGISTRO.png" alt="">
+    </div>
 
 <div class="formulario" >
     <form class="casillas">
-        <input type="text" placeholder="Usuario*" class="Usuario">
-        <input type="password" placeholder="Contraseña*" class="Contraseña">
-        <input type="text" placeholder="Repetir contraseña*" class="Contraseña">
-        <input type="email" placeholder ="Correo electrónico" class="Email">
-        <input type="date" class="Fecha">
+        <label for="usuario" class="form-label" >Usuario*: </label>
+        <input type="text" id="usuario" placeholder=" " class="form-input">
+        <span class="form-line"></span>
+
+        <label for="contraseña" class="form-label" >Contraseña*: </label>
+        <input type="password" id="contraseña" placeholder="" class="form-input">
+        <span class="form-line"></span>
+
+        <label for="contraseña2" class="form-label" >Repetir contraseña*: </label>
+        <input type="password" id="contraseña2" placeholder=" " class="form-input">
+        <span class="form-line"></span>
+
+        <label for="email" class="form-label" >Correo electrónico*: </label>
+        <input type="email" id="email" placeholder =" " class="form-input">
+        <span class="form-line"></span>
+
+        <label for="fecha" class="form-label" >Fecha de nacimiento: </label>
+        <input type="date" id="fecha" placeholder =" " class="form-input">
+        <span class="form-line"></span>
     </form>
     <button class="boton">
-        <h5>Registrarse</h5>
+        Registrarse
     </button>
-    <div class="texto-peq">
-        <h5>
-             ¿Ya tienes cuenta?
-        </h5>
-        <h5>
+    <p class="texto-peq">
+          ¿Ya tienes cuenta?
+        <a href="#" class="enlace">
               Inicia sesión
-        </h5>
-    </div>
+        </a>
+    </p>
+</div>
 </div>
 
 </body>
