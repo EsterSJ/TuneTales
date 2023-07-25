@@ -8,6 +8,7 @@ import { AddMusicComponent } from './pages/add-music/add-music.component';
 import { AddMusicFormComponent } from './components/add-music-form/add-music-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { ForYouComponent } from './pages/for-you/for-you.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     HomeComponent,
     AddMusicComponent,
     AddMusicFormComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ForYouComponent
   ],
   imports: [
     BrowserModule,
