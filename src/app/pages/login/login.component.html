@@ -6,25 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="login-container">
-        <div class="logo">
-          <img src="ruta_del_logotipo.png" alt="Logotipo de la página">
+  <div class="login-container">
+    <div class="logo">
+      <img src="../../../assets/img/LogoLogin.png" alt="Logotipo de la página">
+      <h2 class="login-title">LOGIN</h2>
+    </div>
+    <div class="login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-item">
+          <label for="username">Usuario*</label>
+          <input type="text" id="username" formControlName="username">
         </div>
-        <div class="login-form">
-       
-          <form>
-            <div class="form-item">
-              <label for="username">Usuario*</label>
-              <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-item">
-              <label for="password">Contraseña*</label>
-              <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Login</button>
-          </form>
+        <div class="form-item">
+          <label for="password">Contraseña*</label>
+          <input type="password" id="password" formControlName="password">
         </div>
-      </div>
-
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

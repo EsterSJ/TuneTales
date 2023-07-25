@@ -1,54 +1,120 @@
- input.ng-invalid.ng-touched {
-    border: 1px solid red;
-  }
-  
-  div.ng-invalid.ng-touched {
-    color: red;
-    margin-top: 5px;
-  }
 
+@font-face {
+  font-family: 'DINNeuzeitGrotesk';
+  src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+}
 
-  .form-login.fullscreen {
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'DINNeuzeitGrotesk LT Light', sans-serif;
+  background-color: black;
+}
+
+  .login-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f1f1f1;
-  }
-  
-  .form-login-container {
-    width: 800px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    padding: 20px;
-    margin-right: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid aquamarine;
-    border-radius: 5px;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
+    justify-content: center;
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla */
+    margin: 0 auto; /* Centrar horizontalmente el contenedor en la pantalla */
+    background-color: black;
+}
 
-  button[type="submit"] {
-    margin-left:350px;
-  }
+
+
+.logo {
+  text-align: center;
+
+}
+
+.logo img {
+  width: 848.34px;
+  height: 325.91px;
+  margin-left: -200px;
+}
+
+.login-form {
+ 
+  color: #fff;
+  position: relative; 
+  margin-left: -260px; /* Espacio entre la imagen y el formulario */
+  margin-top: 200px;
+  z-index: 1;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar el contenido del formulario horizontalmente */
+}
+
+.login-title {
+  position: absolute; /* Posicionamiento absoluto */
+  bottom: 300px; /* Ajustamos la posición desde abajo */
+  left: 837.5px; /* Lo centramos horizontalmente */
+  transform: translateX(-50%); /* Centramos exactamente en el centro horizontal */
+  color: #fff; /* Color del texto */
+  font-size: 40px; /* Tamaño del texto */
+}
+
+
+/* Estilo para las etiquetas "Usuario" y "Contraseña" */
+.login-form label {
+
+  font-size: 20px;
+  display: inline-block;
+  width: 485px; /* Ajustamos el ancho del label para que tenga el mismo tamaño */
+  border-bottom: 2px solid #ffffff; /* Agregamos subrayado blanco */
+ padding-bottom:5px ;
+}
+
+
+/* Estilo para las cajas del formulario */
+.login-form input {
+  margin-left: 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 0;
+  background-color: black; /* Fondo negro */
+  color: #fff; /* Letras en blanco */
+  margin-bottom: 15px;
+  width: 100%;
+  outline: none; /* Elimina el borde de enfoque */
+
+}
+
+
+
+/* Estilo para las etiquetas con subrayado */
+.login-form .form-item {
+  display: grid;
+  grid-template-columns: 100px auto; /* Ajustamos el ancho del label y el input */
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.login-form button {
+  width: 212.33px;
+  height: 36px;
+  padding: 10px;
+  background-color: #393E46;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  margin-top: 30px;
+
+}
