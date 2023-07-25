@@ -1,11 +1,12 @@
 
 @font-face {
     font-family: 'DINNeuzeitGrotesk';
-    src: url('./fonts/DIN.ttf') format('truetype');
+    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
 
   }
 
-body {
+
+   body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,6 +112,3 @@ body {
     outline:none;
     margin-bottom: 60px;
   }
-
-
-
