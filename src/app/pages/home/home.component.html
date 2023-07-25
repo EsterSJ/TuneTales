@@ -12,40 +12,24 @@
             <a class="link" routerLink=''>Visita nuestra comunidad</a>
         </span>
     </div>
-    <div class="slide">
-        <div class="slide-inner">
-            <input class="slide-open" type="radio" id="slide-1" 
-                  name="slide" aria-hidden="true" hidden="" checked="checked">
-            <div class="slide-item">
-                <img src="https://edit.org/images/cat/caratulas-cd-big-2019090615.jpg">
+        
+    <div class="container_slider">
+        <div class="container">
+            <input type="radio" name="slider" id="item1" checked>
+            <input type="radio" name="slider" id="item2">
+            <input type="radio" name="slider" id="item3">
+
+            <div class="cards">
+                <label class="card" for="item1" id="selector1">
+                    <img src="https://edit.org/images/cat/caratulas-cd-big-2019090615.jpg">
+                </label>
+                <label class="card" for="item2" id="selector2">
+                    <img src="https://edit.org/photos/img/blog/how-caratulas-de-discos.jpg-840.jpg">
+                </label>
+                <label class="card" for="item3" id="selector3">
+                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/186737659/original/5bbf057aecc23f24deab6b4112f87150f3a59149/con-un-poco-de-arte-el-mundo-sera-mejor.jpg">
+                </label>
             </div>
-            <input class="slide-open" type="radio" id="slide-2" 
-                  name="slide" aria-hidden="true" hidden="">
-            <div class="slide-item">
-                <img src="https://edit.org/photos/img/blog/how-caratulas-de-discos.jpg-840.jpg">
-            </div>
-            <input class="slide-open" type="radio" id="slide-3" 
-                  name="slide" aria-hidden="true" hidden="">
-            <div class="slide-item">
-                <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/186737659/original/5bbf057aecc23f24deab6b4112f87150f3a59149/con-un-poco-de-arte-el-mundo-sera-mejor.jpg">
-            </div>
-            <label for="slide-3" class="slide-control prev control-1">‹</label>
-            <label for="slide-2" class="slide-control next control-1">›</label>
-            <label for="slide-1" class="slide-control prev control-2">‹</label>
-            <label for="slide-3" class="slide-control next control-2">›</label>
-            <label for="slide-2" class="slide-control prev control-3">‹</label>
-            <label for="slide-1" class="slide-control next control-3">›</label>
-            <ol class="slide-indicador">
-                <li>
-                    <label for="slide-1" class="slide-circulo">•</label>
-                </li>
-                <li>
-                    <label for="slide-2" class="slide-circulo">•</label>
-                </li>
-                <li>
-                    <label for="slide-3" class="slide-circulo">•</label>
-                </li>
-            </ol>
         </div>
     </div>
 </div>
