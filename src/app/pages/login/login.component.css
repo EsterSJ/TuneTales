@@ -10,7 +10,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: 'DINNeuzeitGrotesk LT Light', sans-serif;
+  font-family: 'DINNeuzeitGrotesk';
   background-color: black;
 }
 
@@ -22,6 +22,7 @@ body {
     height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla */
     margin: 0 auto; /* Centrar horizontalmente el contenedor en la pantalla */
     background-color: black;
+   
 }
 
 
@@ -44,6 +45,7 @@ body {
   margin-left: -260px; /* Espacio entre la imagen y el formulario */
   margin-top: 200px;
   z-index: 1;
+
 }
 
 .login-form h2 {
@@ -58,22 +60,25 @@ body {
 
 .login-title {
   position: absolute; /* Posicionamiento absoluto */
-  bottom: 300px; /* Ajustamos la posición desde abajo */
+  bottom: 320px; /* Ajustamos la posición desde abajo */
   left: 837.5px; /* Lo centramos horizontalmente */
   transform: translateX(-50%); /* Centramos exactamente en el centro horizontal */
   color: #fff; /* Color del texto */
   font-size: 40px; /* Tamaño del texto */
+  font-family:'DINNeuzeitGrotesk';
 }
 
 
 /* Estilo para las etiquetas "Usuario" y "Contraseña" */
 .login-form label {
-
+  font-family:'DINNeuzeitGrotesk';
+  font-weight: 500;
   font-size: 20px;
   display: inline-block;
   width: 485px; /* Ajustamos el ancho del label para que tenga el mismo tamaño */
   border-bottom: 2px solid #ffffff; /* Agregamos subrayado blanco */
- padding-bottom:5px ;
+  padding-bottom:5px ;
+
 }
 
 
@@ -89,6 +94,7 @@ body {
   width: 100%;
   outline: none; /* Elimina el borde de enfoque */
 
+
 }
 
 
@@ -99,6 +105,8 @@ body {
   grid-template-columns: 100px auto; /* Ajustamos el ancho del label y el input */
   align-items: center;
   margin-bottom: 15px;
+ 
+
 }
 
 .login-form button {
@@ -116,5 +124,6 @@ body {
   justify-content: center;
   margin-left: 200px;
   margin-top: 30px;
+  font-family:'DINNeuzeitGrotesk';
 
 }
