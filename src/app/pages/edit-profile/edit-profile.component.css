@@ -12,16 +12,15 @@
 }
 
 img{
-    margin-bottom: 80px;
-    width: 240px;
-    height: 240px;
+    margin-bottom: 60px;
+    width: 220px;
+    height: 220px;
 }
 
 p{
     margin-left: -268px ;
-    margin-bottom: -18px;
+    margin-bottom: -10px;
     color: var(--colorGris);
-    font-weight: bold;
 }
 
 input, textarea{
@@ -50,7 +49,7 @@ input, textarea{
 
 label{
     font-size: 14px;
-    margin-bottom: -18px;
+    margin-bottom: -14px;
     margin-left: -320px;
 }
 
@@ -65,3 +64,21 @@ label{
     .boton:hover{
         background-color: var(--colorMoradoClaro);
     }
+
+.input_rrss{
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.boton_icon{
+    border: none;
+    background-color: transparent;
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    margin-right: -24px;
+    margin-bottom: -0.5px;
+}
