@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     align-items: center;
     height: 100vh;
+    padding-top: 12vh;
 }
 
 .logo{
@@ -12,12 +13,17 @@
     margin-bottom: 100px;
 }
 
+    img{
+        width: 280px;
+        height: 280px;
+    }
+
     .titulo{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center; 
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
 
     h1{
