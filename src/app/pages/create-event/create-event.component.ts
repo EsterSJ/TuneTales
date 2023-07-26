@@ -22,11 +22,23 @@ export class CreateEventComponent implements OnInit {
     });
   }
 
-  onImageSelected(event: Event) {
+  onImageClick(): void {
+    // logica para el  hacer clic en la imagen
    
   }
 
-  onSubmit() {
-   
+  onSubmit(): void {
+    // logica para enviar el formulario
+  }
+
+
+  // Método para manejar la selección de la imagen
+  onImageSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input?.files?.length) {
+      const file = input.files[0];
+      // Aquí puedes hacer lo que desees con el archivo seleccionado
+      console.log('Archivo seleccionado:', file);
+    }
   }
 }
