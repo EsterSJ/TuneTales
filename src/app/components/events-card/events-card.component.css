@@ -1,0 +1,102 @@
+:root{
+    --colorMoradoOscuro: #6C4B8D;
+    --colorMoradoClaro: #CE9CFF;
+    --colorFondo: #000000;
+    --colorBlanco: #FFFFFF;
+}
+
+.containerPadre{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.container {
+    width:30%;
+
+}
+
+input {
+	outline: none;
+	box-sizing: border-box;
+	height: 30px;
+	padding: 0 20px;
+	background-color: #000000;
+    color: #FFFFFF;
+	border: none;
+    border-bottom: 1px solid #FFFFFF;
+	
+}
+.btn i {
+	font-size: 20px;
+	color: #FFFFFF;
+	line-height: 50px;
+}
+
+
+
+.headerTabla{
+    /* border:3px solid red; */
+    border:none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 180px;
+    border-bottom: 1px solid white;
+
+}
+
+.Title{
+    width: 8%;
+    height:30px;
+    /* border: 2px solid yellow; */
+   
+}
+
+.filasTabla{
+    /* border: 2px solid green; */
+    padding-top: 15px;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    height:160px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.filasTabla img{
+    /* border:2px solid purple; */
+    height:130px;
+    width: 10%;
+}
+
+.nameEvento{
+    /* border: 1px solid blue; */
+    width: 10%;
+    height:130px;
+}
+
+.fecha{
+    width: 10%;
+    height:130px;
+    /* border: 1px solid blue; */
+}
+
+.ubicacion{
+    width: 10%;
+    height:130px;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.tickets{
+    width: 10%;
+    height:130px;
+    /* border: 1px solid blue; */
+}
