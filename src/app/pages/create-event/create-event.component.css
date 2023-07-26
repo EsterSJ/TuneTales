@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'DINNeuzeitGrotesk';
+    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+  }
+  
+  .create-event-container {
+    display: grid; /* Cambiamos a grid layout */
+    grid-template-columns: 1fr; /* Una columna */
+    justify-content: center; /* Centrar en el eje horizontal */
+    align-items: center; /* Centrar en el eje vertical */
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: black;
+    color: #fff;
+    margin-top:-100px;
+  }
+  
+  .create-event-title {
+  font-family: 'DINNeuzeitGrotesk';
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center; /* Centrar el texto */
+  letter-spacing: 5px;
+  margin-top:350px;
+  
+  }
+  
+  .form-item {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+  
+  label {
+    font-family: 'DINNeuzeitGrotesk';
+    font-weight: 500;
+    font-size: 20px;
+    display: inline-block;
+    width: 250px;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  textarea {
+    margin-left: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 0;
+    background-color: black;
+    color: #ffffff;
+    margin-bottom: 15px;
+    width: 100%;
+    outline: none;
+  }
+  button {
+    width: 476px;
+    height: 55px;
+    padding: 10px;
+    background-color: #393E46;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DINNeuzeitGrotesk';
+    margin-top: 150px;
+    margin-left:30%;
+  }
+
+
+
+
+
+
+
+
+
+
+  /* Estilo para el input tipo "file" oculto */
+input[type="file"] {
+  display: none;
+}
+
+
+.image-input {
+  /* Ajustamos los márgenes para centrar la imagen */
+  margin-left: 15px;
+  margin-top: -100px;
+  margin-bottom: 50px;
+  cursor: pointer; /* Cambiamos el cursor al hacer clic */
+  display: block;
+  border: none;
+  outline: none; /* Eliminamos el contorno al hacer clic */
+
+}
+.image-label {
+  /* Ajustamos los márgenes para centrar la imagen */
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer; /* Cambiamos el cursor al hacer clic */
+
+  /* Añadimos estas líneas para quitar posibles márgenes y espacios */
+  display: block;
+  border: none;
+  padding: 0;
+
+  /* Asegurémonos de que el label no tenga borde y el fondo sea transparente */
+  border-bottom: none;
+  background-color: transparent;
+}
+
+
+
+
+.description-label {
+  font-family: 'DINNeuzeitGrotesk';
+  font-weight: 500;
+  font-size: 20px;
+  display: inline-block;
+  width: 1130px;
+  border-bottom: 2px solid #ffffff; /* Ajusta el grosor del borde aquí */
+  padding-bottom: 5px;
+  
+}
+
+.description-container {
+  /* Ajustamos los márgenes del contenedor para mover todo el campo "Descripción" hacia la derecha */
+  margin-left: 35px; /* Puedes ajustar este valor según tus preferencias */
+}
+
+
+
+
+
+.event-label {
+  border-bottom: 2px solid #ffffff; /* Ajusta el grosor del borde aquí */
+  padding-bottom: 5px;
+  width: 865px;
+
+}
+
+.event-container {
+  /* Ajustamos los márgenes del contenedor para mover todo el campo "Evento" hacia la derecha */
+  margin-left: 300px; /* Puedes ajustar este valor según tus preferencias */
+}
+
+.date-label {
+  /* Ajustamos el borde inferior del campo "Fecha" */
+  border-bottom: 2px solid #ffffff; /* Puedes ajustar el grosor del borde aquí */
+  padding-bottom: 5px;
+  width: 250px; /* Ajusta el ancho del campo de fecha según tus preferencias */
+
+  margin-left:-10px;
+}
