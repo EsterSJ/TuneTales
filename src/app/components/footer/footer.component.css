@@ -1,0 +1,20 @@
+footer div {
+
+    height: 80px;
+    width: 100%;
+
+    display: flex;
+    justify-content: right;
+    font-family: dinn;
+    align-items: center;
+
+    background-color: var(--myVarColor1);
+}
+
+
+.title {
+
+    width: 12%;
+    /* border: 2px solid plum; */
+    margin-right: 3%;
+}
