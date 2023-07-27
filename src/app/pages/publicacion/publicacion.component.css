@@ -1,0 +1,175 @@
+body {
+
+    display: flex;
+
+    height: 900px;
+    width: 100%;
+
+    border: solid 3px blue;
+
+
+}
+
+.first_section_img {
+
+    height: 200px;
+    width: 40%;
+    border: solid 4px orangered;
+
+    margin-top: 3%;
+    margin-left: 2%;
+}
+
+.first_section_info {
+
+    height: 200px;
+    width: 70%;
+    border: solid 4px rosybrown;
+
+    margin-top: 3%;
+    /* margin-top: 20px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+
+.container_img_user {
+
+    display: flex;
+
+    /* border: solid 3px greenyellow; */
+    height: 190px;
+    width: 100%;
+
+    align-items: center;
+    justify-content: right;
+    /* margin-right: 10%; */
+}
+
+.img_user {
+
+    height: 160px;
+    width: 160px;
+
+    border-radius: 17px;
+    margin-right: 3%;
+}
+
+.user_name {
+
+    height: 40px;
+    width: 220px;
+    /* border: 3px solid red; */
+
+    margin-top: 25px;
+    margin-left: 20px;
+
+    font-size: 25px;
+    color: var(--colorMoradoClaro);
+}
+
+.descripcion {
+
+    height: 60px;
+    width: 550px;
+    /* border: solid 2px goldenrod; */
+
+    margin-left: 20px;
+
+    color: white;
+    font-size: 14px;
+}
+
+.button_1 {
+
+    background-color: var(--colorGris);
+    text-decoration: none;
+
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 20px;
+
+    height: 40px;
+    width: 170px;
+}
+
+.container_button_1 {
+
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 630px;
+
+    /* border: 3px solid seagreen; */
+    margin-left: 20px;
+
+    text-decoration: none;
+}
+
+
+.container_button_2 {
+
+    height: 60px;
+    width: 270px;
+
+    /* border: 3px solid brown; */
+
+    text-decoration: none;
+
+}
+
+.button_2 {
+
+    background-color: var(--colorGris);
+    text-decoration: none;
+
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 20px;
+
+    height: 40px;
+    width: 90px;
+
+    margin-right: 7%;
+}
+
+.logos_redes {
+
+    display: flex;
+
+    height: 40px;
+    width: 280px;
+    /* border: 3px solid orchid; */
+
+    justify-content: right;
+    align-items: center;
+}
+
+.img_ig {
+
+    height: 20px;
+    width: 30px;
+
+    justify-content: space-evenly;
+
+    margin-right: 6%;
+}
+
+.button_2:hover, .button_1:hover{
+
+    background-color: var(--colorMoradoClaro);
+}
+
+.second_section {
+
+
+    margin-top: 7%;
+
+    width: 100%;
+    height: 200px;
+
+    border: 3px solid sienna;
+}
+
