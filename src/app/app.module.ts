@@ -14,6 +14,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ForYouComponent } from './pages/for-you/for-you.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AddMusicFormComponent,
     EditProfileComponent,
     ForYouComponent,
-    ProfileComponent
+    ProfileComponent,
+    CommunityComponent
   ],
   imports: [
     BrowserModule,
