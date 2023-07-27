@@ -5,13 +5,15 @@ import { AddMusicComponent } from './pages/add-music/add-music.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { ForYouComponent } from './pages/for-you/for-you.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 const routes: Routes = [
   // {path: '', component: HomeComponent}
   // {path: '', component: AddMusicComponent}
   // {path: '', component: EditProfileComponent}
   // {path: '', component: ForYouComponent}
-  {path: '', component: ProfileComponent}
+  // {path: '', component: ProfileComponent}
+  {path: '', component: CommunityComponent}
 ];
 
 @NgModule({
