@@ -1,0 +1,31 @@
+<div class="contenedor_perfil">
+    <div class="cabecera">
+        <img src="assets/img/imgPerfil.png" alt="">
+        <div class="info_perfil">
+            <h4>@tune_explorer</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dictum tortor eget bibendum ultrices. Nullam vitae faucibus odio. Ut ut imperdiet ex, ac pulvinar augue. Etiam pulvinar nibh eget orci congue auctor. Sed maximus, justo at sodales semper, lectus quam accumsan mauris, at ullamcorper elit elit et massa...</p>
+            <div class="botones_perfil">
+                <div class="botones">
+                    <button type="reset">Añadir publicación</button>
+                    <button type="reset">Editar perfil</button>
+                    <button type="reset">Seguir</button>
+                </div>
+                <div class="iconos_rrss">
+                    <a href=""><img class="img_rrss" src="assets/img/icono-facebook-morado.png" alt=""></a>
+                    <a href=""><img class="img_rrss" src="assets/img/icono-instagram-morado.png" alt=""></a>
+                    <a href=""><img class="img_rrss" src="assets/img/icono-twitter-morado.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <button type="reset" class="boton_menu">Publicaciones</button>
+        <button type="reset" class="boton_menu">Eventos</button>
+    </div>
+    <div class="vista_cards">
+        <!-- aqui codificaremos si se selecciona Publicaciones o Eventos con ngIf y ngTemplate -->
+        <div *ngFor="let number of [0,1,2,3,4,5,6,7]">
+            <img class="img_card" src="https://s3.amazonaws.com/virginia.webrand.com/virginia/344/cQjwpaAQYeA/45be7f5e3024f3b5bde42c562e6e6f57.jpg?1638343911" alt="">
+        </div>
+    </div>
+</div>
