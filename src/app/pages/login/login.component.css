@@ -18,10 +18,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
-    height: 100vh; /* Ajusta la altura para que ocupe toda la pantalla */
-    margin: 0 auto; /* Centrar horizontalmente el contenedor en la pantalla */
+    max-width: 1200px;
+    height: 100vh; 
+    margin: 0 auto;
     background-color: black;
+   margin-bottom: 400px;
    
 }
 
@@ -36,17 +37,20 @@ body {
   width: 848.34px;
   height: 325.91px;
   margin-left: -200px;
+  margin-bottom: 100px;
 }
 
 .login-form {
  
   color: #fff;
   position: relative; 
-  margin-left: -260px; /* Espacio entre la imagen y el formulario */
+  margin-left: -260px; 
   margin-top: 200px;
-  z-index: 1;
-
 }
+
+
+
+
 
 .login-form h2 {
   margin-bottom: 20px;
@@ -55,56 +59,56 @@ body {
 .login-form form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar el contenido del formulario horizontalmente */
+  align-items: center; 
 }
 
 .login-title {
-  position: absolute; /* Posicionamiento absoluto */
-  bottom: 320px; /* Ajustamos la posición desde abajo */
-  left: 837.5px; /* Lo centramos horizontalmente */
-  transform: translateX(-50%); /* Centramos exactamente en el centro horizontal */
-  color: #fff; /* Color del texto */
-  font-size: 40px; /* Tamaño del texto */
+  position: absolute; 
+  top:500px;
+  left: 830.5px;
+  transform: translateX(-50%); 
+  color: #fff; 
+  font-size: 40px; 
   font-family:'DINNeuzeitGrotesk';
 }
 
 
-/* Estilo para las etiquetas "Usuario" y "Contraseña" */
 .login-form label {
   font-family:'DINNeuzeitGrotesk';
   font-weight: 500;
   font-size: 20px;
-  display: inline-block;
-  width: 485px; /* Ajustamos el ancho del label para que tenga el mismo tamaño */
-  border-bottom: 2px solid #ffffff; /* Agregamos subrayado blanco */
+  width: 485px; 
+  border-bottom: 2px solid #ffffff; 
   padding-bottom:5px ;
 
 }
 
 
-/* Estilo para las cajas del formulario */
 .login-form input {
   margin-left: 15px;
   margin-top: 15px;
   border: none;
   border-radius: 0;
-  background-color: black; /* Fondo negro */
-  color: #fff; /* Letras en blanco */
+  background-color: black; 
+  color: #fff;
   margin-bottom: 15px;
   width: 100%;
-  outline: none; /* Elimina el borde de enfoque */
+  outline: none; 
+  margin-left: 50px;
+
 
 
 }
 
 
 
-/* Estilo para las etiquetas con subrayado */
+
 .login-form .form-item {
   display: grid;
-  grid-template-columns: 100px auto; /* Ajustamos el ancho del label y el input */
+  grid-template-columns: 100px auto; 
   align-items: center;
   margin-bottom: 15px;
+
  
 
 }
@@ -127,3 +131,5 @@ body {
   font-family:'DINNeuzeitGrotesk';
 
 }
+
+

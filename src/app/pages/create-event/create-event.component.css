@@ -13,7 +13,8 @@
     margin: 0 auto;
     background-color: black;
     color: #fff;
-    margin-top:-100px;
+    margin-bottom: 80px;
+    margin-top: -320px;
   }
   
   .create-event-title {
@@ -52,8 +53,9 @@
   input[type="text"],
   input[type="date"],
   input[type="time"],
+  input[type="location"],
   textarea {
-    margin-left: 15px;
+    margin-left: 25px;
     margin-top: 15px;
     border: none;
     border-radius: 0;
@@ -62,6 +64,16 @@
     margin-bottom: 15px;
     width: 100%;
     outline: none;
+
+  }
+  input[type="location"] {
+    margin-left:-25px;
+  }
+  input[type="date"] {
+    margin-left:-1px;
+  }
+  input[type="text"]{
+    margin-left: 40px;
   }
   button {
     width: 476px;
@@ -77,17 +89,9 @@
     align-items: center;
     justify-content: center;
     font-family: 'DINNeuzeitGrotesk';
-    margin-top: 150px;
+    margin-top: 100px;
     margin-left:30%;
   }
-
-
-
-
-
-
-
-
 
 
   /* Estilo para el input tipo "file" oculto */
@@ -97,32 +101,27 @@ input[type="file"] {
 
 
 .image-input {
-  /* Ajustamos los márgenes para centrar la imagen */
+
   margin-left: 15px;
   margin-top: -100px;
   margin-bottom: 50px;
-  cursor: pointer; /* Cambiamos el cursor al hacer clic */
+  cursor: pointer; 
   display: block;
   border: none;
-  outline: none; /* Eliminamos el contorno al hacer clic */
+  outline: none; 
 
 }
 .image-label {
-  /* Ajustamos los márgenes para centrar la imagen */
+ 
   margin-left: 15px;
   margin-top: 15px;
-  cursor: pointer; /* Cambiamos el cursor al hacer clic */
-
-  /* Añadimos estas líneas para quitar posibles márgenes y espacios */
+  cursor: pointer;
   display: block;
   border: none;
   padding: 0;
-
-  /* Asegurémonos de que el label no tenga borde y el fondo sea transparente */
   border-bottom: none;
   background-color: transparent;
 }
-
 
 
 
@@ -132,37 +131,40 @@ input[type="file"] {
   font-size: 20px;
   display: inline-block;
   width: 1130px;
-  border-bottom: 2px solid #ffffff; /* Ajusta el grosor del borde aquí */
+  border-bottom: 2px solid #ffffff;
   padding-bottom: 5px;
   
 }
 
 .description-container {
-  /* Ajustamos los márgenes del contenedor para mover todo el campo "Descripción" hacia la derecha */
-  margin-left: 35px; /* Puedes ajustar este valor según tus preferencias */
+
+  margin-left: 35px; 
 }
 
 
 
-
-
 .event-label {
-  border-bottom: 2px solid #ffffff; /* Ajusta el grosor del borde aquí */
+  border-bottom: 2px solid #ffffff; 
   padding-bottom: 5px;
   width: 865px;
 
 }
 
 .event-container {
-  /* Ajustamos los márgenes del contenedor para mover todo el campo "Evento" hacia la derecha */
-  margin-left: 300px; /* Puedes ajustar este valor según tus preferencias */
+
+  margin-left: 300px; 
 }
 
 .date-label {
-  /* Ajustamos el borde inferior del campo "Fecha" */
-  border-bottom: 2px solid #ffffff; /* Puedes ajustar el grosor del borde aquí */
+
+  border-bottom: 2px solid #ffffff; 
   padding-bottom: 5px;
-  width: 250px; /* Ajusta el ancho del campo de fecha según tus preferencias */
+  width: 250px;
 
   margin-left:-10px;
 }
+
+
+
+
+

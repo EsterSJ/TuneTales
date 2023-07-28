@@ -32,12 +32,12 @@ export class CreateEventComponent implements OnInit {
   }
 
 
-  // Método para manejar la selección de la imagen
+  // manejar la selección de la imagen
   onImageSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input?.files?.length) {
       const file = input.files[0];
-      // Aquí puedes hacer lo que desees con el archivo seleccionado
+      //  archivo seleccionado
       console.log('Archivo seleccionado:', file);
     }
   }
