@@ -2,7 +2,8 @@ body header{
 
     display: flex;
 
-    height: 150px;
+    /* height: 150px; */
+    height: var(--altoHeader);
     width: 100%;
     background-color: black;
 
@@ -19,7 +20,7 @@ body header{
     justify-content: space-evenly;
 
     font-family: dinn;
-    font-size: 15px;
+    font-size: var(--fontTituloCard);
 
     color: white;
     margin-right: 30px;

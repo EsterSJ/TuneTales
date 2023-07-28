@@ -12,7 +12,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'register', component: FormRegisterComponent },
   { path: 'create-event', component: CreateEventComponent },
   { path: 'login', component: LoginComponent },

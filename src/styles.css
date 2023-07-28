@@ -6,11 +6,30 @@
 
 /* variables */
 :root{
+    /* colores */
     --colorMoradoOscuro: #6C4B8D;
     --colorMoradoClaro: #CE9CFF;
     --colorFondo: #000000;
     --colorBlanco: #FFFFFF;
     --colorGris: #7D7979;
+
+    /* tamaños de letra */
+    --fontLogo: 40px;
+    --titulo: 24px;
+    --fontBody: 16px; 
+    --fontBoton: 14px;
+    --fontTituloCard: 20px;
+    --fontCard: 15px; 
+
+    /* tamaños botones */
+    --anchoBotonGrande: 180px;
+    --altoBotonGrande: 48px;
+    --anchoBotonPeque: 110px;
+    --altoBotonPeque: 48px;
+    --radiusBoton: 15px;
+
+    --altoFooter: 8vh;
+    --altoHeader: 16vh;
 }
 
 /* limpiadores */

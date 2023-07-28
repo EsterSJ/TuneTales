@@ -1,14 +1,15 @@
 footer div {
 
-    height: 80px;
+    /* height: 80px; */
+    height: var(--altoFooter);
     width: 100%;
 
     display: flex;
     justify-content: right;
-    font-family: dinn;
+    font-family: TuneTales;
     align-items: center;
 
-    background-color: var(--myVarColor1);
+    background-color: var(--colorMoradoOscuro);
 }
 
 
