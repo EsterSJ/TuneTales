@@ -9,7 +9,7 @@
   <div class="create-event-container">
     <h2 class="create-event-title">CREAR EVENTO</h2>
     <form [formGroup]="createForm">
-      <div class="form-item event-container"> <!-- Agregamos la clase "event-container" -->
+      <div class="form-item event-container"> 
         <label for="eventName" class="event-label">Evento</label>
         <input type="text" id="eventName" formControlName="eventName">
       </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="form-item">
           <label for="location">Lugar</label>
-          <input type="text" id="location" formControlName="location">
+          <input type="location" id="location" formControlName="location">
         </div>
         <div class="form-item">
           <label class="date-label" for="date">Fecha</label>
@@ -33,7 +33,7 @@
           <input type="time" id="time" formControlName="time">
         </div>
       </div>
-      <div class="form-item description-container"> <!-- Agregamos la clase "description-container" -->
+      <div class="form-item description-container">
         <label for="description" class="description-label">Descripción</label>
         <input type="text" id="description" formControlName="description">
       </div>
