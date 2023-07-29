@@ -1,8 +1,7 @@
 @font-face {
-    font-family: "Dinn Light";
-    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf');
-   
-}
+    font-family: 'DINNeuzeitGrotesk';
+    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+  }
 
 *{
     margin: 0;
@@ -12,7 +11,6 @@
 
 body{
     color: white;
-    font-family: "Dinn Light";
     background-color: black;
    
 }
@@ -28,7 +26,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* border: 3px solid red; */
     width: 100vh;
     margin-bottom: 70px;
     padding-left: 80px;
@@ -36,30 +33,32 @@ body{
 }
 
 .letrasLogo{
-    width: 25%;
-    height: 20%;
-    margin-left: 200px;
+    width: 60%;
+    height: 10%;
+    margin-top: -110px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    
 }
-
-/* :root{
-    /* --primarycolor: black;
-    --secundarycolor: white;
-    --font-family-system: var(--font-family-system); */
+.letrasLogo img{
+    height: 25px;
+}
  
 
 .formulario{
-    /* border: 3px solid purple; */
     display:flex;
     flex-direction: column;
     align-items: center;
-     width: 40%;
-    height:450px;
+    width: 40%;
+    height:460px;
     margin-right: 20px;
     margin-top: 50px;
 }
 
 .casillas{
-    /* border: 3px solid green; */
     display: grid;
     gap: 0.4em;
     width: 100%;
@@ -74,6 +73,7 @@ body{
     border: none;
     outline: none;
     border-bottom: 1px solid rgb(85, 85, 85);
+    height:30px;
 }
 
 .form-label{
@@ -84,15 +84,16 @@ body{
 
 
 .boton{
-    margin-top: 20px;
+    margin-top: 40px;
     width: 120px;
     height:30px;
     border-radius: 15px;
     border: 1px;
-    font-family:"Dinn Light";
+    font-family:"DINNeuzeitGrotesk";
     background-color: rgb(104, 103, 103);
     color: rgb(231, 229, 229);
-}
+    font-size: 14px;
+    }
 
 .texto-peq{
     margin-top: 20px;
