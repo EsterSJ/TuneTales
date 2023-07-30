@@ -9,12 +9,12 @@
     justify-content: center; /* Centrar en el eje horizontal */
     align-items: center; /* Centrar en el eje vertical */
     max-width: 1200px;
-    height: 101.1vh;
+    height: 92vh;
     margin: 0 auto;
     background-color: black;
     color: #fff;
-    margin-bottom: 80px;
-    margin-top: -200px;
+    padding-top: 18vh;
+    padding-bottom: 10vh;
   }
   
   .create-event-title {
@@ -22,9 +22,7 @@
   font-size: 30px;
   margin-bottom: 20px;
   text-align: center; /* Centrar el texto */
-  letter-spacing: 5px;
-  margin-top:350px;
-  
+  letter-spacing: 5px;  
   }
   
   .form-item {
