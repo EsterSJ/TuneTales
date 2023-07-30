@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'DINNeuzeitGrotesk';
-    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
-  }
-  
+  font-family: 'DINNeuzeitGrotesk';
+  src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+}
+
   .create-event-container {
     display: grid; /* Cambiamos a grid layout */
     grid-template-columns: 1fr; /* Una columna */
     justify-content: center; /* Centrar en el eje horizontal */
     align-items: center; /* Centrar en el eje vertical */
     max-width: 1200px;
-    height: 100vh;
+    height: 101.1vh;
     margin: 0 auto;
     background-color: black;
     color: #fff;
@@ -18,7 +18,7 @@
   }
   
   .create-event-title {
-  font-family: 'DINNeuzeitGrotesk';
+    font-family:"DINNeuzeitGrotesk";
   font-size: 30px;
   margin-bottom: 20px;
   text-align: center; /* Centrar el texto */
@@ -41,13 +41,13 @@
   }
   
   label {
-    font-family: 'DINNeuzeitGrotesk';
     font-weight: 500;
-    font-size: 20px;
     display: inline-block;
     width: 250px;
     border-bottom: 2px solid #ffffff;
     padding-bottom: 5px;
+    font-size: 16px;
+    font-family:"DINNeuzeitGrotesk";
   }
   
   input[type="text"],
@@ -55,7 +55,7 @@
   input[type="time"],
   input[type="location"],
   textarea {
-    margin-left: 25px;
+    margin-left: 20px;
     margin-top: 15px;
     border: none;
     border-radius: 0;
@@ -64,33 +64,36 @@
     margin-bottom: 15px;
     width: 100%;
     outline: none;
+    font-size: 16px;
+    font-family:"DINNeuzeitGrotesk";
 
   }
   input[type="location"] {
     margin-left:-25px;
+    font-size: 16px;
+    font-family:"DINNeuzeitGrotesk";
   }
   input[type="date"] {
     margin-left:-1px;
+    font-size: 16px;
+    font-family:"DINNeuzeitGrotesk";
   }
   input[type="text"]{
-    margin-left: 40px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-family:"DINNeuzeitGrotesk";
   }
   button {
-    width: 476px;
-    height: 55px;
-    padding: 10px;
-    background-color: #393E46;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DINNeuzeitGrotesk';
-    margin-top: 100px;
-    margin-left:30%;
+  margin-top: 40px;
+  width: 180px;
+  height:48px;
+  border-radius: 15px;
+  border: 1px;
+  font-family:"DINNeuzeitGrotesk";
+  background-color: rgb(104, 103, 103);
+  color: #FFFFFF;
+  font-size: 12px;
+  margin-left:510px;
   }
 
 
@@ -128,7 +131,7 @@ input[type="file"] {
 .description-label {
   font-family: 'DINNeuzeitGrotesk';
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   display: inline-block;
   width: 1130px;
   border-bottom: 2px solid #ffffff;
@@ -147,6 +150,7 @@ input[type="file"] {
   border-bottom: 2px solid #ffffff; 
   padding-bottom: 5px;
   width: 865px;
+  font-size: 16px;
 
 }
 
@@ -160,6 +164,7 @@ input[type="file"] {
   border-bottom: 2px solid #ffffff; 
   padding-bottom: 5px;
   width: 250px;
+  font-size: 16px;
 
   margin-left:-10px;
 }
