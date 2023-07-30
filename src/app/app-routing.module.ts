@@ -12,16 +12,16 @@ import { EventsComponent } from './pages/events/events.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
-  {path:'', component:FormRegisterComponent},
-  {path:'register', component:FormRegisterComponent},
-  {path:'paraTi', component:ForYouComponent},
-  {path:'login', component:LoginComponent},
+  {path: '', component:HomeComponent},
+  {path: 'register', component:FormRegisterComponent},
+  {path: 'paraTi', component:ForYouComponent},
+  {path: 'login', component:LoginComponent},
   {path: 'events', component:EventsComponent},
   {path: 'editEvent', component:CreateEventComponent},
   {path: 'comunidad', component:CommunityComponent},
   {path: 'addMusic', component:AddMusicComponent},
   {path: 'editProfile', component:EditProfileComponent},
-  {path: 'Profile', component:ProfileComponent},
+  {path: 'profile', component:ProfileComponent},
 
 ];
 
