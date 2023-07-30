@@ -94,9 +94,10 @@ button{
   
   /* Estilos para la línea morada */
   .linea_morada {
+    margin-bottom: -2px;
     height: 5px;
     width: 573.5px;
-    background-color: var(--colorMoradoOscuro);
+    background-color: var(--colorMoradoClaro);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -105,7 +106,7 @@ button{
   
   /* Estilos para el botón seleccionado */
   .boton_menu.seleccionado {
-    font-weight: bold; /* Añadimos negrita al texto del botón seleccionado */
+    font-weight: bold; 
     color: var(--colorMoradoClaro);
   }
   
