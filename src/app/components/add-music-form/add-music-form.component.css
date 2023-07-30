@@ -9,14 +9,15 @@
 input, textarea{
     background-color: transparent;
     color: white;
-    font-size: 20px;
+    font-size: var(--fontBody);
     border: none;
     border-bottom: 1px solid white;
     width: 500px;
+    resize: none;
 }
     ::placeholder{
         color: white;
-        font-size: 14px;
+        /* font-size: 14px; */
     }
 
     textarea{
@@ -26,16 +27,18 @@ input, textarea{
 
 label{
     align-self: flex-start;
-    font-size: 14px;
+    font-size: var(--fontBody);
     margin-bottom: -8px;
 }
 
 .boton{
-    width: var(--anchoBoton);
-    height: var(--altoBoton);
-    border-radius: 15px;
+    width: var(--anchoBotonPeque);
+    height: var(--altoBotonPeque);
+    border-radius: var(--radiusBoton);
     border: 1px;
     background-color: var(--colorGris);
+    font-size: var(--fontBoton);
+    margin-top: 40px;
 }
 
     .boton:hover{

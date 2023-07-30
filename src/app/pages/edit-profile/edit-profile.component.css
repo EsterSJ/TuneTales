@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
-    height: 76vh;
+    height: 92vh;
+    padding-top: 100px;
 }
 
 .bloque_form{

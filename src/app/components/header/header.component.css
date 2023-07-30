@@ -1,11 +1,11 @@
 body header{
 
     display: flex;
+    position: fixed;
 
-    /* height: 150px; */
     height: var(--altoHeader);
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
 
     justify-content: right;
     margin-right: 30%;

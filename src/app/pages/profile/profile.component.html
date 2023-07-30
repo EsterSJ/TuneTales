@@ -18,14 +18,28 @@
             </div>
         </div>
     </div>
-    <div class="menu">
-        <button type="reset" class="boton_menu">Publicaciones</button>
+    <!-- <div class="menu">
+        <button type="reset" class="boton_menu" (click)="seleccionarBoton('publicaciones')">Publicaciones</button>
         <button type="reset" class="boton_menu">Eventos</button>
-    </div>
+    </div> -->
+    <div class="menu">
+        <button type="button" class="boton_menu" [class.seleccionado]="botonSeleccionado === 0" (click)="seleccionarBoton(0)">Publicaciones</button>
+        <button type="button" class="boton_menu" [class.seleccionado]="botonSeleccionado === 1" (click)="seleccionarBoton(1)">Eventos</button>
+        <div class="linea_morada" [style.transform]="'translateX(' + (40 * botonSeleccionado) + 'vw)'"></div>
+      </div>
+          
+
     <div class="vista_cards">
-        <!-- aqui codificaremos si se selecciona Publicaciones o Eventos con ngIf y ngTemplate -->
-        <div *ngFor="let number of [0,1,2,3,4,5,6,7]">
-            <img class="img_card" src="https://s3.amazonaws.com/virginia.webrand.com/virginia/344/cQjwpaAQYeA/45be7f5e3024f3b5bde42c562e6e6f57.jpg?1638343911" alt="">
-        </div>
+        <ng-template [ngIf]= "botonSeleccionado === 0">
+            <div *ngFor = "let number of [0,1,2,3,4,5,6,7]">
+                <img class="img_card" src="https://s3.amazonaws.com/virginia.webrand.com/virginia/344/cQjwpaAQYeA/45be7f5e3024f3b5bde42c562e6e6f57.jpg?1638343911" alt="">
+            </div>
+        </ng-template>
+
+        <ng-template [ngIf]= "botonSeleccionado === 1">
+            <div *ngFor = "let number of [0,1,2,3,4,5,6,7]">
+                <img class="img_card" src="https://edit.org/images/cat/caratulas-cd-big-2019090615.jpg" alt="">
+            </div>
+        </ng-template>
     </div>
 </div>

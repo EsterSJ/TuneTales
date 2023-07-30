@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
-    padding-top: 20vh;
+    padding-top: 18vh;
+    /* height: 180vh; */
 }
 
 /* estilos cabecera */
@@ -13,25 +14,26 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    gap: 80px
+    width: 80vw;
+    gap: 100px;
 }   
 
     img{
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 
     .info_perfil{
-        height: 200px;
+        height: 240px;
         width: 60vw;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
     }
 
         .botones_perfil{
+            margin-top: 6%;
             width: 60vw;
             display: flex;
             flex-direction: row;
@@ -56,15 +58,15 @@ h4{
 
 p{
     text-align: justify;
-    font-weight: bold;
 }
 
 button{
-    width: var(--anchoBoton);
-    height: var(--altoBoton);
-    border-radius: 15px;
+    width: var(--anchoBotonGrande);
+    height: var(--altoBotonGrande);
+    border-radius: var(--radiusBoton);
     border: 1px;
     background-color: var(--colorGris);
+    font-size: var(--fontBoton);
 }
 
     button:hover{
@@ -72,20 +74,21 @@ button{
     }
 
 /* estilos menu */
-.menu{
+/* .menu{
     border-top: 1px solid var(--colorGris);
     width: 80vw;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
     .boton_menu{
         background-color: transparent;
         width: 40vw;
         border-radius: 0%;
-    }
+    } */
 
-        .boton_menu:hover{
+        /* .boton_menu:hover{
             color: var(--colorMoradoClaro);
             border-top: 3px solid var(--colorMoradoOscuro);
             background-color: transparent;
@@ -97,7 +100,49 @@ button{
             border-top: 3px solid var(--colorMoradoOscuro);
             background-color: transparent;
             font-weight: bold;
-        }
+        } */
+
+/* Estilos menu */
+.menu {
+    border-bottom: 1px solid var(--colorGris);
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    position: relative; /* Añadimos posición relativa para alinear la línea morada */
+  }
+  
+  .boton_menu {
+    font-size: var(--fontTituloCard);
+    background-color: transparent;
+    width: 40vw;
+    border-radius: 0%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Estilos para la línea morada */
+  .linea_morada {
+    height: 3px;
+    width: 40vw;
+    background-color: var(--colorMoradoOscuro);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Agregamos una transición para un efecto suave */
+  }
+  
+  /* Estilos para el botón seleccionado */
+  .boton_menu.seleccionado {
+    font-weight: bold; /* Añadimos negrita al texto del botón seleccionado */
+    color: var(--colorMoradoClaro);
+  }
+  
+
+  .boton_menu:hover{
+    background-color: transparent;
+  }
+  
 
 /* estilos del escaparate de tarjetas */
     .vista_cards{
@@ -108,6 +153,7 @@ button{
         flex-wrap: wrap;
         gap: 10vw;
         margin-top: -40px;
+        margin-bottom: 12vh;
     }
 
     .img_card{
