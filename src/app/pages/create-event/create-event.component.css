@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'DINNeuzeitGrotesk';
+  font-family: 'FuenteTuneTales';
   src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
 }
 
@@ -9,20 +9,21 @@
     justify-content: center; /* Centrar en el eje horizontal */
     align-items: center; /* Centrar en el eje vertical */
     max-width: 1200px;
-    height: 92vh;
+    height: 101.1vh;
     margin: 0 auto;
-    background-color: black;
-    color: #fff;
-    padding-top: 18vh;
-    padding-bottom: 10vh;
+    background-color:var(--colorFondo);
+    color: var(--colorBlanco);
+    margin-bottom: 80px;
+    margin-top: -320px;
   }
-  
+ 
   .create-event-title {
-    font-family:"DINNeuzeitGrotesk";
-  font-size: 30px;
+    font-family:'FuenteTuneTales';
+  font-size:var(--titulo);
   margin-bottom: 20px;
   text-align: center; /* Centrar el texto */
-  letter-spacing: 5px;  
+  letter-spacing: 5px;
+  margin-top:350px;
   }
   
   .form-item {
@@ -39,13 +40,12 @@
   }
   
   label {
-    font-weight: 500;
     display: inline-block;
     width: 250px;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid var(--colorBlanco);
     padding-bottom: 5px;
-    font-size: 16px;
-    font-family:"DINNeuzeitGrotesk";
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
   }
   
   input[type="text"],
@@ -57,40 +57,40 @@
     margin-top: 15px;
     border: none;
     border-radius: 0;
-    background-color: black;
-    color: #ffffff;
+    background-color:var(--colorFondo);
+    color:var(--colorBlanco);
     margin-bottom: 15px;
     width: 100%;
     outline: none;
-    font-size: 16px;
-    font-family:"DINNeuzeitGrotesk";
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
 
   }
   input[type="location"] {
     margin-left:-25px;
-    font-size: 16px;
-    font-family:"DINNeuzeitGrotesk";
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
   }
   input[type="date"] {
     margin-left:-1px;
-    font-size: 16px;
-    font-family:"DINNeuzeitGrotesk";
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
   }
   input[type="text"]{
     margin-left: 20px;
-    font-size: 16px;
-    font-family:"DINNeuzeitGrotesk";
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
   }
   button {
   margin-top: 40px;
-  width: 180px;
-  height:48px;
-  border-radius: 15px;
+  width: var(--anchoBotonGrande);
+  height:var(--altoBotonGrande);
+  border-radius: var(--radiusBoton);
   border: 1px;
-  font-family:"DINNeuzeitGrotesk";
-  background-color: rgb(104, 103, 103);
-  color: #FFFFFF;
-  font-size: 12px;
+  font-family:'FuenteTuneTales';
+  background-color: var(--colorGris);
+  color:var(--colorBlanco);
+  font-size: var(--fontBoton);
   margin-left:510px;
   }
 
@@ -127,12 +127,12 @@ input[type="file"] {
 
 
 .description-label {
-  font-family: 'DINNeuzeitGrotesk';
+  font-family: 'FuenteTuneTales';
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--fontBody);
   display: inline-block;
   width: 1130px;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid var(--colorBlanco);
   padding-bottom: 5px;
   
 }
@@ -145,10 +145,10 @@ input[type="file"] {
 
 
 .event-label {
-  border-bottom: 2px solid #ffffff; 
+  border-bottom: 2px solid var(--colorBlanco); 
   padding-bottom: 5px;
   width: 865px;
-  font-size: 16px;
+  font-size: var(--fontBody);
 
 }
 
@@ -159,10 +159,10 @@ input[type="file"] {
 
 .date-label {
 
-  border-bottom: 2px solid #ffffff; 
+  border-bottom: 2px solid var(--colorBlanco); 
   padding-bottom: 5px;
   width: 250px;
-  font-size: 16px;
+  font-size: var(--fontBody);
 
   margin-left:-10px;
 }
