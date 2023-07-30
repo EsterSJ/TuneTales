@@ -4,8 +4,9 @@
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    height: 76vh;
+    height: 92vh;
     padding-bottom: 28px;
+    padding-top: var(--altoHeader);
 }
 
 h1{

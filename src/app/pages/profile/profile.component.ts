@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  public botonSeleccionado: number;
+
+  constructor (){
+    this.botonSeleccionado = 0;
+  }
+
+  public seleccionarBoton (indice: number){
+    this.botonSeleccionado = indice;
+  }
 
 }
