@@ -1,135 +1,95 @@
-
 @font-face {
   font-family: 'DINNeuzeitGrotesk';
   src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
 }
 
-body {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+body{
+  color: white;
+  background-color: black;
+ 
+}
+
+.contenedor{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: 'DINNeuzeitGrotesk';
-  background-color: black;
+  height: 76.5vh;
 }
 
-  .login-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    height: 100vh; 
-    margin: 0 auto;
-    background-color: black;
-   margin-bottom: 400px;
-   
-}
-
-
-
-.logo {
-  text-align: center;
-
-}
-
-.logo img {
-  width: 848.34px;
-  height: 325.91px;
-  margin-left: -200px;
-  margin-bottom: 100px;
-}
-
-.login-form {
- 
-  color: #fff;
-  position: relative; 
-  margin-left: -260px; 
-  margin-top: 200px;
-}
-
-
-
-
-
-.login-form h2 {
-  margin-bottom: 20px;
-}
-
-.login-form form {
+.logoGrande{
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  justify-content: flex-end;
+  width: 100vh;
+  margin-top:-200px;
+  padding-left: 80px;
 }
 
-.login-title {
-  position: absolute; 
-  top:500px;
-  left: 830.5px;
-  transform: translateX(-50%); 
-  color: #fff; 
-  font-size: 40px; 
-  font-family:'DINNeuzeitGrotesk';
-}
-
-
-.login-form label {
-  font-family:'DINNeuzeitGrotesk';
-  font-weight: 500;
-  font-size: 20px;
-  width: 485px; 
-  border-bottom: 2px solid #ffffff; 
-  padding-bottom:5px ;
-
-}
-
-
-.login-form input {
-  margin-left: 15px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 0;
-  background-color: black; 
-  color: #fff;
-  margin-bottom: 15px;
-  width: 100%;
-  outline: none; 
-  margin-left: 50px;
-
-
-
-}
-
-
-
-
-.login-form .form-item {
-  display: grid;
-  grid-template-columns: 100px auto; 
-  align-items: center;
-  margin-bottom: 15px;
-
- 
-
-}
-
-.login-form button {
-  width: 212.33px;
-  height: 36px;
-  padding: 10px;
-  background-color: #393E46;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 20px;
+.letrasLogo{
+  width: 60%;
+  height: 10%;
+  margin-top: -60px;
+  margin-bottom: 10px;
+  margin-left: 100px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-left: 200px;
-  margin-top: 30px;
-  font-family:'DINNeuzeitGrotesk';
+  position: absolute;
+}
 
+.letrasLogo img{
+  height: 40px;
+}
+
+.formulario{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  height:300px;
+  margin-right: 20px;
+
+}
+
+.casillas{
+  display: grid;
+  gap: 0.4em;
+  width: 100%;
+  height: 180px;
+}
+
+.form-input{
+  color: white;
+  font-size: 1rem;
+  background: none;
+  padding: .3em .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(85, 85, 85);
+  height:30px;
+}
+
+.form-label{
+  color: rgb(231, 229, 229);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.boton{
+  margin-top: 40px;
+  width: 180px;
+  height:48px;
+  border-radius: 15px;
+  border: 1px;
+  font-family:"DINNeuzeitGrotesk";
+  background-color: rgb(104, 103, 103);
+  color: #FFFFFF;
+  font-size: 12px;
 }
 
 
