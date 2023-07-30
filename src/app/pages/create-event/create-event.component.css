@@ -11,12 +11,12 @@
     max-width: 1200px;
     height: 101.1vh;
     margin: 0 auto;
-    background-color: black;
+    background-color:var(--colorFondo);
     color: var(--colorBlanco);
     margin-bottom: 80px;
     margin-top: -320px;
   }
-  
+ 
   .create-event-title {
     font-family:'FuenteTuneTales';
   font-size:var(--titulo);
