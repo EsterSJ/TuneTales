@@ -20,7 +20,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 76vh;
-  padding-top: 20vh;
+  padding-top: 70vh;
 }
 
 .logoGrande{
@@ -88,12 +88,10 @@ body{
   margin-top: 40px;
   width: 180px;
   height:48px;
-  border-radius: 15px;
+  border-radius: var(--radiusBoton);
   border: 1px;
   font-family:"DINNeuzeitGrotesk";
   background-color: rgb(104, 103, 103);
   color: #FFFFFF;
   font-size: 12px;
 }
-
-

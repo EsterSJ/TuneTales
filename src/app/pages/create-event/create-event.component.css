@@ -3,29 +3,27 @@
   src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
 }
 
-  .create-event-container {
-    display: grid; /* Cambiamos a grid layout */
-    grid-template-columns: 1fr; /* Una columna */
-    justify-content: center; /* Centrar en el eje horizontal */
-    align-items: center; /* Centrar en el eje vertical */
-    max-width: 1200px;
-    height: 101.1vh;
-    margin: 0 auto;
-    background-color: black;
-    color: #fff;
-    margin-bottom: 80px;
-    margin-top: -320px;
-  }
+.create-event-container {
+  display: grid; /* Cambiamos a grid layout /
+  grid-template-columns: 1fr; / Una columna /
+  justify-content: center; / Centrar en el eje horizontal /
+  align-items: center; / Centrar en el eje vertical */
+  max-width: 1200px;
+  height: 92vh;
+  margin: 0 auto;
+  background-color: black;
+  color: #fff;
+  padding-top: 18vh;
+  padding-bottom: 10vh;
+}
   
-  .create-event-title {
-    font-family:"DINNeuzeitGrotesk";
-  font-size: 30px;
-  margin-bottom: 20px;
-  text-align: center; /* Centrar el texto */
-  letter-spacing: 5px;
-  margin-top:350px;
-  
-  }
+.create-event-title {
+  font-family:"DINNeuzeitGrotesk";
+font-size: 30px;
+margin-bottom: 20px;
+text-align: center; /* Centrar el texto */
+letter-spacing: 5px;
+}
   
   .form-item {
     display: grid;
