@@ -10,6 +10,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { EventsComponent } from './pages/events/events.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'addMusic', component:AddMusicComponent},
   {path: 'editProfile', component:EditProfileComponent},
   {path: 'profile', component:ProfileComponent},
+  {path: 'publicacion', component:PublicacionComponent}
 
 ];
 
