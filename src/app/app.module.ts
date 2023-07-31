@@ -19,6 +19,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { FormRegisterComponent } from './pages/form-register/form-register.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
+import { PlaylistComponent } from './pages/playlist/playlist.component';
 
 
 
@@ -41,7 +42,8 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
     ForYouComponent,
     ProfileComponent,
     CommunityComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,
