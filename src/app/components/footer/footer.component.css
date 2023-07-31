@@ -5,10 +5,10 @@ footer div {
 
     display: flex;
     justify-content: right;
-    font-family: dinn;
+    font-family: 'FuenteTuneTales';
     align-items: center;
 
-    background-color: var(--myVarColor1);
+    background-color: var(--colorMoradoOscuro);
 }
 
 
