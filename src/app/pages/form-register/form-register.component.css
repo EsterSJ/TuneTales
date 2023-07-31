@@ -9,6 +9,14 @@
     box-sizing:border-box;
 }
 
+:root{
+    --colorMoradoOscuro: #6C4B8D;
+    --colorMoradoClaro: #CE9CFF;
+    --colorFondo: #000000;
+    --colorBlanco: #FFFFFF;
+    --colorGris: #7D7979;
+}
+
 body{
     color: white;
     background-color: black;
@@ -77,22 +85,31 @@ body{
 }
 
 .form-label{
-    color: rgb(231, 229, 229);
+    color: white;
     cursor: pointer;
     transition: .3s;
 }
 
 
 .boton{
-    margin-top: 40px;
-    width: 120px;
-    height:30px;
-    border-radius: 15px;
+    margin-top: 50px;
+    width: 110px;
+    height:48px;
+    border-radius: 50px;
     border: 1px;
     font-family:"DINNeuzeitGrotesk";
-    background-color: rgb(104, 103, 103);
+    background-color: var(--colorGris);
     color: rgb(231, 229, 229);
     font-size: 14px;
+    }
+
+.boton:hover{
+    background-color: var(--colorMoradoClaro);
+}
+
+    ::placeholder{
+        color: white;
+        font-size: var(--fontBody);
     }
 
 .texto-peq{
