@@ -1,0 +1,15 @@
+.container {
+
+    width: 290px;
+    height: 260px;
+
+    border: none;
+    background-color: grey;
+
+    transition: 0.1s;
+}
+
+.container:hover {
+
+    transform:scale(1.1);
+}
