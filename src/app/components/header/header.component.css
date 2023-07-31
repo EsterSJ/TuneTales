@@ -2,7 +2,10 @@ body header{
 
     display: flex;
 
-    height: 150px;
+    /* height: 150px; */
+
+    height: var(--altoHeader);
+    /* height: 16vh; */
     width: 100%;
     background-color: black;
 
@@ -40,4 +43,72 @@ header a:hover {
 
     color: black;
     
+}
+
+
+.div_img_logOut {
+
+    display: flex;
+
+    height: 45px;
+    width: 45px;
+
+    /* border: 2px solid red; */
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img_logOut {
+
+    height: 28px;
+    width: 22px;
+}
+
+.div_button_logOut {
+
+    display: flex;
+
+    height: 45px;
+    width: 36px;
+
+    /* border: 2px solid green; */
+
+    justify-content: end;
+    align-items: center;
+}
+.button_logOut {
+
+    text-decoration: none;
+    background-color: black;
+    border: none;
+}
+
+
+.img_logOut:hover {
+
+    background-color: black;
+}
+
+
+.div_logoHeader {
+
+    display: flex;
+
+    width: 1000px;
+    height: 115px;
+
+    /* border: 2px solid salmon; */
+
+    margin-left: 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.img_logo {
+
+    height: 100px;
+    width: 200px;
 }
