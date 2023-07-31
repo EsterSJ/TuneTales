@@ -4,8 +4,6 @@
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    height: 92vh;
-    padding-bottom: 32px;
     padding-top: var(--altoHeader);
 }
 
@@ -16,7 +14,7 @@ h1{
 .contenido{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
 }
 
 .contenido_logo{
@@ -67,6 +65,7 @@ img{
     border-radius: 10px;
     -o-object-fit: cover;
     object-fit: cover;
+    z-index: 90;
 }
 
 input[type=radio]{
