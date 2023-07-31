@@ -11,6 +11,7 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { EventsComponent } from './pages/events/events.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
+import { PlaylistComponent } from './pages/playlist/playlist.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path: 'addMusic', component:AddMusicComponent},
   {path: 'editProfile', component:EditProfileComponent},
   {path: 'profile', component:ProfileComponent},
-  {path: 'publicacion', component:PublicacionComponent}
+  {path: 'publicacion', component:PublicacionComponent},
+  {path: 'myPlaylist', component:PlaylistComponent}
 
 ];
 
