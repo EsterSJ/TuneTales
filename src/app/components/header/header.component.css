@@ -21,7 +21,8 @@ body header{
     align-items: center;
     justify-content: space-evenly;
 
-    font-family: dinn;
+    font-family: 'FuenteTuneTales';
+    font-size: 15px;
     font-size: var(--fontTituloCard);
 
     color: white;
@@ -70,12 +71,14 @@ header a:hover {
 
     display: flex;
 
-    height: 45px;
-    width: 36px;
+    height: 95%;
+    width: 80%;
+    /* height: 45px;
+    width: 36px; */
 
     /* border: 2px solid green; */
 
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 }
 .button_logOut {
@@ -96,13 +99,15 @@ header a:hover {
 
     display: flex;
 
-    width: 1000px;
-    height: 115px;
+    /* width: 1000px;
+    height: 115px; */
+    width: 150vh;
+    height: 18vh;
 
     /* border: 2px solid salmon; */
 
     margin-left: 20px;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
