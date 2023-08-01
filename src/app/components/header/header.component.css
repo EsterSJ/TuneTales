@@ -127,3 +127,38 @@ header a:hover {
     height: 100px;
     width: 200px;
 }
+
+
+.div_a_b {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    /* border: 2px solid yellow; */
+
+    width: 30%;
+
+    font-family: 'FuenteTuneTales';
+    font-size: 20px;
+
+    color: white;
+
+    padding: 3%;
+}
+
+.div_a_b a{
+
+    text-decoration: none;
+    color: white;
+}
+
+.noLog {
+
+    display: flex;
+
+    margin-left: 20%;
+
+    justify-content: flex-end;
+}

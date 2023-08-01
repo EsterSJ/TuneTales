@@ -1,22 +1,23 @@
 <body>
     <header>
-    <div class="div_a">
-        <div class="div_logoHeader"><img class="img_logo" src="/assets/img/logoHeader.png" alt=""></div>
-        <a routerLink="comunidad">comunidad</a>
-        <a routerLink="eventos">eventos</a>
-        <a routerLink="paraTi">para ti</a>
-        <a routerLink="perfil">perfil</a>
-        <a routerLink="myPlaylist">myPlaylist</a>
-        <div class="div_img_logOut">
-            <div class="div_button_logOut"><button class="button_logOut"><img class="img_logOut" src="/assets/img/log_out.png" alt=""></button></div>
+        <ng-template #logueado>
+            <div class="div_a">
+                <div class="div_logoHeader"><img class="img_logo" src="/assets/img/logoHeader.png" alt=""></div>
+                <a routerLink="community">comunidad</a>
+                <a routerLink="events">eventos</a>
+                <a routerLink="for-you">para ti</a>
+                <a routerLink="profile">perfil</a>
+                <a routerLink="playlist">myPlaylist</a>
+                <div class="div_img_logOut">
+                    <div class="div_button_logOut"><button class="button_logOut"><img class="img_logOut" src="/assets/img/log_out.png" alt=""></button></div>
+                </div>
+            </div>
+        </ng-template>
+    
+        <div class="div_a_b" *ngIf="!this.UserService.logueado; else logueado">
+            <a class="noLog" routerLink="form-register">Regístrate</a>
+            <a class="noLog" routerLink="login">Login</a>
         </div>
-    </div>
 
-    <!-- <ng-template #noLogueado>
-        <div class="div_a">
-            <a routerLink="registrate">Regístrate</a>
-            <a routerLink="login">Login</a>
-        </div>
-    </ng-template> -->
 </header>
 </body>
