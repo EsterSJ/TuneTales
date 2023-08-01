@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'profile', component:ProfileComponent},
   {path: 'publicacion', component:PublicacionComponent},
   {path: 'myPlaylist', component:PlaylistComponent},
-
+]
 
 
 @NgModule({
