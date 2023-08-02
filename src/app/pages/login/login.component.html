@@ -1,26 +1,26 @@
 <div class="contenedor">
-  <div class="Logos">
-      <div class="logoGrande">
-          <img src="../../../assets/img/Logo.png" alt="">
-      </div>
-      <div class="letrasLogo">
-          <img src="../../../assets/img/LOGIN.png" alt="">
-      </div>
-  </div>
-
-  <div class="formulario">
-      <form class="casillas">
-          <label for="usuario" class="form-label">Usuario*: </label>
-          <input type="text" id="usuario" placeholder=" " class="form-input">
-          <span class="form-line"></span>
-
-          <label for="contraseña" class="form-label">Contraseña*: </label>
-          <input type="password" id="contraseña" placeholder="" class="form-input">
-          <span class="form-line"></span>
-
-          <button class="boton">
-              Login
-          </button>
+    <div class="Logos">
+        <div class="logoGrande">
+            <img src="../../../assets/img/Logo.png" alt="">
+        </div>
+        <div class="letrasLogo">
+            <img src="../../../assets/img/LOGIN.png" alt="">
+        </div>
+    </div>
+  
+    <div class="formulario">
+      <form class="casillas" (ngSubmit)="login(username.value, password.value)">
+        <label for="usuario" class="form-label">Usuario*: </label>
+        <input #username type="text" id="usuario" placeholder=" " class="form-input">
+        <span class="form-line"></span>
+  
+        <label for="contraseña" class="form-label">Contraseña*: </label>
+        <input #password type="password" id="contraseña" placeholder="" class="form-input">
+        <span class="form-line"></span>
+  
+        <button class="boton" type="submit">
+            Login
+        </button>
       </form>
+    </div>
   </div>
-</div>
