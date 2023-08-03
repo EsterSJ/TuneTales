@@ -9,6 +9,8 @@ import { UserService } from '../../shared/user.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  loginError: boolean = false;
+  loginSuccess: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService) {
     this.loginForm = this.formBuilder.group({
@@ -17,20 +19,21 @@ export class LoginComponent {
     });
   }
 
+ 
+
   onSubmit() {
     if (this.loginForm.valid) {
       const formData = this.loginForm.value;
-      
-      // Llama al metodo del servicio que se conecta al endpoint de login
+
       this.userService.login(formData.username, formData.password).subscribe(
         (response) => {
-          // Login exitoso, realiza las acciones necesarias
-          this.userService.logueado = true;
-          this.userService.user = response.user;
-        
+          this.loginError = false;
+          this.loginSuccess = true;
+          // Realiza otras acciones si es necesario
         },
         (error) => {
-       
+          this.loginError = true;
+          this.loginSuccess = false;
           console.error('Error en el inicio de sesión', error);
         }
       );
