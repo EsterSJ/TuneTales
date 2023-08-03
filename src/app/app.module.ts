@@ -21,6 +21,7 @@ import { FormRegisterComponent } from './pages/form-register/form-register.compo
 import { PublicacionComponent } from './pages/publicacion/publicacion.component';
 import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { PubliCardComponent } from './components/publi-card/publi-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -52,6 +53,7 @@ import { PubliCardComponent } from './components/publi-card/publi-card.component
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
