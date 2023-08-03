@@ -21,7 +21,7 @@ export class FormRegisterComponent {
         'user': new FormControl(null, [Validators.required]),
         'email': new FormControl(null, [Validators.required, Validators.email]),
         'password': new FormControl(null, [Validators.required, this.passwordValidator]),
-        'repeatPassword': new FormControl(null, [Validators.required, this.passwordValidator]),
+        'password2': new FormControl(null, [Validators.required, this.passwordValidator]),
         'date': new FormControl(null, [Validators.required]),
       })
     }
