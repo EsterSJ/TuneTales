@@ -15,7 +15,7 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
 import { PlaylistComponent } from './pages/playlist/playlist.component';
 
 const routes: Routes = [
-  {path: '', component:FormRegisterComponent},
+  {path: '', component:HomeComponent},
   {path: 'register', component:FormRegisterComponent},
   {path: 'paraTi', component:ForYouComponent},
   {path: 'login', component:LoginComponent},
