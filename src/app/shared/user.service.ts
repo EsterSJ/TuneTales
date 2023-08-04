@@ -21,7 +21,7 @@ export class UserService {
   }
 
   register(user:User):Observable<Object>{
-    return this.http.post(this.url + "register", user)
+    return this.http.post(this.url + "/register", user)
 }
 
 
