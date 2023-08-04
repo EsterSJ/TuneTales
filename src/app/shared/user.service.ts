@@ -14,11 +14,12 @@ export class UserService {
 
   public logueado:boolean = false;
   public user: User;
+ 
 
   constructor(private http:HttpClient) { 
 
-    this.logueado = false;
   }
+
 
   register(user:User):Observable<Object>{
     return this.http.post(this.url + "register", user)
@@ -27,5 +28,9 @@ export class UserService {
 
   public editProfile(update_user: User){    
     return this.http.put(this.url + '/editProfile',update_user);
+  }
+
+  login(user: User) {
+    return this.http.post(`${this.url}/login`, user);
   }
 }
