@@ -18,11 +18,15 @@
     </div>
     
 
-<div class="formulario" [formGroup]="miFormularioReg"  (ngSubmit)="onSubmit()">
-    <form class="casillas">
+<form class="formulario" [formGroup]="miFormularioReg"  (ngSubmit)="onSubmit()">
+    <div class="casillas">
         <!-- <label for="usuario" class="form-label" > </label> -->
         <input type="text" id="user" placeholder="Usuario*: " class="form-input"
         formControlName="user" [ngClass]="{'is-invalid': (miFormularioReg.get('user').dirty || miFormularioReg.get('user').touched) && !miFormularioReg.get('user').valid}">
+
+        <div class="invalid-feedback" *ngIf="!miFormularioReg.get('user').valid">
+            El usuario es obligatorio
+      </div>
 
         <!-- <label for="contraseña" class="form-label" > </label> -->
         <input type="password" id="password" placeholder="Contraseña*:" class="form-input"
@@ -52,9 +56,12 @@
         <input type="email" id="email" placeholder ="Correo electrónico*: " class="form-input" formControlName="email"
         [ngClass]="{'is-invalid': (miFormularioReg.get('email').dirty || miFormularioReg.get('email').touched) && !miFormularioReg.get('email').valid}">
 
+        <div class="invalid-feedback" *ngIf="!miFormularioReg.get('email').valid">
+            El correo electrónico es obligatorio
+      </div>
         <label for="fecha" class="form-label" >Fecha de nacimiento: </label>
         <input type="date" id="date" placeholder ="Fecha de nacimiento: " formControlName="date" class="form-input">
-    </form>
+    </div>
 
     <button class="boton" type="submit" click= "onSubmit()" [disabled]="miFormularioReg.invalid">
         Registrarse
@@ -65,7 +72,7 @@
               Inicia sesión
         </a>
     </p>
-</div>
+</form>
 </div>
 
 </body>
