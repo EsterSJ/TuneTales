@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
             console.log('Inicio de sesión exitoso');
             this.usuarioService.logueado = true;
             this.usuarioService.usuario = response.user;
+            console.log(response.user);
             this.router.navigate(['/profile']);
           } else {
             this.loginError = true;
