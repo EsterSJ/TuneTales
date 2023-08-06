@@ -18,8 +18,8 @@
 
 img{
     margin-bottom: 60px;
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
 }
 
 p{
@@ -61,7 +61,13 @@ label{
     margin-left: -320px;
 }
 
-.boton{
+.botonera{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.boton, .boton_peq{
     width: var(--anchoBotonGrande);
     height: var(--altoBotonGrande);
     border-radius: var(--radiusBoton);
@@ -71,7 +77,12 @@ label{
     margin-top: 12px;
 }
 
-    .boton:hover{
+.boton_peq{
+    width: var(--anchoBotonPeque);
+    height: var(--altoBotonPeque);
+}
+
+    .boton:hover, .boton_peq:hover{
         background-color: var(--colorMoradoClaro);
     }
 

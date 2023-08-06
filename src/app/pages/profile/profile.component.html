@@ -7,8 +7,8 @@
             <div class="botones_perfil">
                 <div class="botones">
                     <button type="reset">Añadir publicación</button>
-                    <button type="reset">Editar perfil</button>
-                    <button type="reset">Seguir</button>
+                    <button type="reset" (click)="goEditProfile();">Editar perfil</button>
+                    <!-- <button type="reset">Seguir</button> -->
                 </div>
                 <div class="iconos_rrss">
                     <a href=""><img class="img_rrss" src="assets/img/icono-facebook-morado.png" alt=""></a>
@@ -18,10 +18,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="menu">
-        <button type="reset" class="boton_menu" (click)="seleccionarBoton('publicaciones')">Publicaciones</button>
-        <button type="reset" class="boton_menu">Eventos</button>
-    </div> -->
+
     <div class="menu">
         <button type="button" class="boton_menu" [class.seleccionado]="botonSeleccionado === 0" (click)="seleccionarBoton(0)">Publicaciones</button>
         <button type="button" class="boton_menu" [class.seleccionado]="botonSeleccionado === 1" (click)="seleccionarBoton(1)">Eventos</button>
