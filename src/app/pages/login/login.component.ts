@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
             // Almacena todos los datos del usuario en el servicio
             this.usuarioService.logueado = true;
             this.usuarioService.user = response.user;
+            //añadida esta linea
+            this.usuarioService.profile = response.user;
             console.log('Datos del usuario almacenados en el servicio:', this.usuarioService.user);
             this.router.navigate(['/profile']);
           } else {
