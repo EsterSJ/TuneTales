@@ -1,8 +1,10 @@
 <div class="contenedor_editProfile">
 
     <div class="bloque_form">
-        <img src={{profile.photo}} alt="">
-        <input type="photo" name="photo" id="photo" placeholder="{{profile.photo}}" #photo/>
+        <img src={{profile.photo}} alt="" id="foto_perfil" style="border-radius: 15px; border: 8px solid var(--colorMoradoOscuro);">
+        <label for="photo" class="label_photo">Cambiar Foto</label>
+        <input type="file" name="photo" id="photo" placeholder="{{profile.photo}}" style="display: none;" #photo/>   
+  
         <p>Tus redes sociales</p>
         <div class="input_rrss">
             <button type="reset" class="boton_icon"><img class="icon" src="assets/img/icono-facebook.png"></button>
