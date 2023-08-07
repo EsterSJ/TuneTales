@@ -40,11 +40,11 @@ export class CreateEventComponent implements OnInit {
       let description = this.createForm.get('description').value;
     
       
-      this.user = new User(null, user, email, password, null, null, null, date, null, null, null)
+      this.event = new Evento (null, null, name_event, date, hour, place, null, photo, description)
    
 
    
-     console.log(this.user);
+     console.log(this.event);
    
      if(password === password2){
        this.userService.register(this.user).subscribe((data:Response)=>{
