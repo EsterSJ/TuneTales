@@ -30,7 +30,8 @@ export class UserService {
     return this.http.put(this.url + '/editProfile',update_user);
   }
 
-  login(user: User) {
+  login(user: User): Observable<any> {
     return this.http.post(`${this.url}/login`, user);
+    console.log(user)
   }
 }

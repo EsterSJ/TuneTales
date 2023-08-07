@@ -40,8 +40,10 @@ export class LoginComponent implements OnInit {
             this.loginError = false;
             this.loginSuccess = true;
             console.log('Inicio de sesión exitoso');
+            // Almacena todos los datos del usuario en el servicio
             this.usuarioService.logueado = true;
             this.usuarioService.user = response.user;
+            console.log('Datos del usuario almacenados en el servicio:', this.usuarioService.user);
             this.router.navigate(['/profile']);
           } else {
             this.loginError = true;
