@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Evento } from 'src/app/models/evento';
 
 @Component({
   selector: 'app-create-event',
@@ -7,28 +9,53 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
-  createForm: FormGroup;
+  public createForm: FormGroup;
+  public event: Evento;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, public router: Router) { }
 
   ngOnInit() {
     this.createForm = this.formBuilder.group({
-      eventName: ['', Validators.required],
-      image: ['', Validators.required],
-      location: ['', Validators.required],
-      date: ['', Validators.required],
-      time: ['', Validators.required],
-      description: ['', Validators.required]
+      'eventName': new FormControl([null, Validators.required]),
+      'image': new FormControl([null, Validators.required]),
+      'location': new FormControl([null, Validators.required]),
+      'date': new FormControl([null, Validators.required]),
+      'time': new FormControl([null, Validators.required]),
+      'description': new FormControl([null, Validators.required]),
     });
   }
-
+  
   onImageClick(): void {
     // logica para el  hacer clic en la imagen
    
   }
 
-  onSubmit(): void {
-    // logica para enviar el formulario
+  onSubmit(){
+    
+      let name_event = this.createForm.get('eventName').value;
+      let place = this.createForm.get('location').value;
+      let date = this.createForm.get('date').value;
+      let hour = this.createForm.get('time').value;
+      let photo = this.createForm.get('image').value;
+      let description = this.createForm.get('description').value;
+    
+      
+      this.user = new User(null, user, email, password, null, null, null, date, null, null, null)
+   
+
+   
+     console.log(this.user);
+   
+     if(password === password2){
+       this.userService.register(this.user).subscribe((data:Response)=>{
+         console.log(data);
+         this.Registro();
+       })
+     }else{
+       this.Errors();
+     }
+       
+     }
   }
 
 
@@ -41,4 +68,4 @@ export class CreateEventComponent implements OnInit {
       console.log('Archivo seleccionado:', file);
     }
   }
-}
+

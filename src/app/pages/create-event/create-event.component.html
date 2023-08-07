@@ -1,7 +1,7 @@
 
   <div class="create-event-container">
     <h2 class="create-event-title">CREAR EVENTO</h2>
-    <form [formGroup]="createForm">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
       <div class="form-item event-container"> 
         <label for="eventName" class="event-label">Evento</label>
         <input type="text" id="eventName" formControlName="eventName">
