@@ -32,6 +32,6 @@ export class UserService {
 
   login(user: User): Observable<any> {
     return this.http.post(`${this.url}/login`, user);
-    console.log(user)
   }
+
 }
