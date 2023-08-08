@@ -1,7 +1,7 @@
 body header{
 
     display: flex;
-    position: fixed;
+    /* position: fixed; */
 
     height: var(--altoHeader);
     width: 100%;
@@ -10,9 +10,9 @@ body header{
     /* border: 2px solid lightblue; */
 
     justify-content: right;
-    margin-right: 30%;
+    /* margin-right: 30%; */
 
-    z-index: 1000;
+    /* z-index: 1000; */
 
 }
 
@@ -25,7 +25,7 @@ body header{
 
     /* border: 2px solid yellow; */
 
-    width: 100%;
+    width: 45%;
 
     font-family: 'FuenteTuneTales';
     font-size: 20px;
@@ -43,7 +43,7 @@ body header{
     color: white;
     text-decoration: none;
 
-    /* margin-left: 3%; */
+    margin-left: 2%;
 
     /* border: 2px solid beige; */
 }
@@ -117,7 +117,7 @@ header a:hover {
 
     /* border: 2px solid salmon; */
 
-    /* margin-left: 0.5%; */
+    margin-left: 0.5%;
     justify-content: flex-start;
     align-items: center;
 }
@@ -135,7 +135,7 @@ header a:hover {
     display: flex;
 
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 
     /* border: 2px solid yellow; */
 

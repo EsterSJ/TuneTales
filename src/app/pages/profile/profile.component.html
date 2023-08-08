@@ -1,19 +1,37 @@
 <div class="contenedor_perfil">
     <div class="cabecera">
-        <img src="assets/img/imgPerfil.png" alt="">
+        <img src="{{profile.photo || 'assets/img/sirena.png'}}" alt="" class="profilePhoto">
         <div class="info_perfil">
-            <h4>@tune_explorer</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dictum tortor eget bibendum ultrices. Nullam vitae faucibus odio. Ut ut imperdiet ex, ac pulvinar augue. Etiam pulvinar nibh eget orci congue auctor. Sed maximus, justo at sodales semper, lectus quam accumsan mauris, at ullamcorper elit elit et massa...</p>
+            <div>
+                <h4>{{profile.user}}</h4>
+                <p>{{profile.description}}</p>
+            </div>
+
             <div class="botones_perfil">
                 <div class="botones">
-                    <button type="reset">Añadir publicación</button>
-                    <button type="reset" (click)="goEditProfile();">Editar perfil</button>
-                    <!-- <button type="reset">Seguir</button> -->
+                    <ng-template [ngIf]= "this.mostrar_logueado">
+                        <button type="reset" (click)="publicar();">Añadir publicación</button>
+                        <button type="reset" (click)="goEditProfile();">Editar perfil</button>
+                    </ng-template>
+                    <ng-template [ngIf] = "!this.mostrar_logueado">
+                        <ng-template [ngIf] = "this.siguiendo">
+                            <button type="reset" (click)="seguir();">Dejar de seguir</button>
+                        </ng-template>
+                        <ng-template [ngIf] = "!this.siguiendo">
+                            <button class="boton_seguir" type="reset" (click)="seguir();">Seguir</button>
+                        </ng-template>
+                    </ng-template>    
                 </div>
                 <div class="iconos_rrss">
-                    <a href=""><img class="img_rrss" src="assets/img/icono-facebook-morado.png" alt=""></a>
-                    <a href=""><img class="img_rrss" src="assets/img/icono-instagram-morado.png" alt=""></a>
-                    <a href=""><img class="img_rrss" src="assets/img/icono-twitter-morado.png" alt=""></a>
+                    <ng-container *ngIf="profile.facebook">
+                        <a href="{{profile.facebook}}" target="_blank"><img class="img_rrss" src="assets/img/icono-facebook-morado.png" alt=""></a>
+                    </ng-container>
+                    <ng-container *ngIf="profile.instagram">
+                        <a href="{{profile.instagram}}" target="_blank"><img class="img_rrss" src="assets/img/icono-instagram-morado.png" alt=""></a>
+                    </ng-container>
+                    <ng-container *ngIf="profile.twitter">
+                        <a href="{{profile.twitter}}" target="_blank"><img class="img_rrss" src="assets/img/icono-twitter-morado.png" alt=""></a>
+                    </ng-container>
                 </div>
             </div>
         </div>
@@ -27,14 +45,26 @@
           
 
     <div class="vista_cards">
-        <ng-template [ngIf]= "botonSeleccionado === 0">
+        <!-- <ng-template [ngIf]= "botonSeleccionado === 0">
             <div *ngFor = "let number of [0,1,2,3,4,5,6,7]">
+                <app-publi-card></app-publi-card>
+            </div>
+        </ng-template> -->
+        <ng-template [ngIf]= "botonSeleccionado === 0">
+            <div *ngFor = "let publicacion of publicaciones">
                 <app-publi-card></app-publi-card>
             </div>
         </ng-template>
 
-        <ng-template [ngIf]= "botonSeleccionado === 1">
+        <!-- <ng-template [ngIf]= "botonSeleccionado === 1">
             <div *ngFor = "let number of [0,1,2,3,4,5,6,7]">
+                <div class="img_card">
+                    <app-tarjeta-evento-perfil></app-tarjeta-evento-perfil>
+                </div>
+            </div>
+        </ng-template> -->
+        <ng-template [ngIf]= "botonSeleccionado === 1">
+            <div *ngFor = "let evento of eventos">
                 <div class="img_card">
                     <app-tarjeta-evento-perfil></app-tarjeta-evento-perfil>
                 </div>

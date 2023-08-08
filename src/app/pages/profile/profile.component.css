@@ -22,18 +22,23 @@
         height: 200px;
     }
 
+    .profilePhoto{
+        border: 6px solid var(--colorMoradoOscuro);
+        border-radius: 15px;
+    }
+
     .info_perfil{
         height: 200px;
         width: 50vw;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-start;
         font-size: var(--fontBody);
     }
 
         .botones_perfil{
-            margin-top: 3%;
+            justify-self: flex-end;
             width: 50vw;
             display: flex;
             flex-direction: row;
@@ -72,6 +77,12 @@ button{
     button:hover{
         background-color: var(--colorMoradoClaro);
     }
+
+    .boton_seguir{
+        width: var(--anchoBotonPeque);
+        height: var(--altoBotonPeque);
+    }
+
 
 /* Estilos menu */
 .menu {
