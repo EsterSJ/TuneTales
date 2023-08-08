@@ -1,0 +1,31 @@
+:root{
+    /* colores */
+    --colorMoradoOscuro: #6C4B8D;
+    --colorMoradoClaro: #CE9CFF;
+    --colorFondo: #000000;
+    --colorBlanco: #FFFFFF;
+    --colorGris: #7D7979;
+}
+
+.Titulo{
+    /* border: 3px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:80px;
+    width:100%;
+    background-image:linear-gradient(to bottom, #6C4B8D, #000000);
+}
+
+.Titulo p{
+    color:white;
+    font-size: 32px;
+}
+
+.Reproductores{
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}

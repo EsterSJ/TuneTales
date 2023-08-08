@@ -1,0 +1,114 @@
+
+@font-face {
+    font-family: 'DINNeuzeitGrotesk';
+    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+
+  }
+
+
+   body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Tarjeta */
+  .tarjeta-evento {
+    background-color: #393E46;
+    width: 289px;
+    height: 261px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    color: #FFFFFF;
+    border-radius:10px;
+  }
+  
+  /* Imagen */
+  .imagen-evento {
+    height:89px;
+    width:89.84px;
+    margin-top: 5%;
+  }
+  
+  /* Contenido superior */
+  .contenido-superior {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Título del evento */
+  .titulo-evento {
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'DINNeuzeitGrotesk LT Light', sans-serif;
+    line-height: auto;
+    border-style: hidden;
+    outline: none;
+    width: 222.75px;
+    margin-top: 10%; 
+    display: flex;
+    flex-direction: column; /* Muestra palabras en columnas , se le añadio el span para separar las palabras*/
+    align-items: center; 
+  }
+  .titulo-evento span {
+    margin: 5px; 
+  }
+  /* Contenido central */
+  .contenido-central {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: -10%;
+  }
+  
+  .detalle-evento.hora{
+    color:#eeeeee;
+    text-align:center;
+    vertical-align:text-top;
+    font-size:15px;
+    font-family: 'DINNeuzeitGrotesk LT Light', sans-serif;
+    letter-spacing:3%;
+    line-height:auto;
+    border-style:hidden;
+    outline:none;
+    width:127.28820037841797px;
+    margin-right: 15px;
+  
+  }
+
+  .detalle-evento.fecha{
+    color:#eeeeee;
+    text-align:center;
+    vertical-align:text-top;
+    font-size:15px;
+    font-family: 'DINNeuzeitGrotesk LT Light', sans-serif;
+    letter-spacing:3%;
+    line-height:auto;
+    border-style:hidden;
+    outline:none;
+    width:116.68084716796875px;
+   margin-left:15px ;
+  }
+
+  /* Estilos de los detalles del evento */
+  
+  /* Contenido inferior */
+
+  .contenido-inferior {
+    text-align: center; 
+  }
+
+  .detalle-evento.lugar{
+    color: #eeeeee;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'DINNeuzeitGrotesk LT Light', sans-serif;
+    letter-spacing:3%;
+    border-style:hidden;
+    outline:none;
+    margin-bottom: 60px;
+  }

@@ -1,0 +1,46 @@
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input, textarea{
+    background-color: transparent;
+    color: white;
+    font-size: var(--fontBody);
+    border: none;
+    border-bottom: 1px solid white;
+    width: 500px;
+    resize: none;
+}
+    ::placeholder{
+        color: white;
+        /* font-size: 14px; */
+    }
+
+    textarea{
+        border-top: 1px solid white;
+        border-bottom: none;
+    }
+
+label{
+    align-self: flex-start;
+    font-size: var(--fontBody);
+    margin-bottom: -8px;
+}
+
+.boton{
+    width: var(--anchoBotonPeque);
+    height: var(--altoBotonPeque);
+    border-radius: var(--radiusBoton);
+    border: 1px;
+    background-color: var(--colorGris);
+    font-size: var(--fontBoton);
+    margin-top: 40px;
+}
+
+    .boton:hover{
+        background-color: var(--colorMoradoClaro);
+    }

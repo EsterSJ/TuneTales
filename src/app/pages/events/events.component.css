@@ -1,0 +1,29 @@
+.buscador{
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10vw;
+}
+
+    input{
+        background-color: transparent;
+        color: white;
+        font-size: 20px;
+        border: none;
+        border-bottom: 1px solid var(--colorGris);
+        width: 400px;
+    }
+
+    button{
+        border: none;
+        background-color: transparent;
+        color: var(--colorGris);
+        margin-left: -25px;
+    }
+
+    .lupa{
+        width: 20px;
+        height: 20px;
+    }

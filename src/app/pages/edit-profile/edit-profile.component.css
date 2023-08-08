@@ -1,0 +1,119 @@
+.contenedor_editProfile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    height: 92vh;
+    padding-top: 100px;
+}
+
+.bloque_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+img{
+    width: 240px;
+    height: 240px;
+}
+
+.label_photo{
+    width: 400px;
+    text-align: center;
+    align-self: flex-end;
+    cursor: pointer;
+    color: var(--colorMoradoOscuro);
+    margin-top: -10px;
+}
+
+    .label_photo:hover{
+        color: white;
+    }
+
+p{
+    margin-left: -268px ;
+    margin-bottom: -10px;
+    margin-top: 40px;
+    color: var(--colorGris);
+    font-size: var(--fontTituloCard);
+    padding-left: 38px;
+}
+
+input, textarea{
+    background-color: transparent;
+    color: white;
+    font-size: var(--fontTituloCard);
+    border: none;
+    border-bottom: 1px solid white;
+    width: 400px;
+}
+
+    ::placeholder{
+        color: white;
+        font-size: var(--fontBody);
+    }
+
+    input[type="date"]{
+        color: white;
+        font-size: var(--fontBody);
+    }
+
+    textarea{
+        border-top: 1px solid white;
+        border-bottom: none;
+        resize: none;
+    }
+
+label{
+    font-size: 14px;
+    margin-bottom: -14px;
+    margin-left: -320px;
+}
+
+.botonera{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    margin-top: 48px;
+}
+
+.boton, .boton_peq{
+    width: var(--anchoBotonGrande);
+    height: var(--altoBotonGrande);
+    border-radius: var(--radiusBoton);
+    border: 1px;
+    background-color: var(--colorGris);
+    font-size: var(--fontBoton);
+    margin-top: 12px;
+}
+
+.boton_peq{
+    width: var(--anchoBotonPeque);
+    height: var(--altoBotonPeque);
+}
+
+    .boton:hover, .boton_peq:hover{
+        background-color: var(--colorMoradoClaro);
+    }
+
+.input_rrss{
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.boton_icon{
+    border: none;
+    background-color: transparent;
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    margin-right: -24px;
+    margin-bottom: -0.5px;
+}

@@ -1,0 +1,424 @@
+
+@font-face {
+    font-family: 'FuenteTuneTales';
+    src: url(/DINNeuzeitGroteskLT-Light.ttf);
+}
+
+body {
+
+    display: flex;
+    width: 100%;
+    /* height: 120vh; */
+    background-color: black;
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+
+}
+
+.first_section {
+
+    display: inline-block;
+
+    /* border: 3px solid pink; */
+
+    width: 60%;
+    height: 160vh;
+}
+
+
+
+.name_artist {
+
+    color: white;
+    font-size: 24px;
+
+    font-family: "FuenteTuneTales";
+
+    /* border: 3px solid red; */
+    height: 35px;
+    width: 135px;
+
+    letter-spacing: 4px;
+    font-size: 24px;
+
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.soundcloud_card {
+
+    height: 160px;
+    width: 600px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    margin-left: 20%;
+    margin-top: 1%;
+}
+
+
+.button_container {
+
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 280px;
+    text-decoration: none;
+
+    margin-top: 30px;
+
+    /* border: 2px solid green; */
+    margin-left: 20%;
+}
+
+.button_añadirPlaylist, .publicar {
+
+    height: 48px;
+    width: 180px;
+    border-radius: 22px;
+
+    text-decoration: none;
+    border: none;
+    background-color: #2D2B2B;
+    color: white;
+
+    font-size: 14px;
+}
+
+.button_añadirPlaylist:hover {
+
+    background-color: #CE9CFF;
+}
+
+.button_like_container {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    border: none;
+
+    width: 50px;
+    height: 50px;
+}
+
+.button_like {
+
+    /* border: solid 3px brown; */
+    background-color:#CE9CFF;
+    display: inline-block;
+    /* text-decoration: none; */
+    /* border: none; */
+    height: 27px;
+    width: 27px;
+    /* color: red; */
+    /* color: #2D2B2B; */
+
+    position: relative;
+    transform: rotate(45deg);
+    animation: beating 2s ease infinite;
+}
+
+
+.button_like::before, .button_like::after{
+    content: "";
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    background-color:#CE9CFF; 
+    position: absolute;
+}
+
+
+.button_like::before {
+    top: -15px;
+    left: 0;
+}
+
+
+.button_like::after {
+
+    left: -15px;
+    top: 0;
+}
+
+
+.button_like:hover {
+    
+        transform: rotate(45deg) scale(1.1);
+    
+}
+
+/* .heart {
+
+    height: 40px;
+    width: 60px;
+} */
+
+
+
+/* SECCION LETRA */
+
+.letra_container {
+
+    display: flex;
+    width: 99%;
+    height: 90px;
+
+    /* border: 4px solid sienna; */
+
+    margin-top: 2%;
+    justify-content: center;
+}
+
+.button_letraHistoria_container {
+
+    display: flex;
+
+    width: 80%;
+    height: 50px;
+
+    display: flex;
+    margin-top: 1%;
+
+    justify-content: space-evenly;
+
+}
+
+.button_letra, .button_historia {
+
+    width: 400px;
+    height: 50px;
+
+    font-family: FuenteTuneTales;
+    font-size: 16px;
+    color: white;
+
+    border: none;
+    border-top: 2px solid #2D2B2B;
+    background-color: transparent;
+
+}
+
+
+
+.button_letra:hover {
+
+    color:#CE9CFF; 
+    border-top: 2px solid #CE9CFF;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+
+.button_historia:hover {
+
+    color:#CE9CFF; 
+    border-top: 2px solid #CE9CFF;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+
+/* .button_historia:hover {
+
+    background-color: transparent;
+    font-weight: bold;
+    color:#CE9CFF; 
+    border: 3px solid var(#CE9CFF);
+} */
+
+
+/* .button_letra:active {
+
+    color: #CE9CFF;
+    border-top: 3px solid var(#CE9CFF);
+    font-weight: bold;
+} */
+
+
+
+/* .letra_historia_container:hover {
+
+    color: #CE9CFF;
+    border-top: 2px solid var(#CE9CFF);
+} */
+
+
+
+.textoLetra {
+
+    display: flex;
+
+    width: 99%;
+    height: 100vh;
+
+    /* border: solid 4px goldenrod; */
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.titulo_letra {
+
+    display: flex;
+
+    color: white;
+    font-family: FuenteTuneTales;
+    font-size: 20px;
+
+    justify-content: center;
+}
+
+
+
+.texto {
+
+    display: flex;
+
+    width: 50%;
+    height: 90%;
+    background-color: transparent;
+    border: 3px solid grey;
+
+    resize: none;
+
+    color: white;
+    font-size: 16;
+
+    text-decoration: none;
+    margin-bottom: 3%;
+    justify-content: center;
+
+}
+
+
+
+
+
+/* SECCION COMENTARIOS */
+
+.second_section {
+
+    display: flex;
+
+    /* border: solid 3px blue; */
+
+    width: 40%;
+    /* height: 160vh; */
+
+    justify-content: center;
+
+}
+
+.coments_section {
+
+    /* display: inline-block; */
+
+    height: 1400px;
+    width: 556px;
+
+    /* border: 3px solid salmon; */
+
+    border-radius: 22px;
+
+    background-color: #7D7979;
+    font-family: FuenteTuneTales;
+
+    justify-content: center;
+
+    margin-top: 10%;
+
+}
+
+.old_coments {
+
+    width: 99%;
+    height: 1100px;
+
+    /* border: 3px solid bisque; */
+}
+
+.title_ac {
+
+    display: flex;
+
+    width: 35%;
+    height: 24px;
+
+    color: #EEEEEE;
+    font-size: 16px;
+
+    /* border: solid 2px blue; */
+
+    justify-content: center;
+}
+
+.textarea_container {
+
+    display: flex;
+    height: 180px;
+    width: 100%;
+
+    /* border: solid 3px lightblue; */
+    justify-content: center;
+}
+
+.agregar_comentario {
+
+    display: flex;
+
+    width: 90%;
+    height: 170px;
+
+    border: none;
+    border-radius: 10px;
+    resize: none;
+
+    border: 1px solid #C8BFBF;
+    font-family: FuenteTuneTales;
+    padding: 1%;
+    color: white;
+
+    background-color: transparent;
+}
+
+.caracteres {
+
+    display: flex;
+
+    font-size: 14px;
+    color: #C8BFBF;
+
+    width: 95%;
+    height: 15px;
+
+    /* border: 2px solid forestgreen; */
+
+    justify-content: flex-end;
+    margin-top: 3px;
+
+    /* margin-right: 90px; */
+}
+
+.button_publicar_container {
+
+    display: flex;
+
+    width: 99%;
+    height: 50px;
+
+    /* border: 3px solid lavender; */
+
+    justify-content: center;
+}
+
+
+.publicar:hover {
+
+    background-color: #CE9CFF;
+}

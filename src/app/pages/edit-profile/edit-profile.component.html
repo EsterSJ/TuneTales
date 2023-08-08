@@ -1,0 +1,42 @@
+<div class="contenedor_editProfile">
+
+    <div class="bloque_form">
+        <img src={{profile.photo}} alt="" id="foto_perfil" style="border-radius: 15px; border: 8px solid var(--colorMoradoOscuro);">
+        <label for="photo" class="label_photo">Cambiar Foto</label>
+        <input type="file" name="photo" id="photo" placeholder="{{profile.photo}}" style="display: none;" #photo/>   
+  
+        <p>Tus redes sociales</p>
+        <div class="input_rrss">
+            <button type="reset" class="boton_icon"><img class="icon" src="assets/img/icono-facebook.png"></button>
+            <input type="fb" name="fb" id="fb" placeholder={{profile.facebook}} style="padding-left: 28px;" #facebook/>
+        </div>
+    
+        <div class="input_rrss">
+            <button type="reset" class="boton_icon"><img class="icon" src="assets/img/icono-instagram.png"></button>
+            <input type="ig" name="ig" id="ig" placeholder={{profile.instagram}} style="padding-left: 28px;" #instagram/>
+        </div>
+    
+        <div class="input_rrss">
+            <button type="reset" class="boton_icon"><img class="icon" src="assets/img/icono-twitter.png"></button>
+            <input type="tw" name="tw" id="tw" placeholder={{profile.twitter}} style="padding-left: 28px;" #twitter/>
+        </div>
+    </div>
+
+    <div class="bloque_form">
+        <input type="usuario" name="usuario" id="usuario" placeholder={{profile.user}} #usuario/>
+        <input type="password" name="password" id="password" placeholder={{profile.password}} #password/>
+        <input type="repeatPassword" name="repeatPassword" id="repeatPassword" placeholder={{profile.password}}/>
+        <input type="email" name="email" id="email" placeholder={{profile.email}} #email/>
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder={{profile.birth_date}} #birth_date/>
+        <input type="genero" name="genero" id="genero" placeholder={{profile.music_type}} #music_type/>
+        <label for="descripcion">Descripción</label>
+        <textarea rows="3" cols="40" name="descripcion" id="descripcion" placeholder={{profile.description}} #description></textarea>
+    
+        <div class="botonera">
+            <button type="reset" class="boton" (click)="editProfile(usuario.value, email.value, password.value, instagram.value, facebook.value, twitter.value, birth_date.value, music_type.value, description.value, photo.value);">Guardar cambios</button>
+            <button type="reset" class="boton_peq" (click)="volver();">Volver</button>
+        </div>
+
+    </div>
+
+</div>

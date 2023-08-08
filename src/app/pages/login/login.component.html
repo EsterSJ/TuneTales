@@ -1,0 +1,28 @@
+<div class="contenedor">
+    <div class="Logos">
+        <div class="logoGrande">
+            <img src="../../../assets/img/Logo.png" alt="">
+        </div>
+        <div class="letrasLogo">
+            <img src="../../../assets/img/LOGIN.png" alt="">
+        </div>
+    </div>
+  
+    <div class="formulario">
+      <form [formGroup]="loginForm" class="casillas" (ngSubmit)="onSubmit()">
+        <label for="usuario" class="form-label">Usuario*: </label>
+        <input formControlName="username" type="text" id="usuario" placeholder=" " class="form-input">
+        <span class="form-line"></span>
+    
+        <label for="password" class="form-label">Contraseña*: </label>
+        <input formControlName="password" type="password" id="password" placeholder="" class="form-input">
+        <span class="form-line"></span>
+    
+        <button class="boton" type="submit">
+            Login
+        </button>
+      </form>
+      <div *ngIf="loginSuccess" class="mensaje-success">Inicio de sesión exitoso.</div>
+      <div *ngIf="loginError" class="mensaje-error">Error en el inicio de sesión. Usuario o contraseña incorrectos.</div>
+    </div>
+  </div>

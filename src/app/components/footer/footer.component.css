@@ -1,14 +1,15 @@
 footer div {
 
-    height: 80px;
+    height: var(--altoFooter);
     width: 100%;
-
+    position: fixed;
     display: flex;
     justify-content: right;
-    font-family: dinn;
+    font-family: 'FuenteTuneTales';
     align-items: center;
+    bottom: 0;
 
-    background-color: var(--myVarColor1);
+    background-color: var(--colorMoradoOscuro);
 }
 
 

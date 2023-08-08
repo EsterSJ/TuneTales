@@ -1,11 +1,9 @@
 body header{
 
     display: flex;
-
-    /* height: 150px; */
+    position: fixed;
 
     height: var(--altoHeader);
-    /* height: 16vh; */
     width: 100%;
     background-color: black;
 
@@ -13,6 +11,8 @@ body header{
 
     justify-content: right;
     margin-right: 30%;
+
+    z-index: 1000;
 
 }
 
@@ -29,6 +29,7 @@ body header{
 
     font-family: 'FuenteTuneTales';
     font-size: 20px;
+    font-size: var(--fontTituloCard);
 
     color: white;
     

@@ -1,0 +1,152 @@
+.contenedor_perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding-top: 18vh;
+}
+
+/* estilos cabecera */
+.cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1147px;
+    gap: 40px;
+}   
+
+    img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .profilePhoto{
+        border: 6px solid var(--colorMoradoOscuro);
+        border-radius: 15px;
+    }
+
+    .info_perfil{
+        height: 200px;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-size: var(--fontBody);
+    }
+
+        .botones_perfil{
+            justify-self: flex-end;
+            width: 50vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+            .botones, .iconos_rrss{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 20px;
+            }
+
+            .img_rrss{
+                width: 24px;
+                height: 24px;
+            }
+
+h4{
+    color: var(--colorMoradoClaro);
+}
+
+p{
+    text-align: justify;
+}
+
+button{
+    width: var(--anchoBotonGrande);
+    height: var(--altoBotonGrande);
+    border-radius: var(--radiusBoton);
+    border: 1px;
+    background-color: var(--colorGris);
+    font-size: var(--fontBoton);
+}
+
+    button:hover{
+        background-color: var(--colorMoradoClaro);
+    }
+
+    .boton_seguir{
+        width: var(--anchoBotonPeque);
+        height: var(--altoBotonPeque);
+    }
+
+
+/* Estilos menu */
+.menu {
+    border-bottom: 1px solid var(--colorGris);
+    width: 1147px;
+    display: flex;
+    flex-direction: row;
+    position: relative; /* Añadimos posición relativa para alinear la línea morada */
+  }
+  
+  .boton_menu {
+    font-size: var(--fontTituloCard);
+    background-color: transparent;
+    width: 40vw;
+    border-radius: 0%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Estilos para la línea morada */
+  .linea_morada {
+    margin-bottom: -2px;
+    height: 5px;
+    width: 573.5px;
+    background-color: var(--colorMoradoClaro);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Agregamos una transición para un efecto suave */
+  }
+  
+  /* Estilos para el botón seleccionado */
+  .boton_menu.seleccionado {
+    font-weight: bold; 
+    color: var(--colorMoradoClaro);
+  }
+  
+
+  .boton_menu:hover{
+    background-color: transparent;
+  }
+  
+
+/* estilos del escaparate de tarjetas */
+    .vista_cards{
+        align-self: center;
+        width: 1160px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 140px;
+        margin-top: -40px;
+        margin-bottom: 12vh;
+        padding-left: 4px;
+    }
+
+        .img_card_provisional{
+            width: 289px;
+            height: 261px;
+        }
+    
+        .img_card:hover{
+            border: 4px solid var(--colorMoradoClaro);
+            scale: 1.1;
+            border-radius: 12px;
+        }
