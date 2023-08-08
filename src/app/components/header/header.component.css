@@ -1,7 +1,7 @@
 body header{
 
     display: flex;
-    position: fixed;
+    /* position: fixed; */
 
     height: var(--altoHeader);
     width: 100%;
@@ -12,7 +12,7 @@ body header{
     justify-content: right;
     /* margin-right: 30%; */
 
-    z-index: 1000;
+    /* z-index: 1000; */
 
 }
 
@@ -25,7 +25,7 @@ body header{
 
     /* border: 2px solid yellow; */
 
-    width: 100%;
+    width: 45%;
 
     font-family: 'FuenteTuneTales';
     font-size: 20px;
@@ -135,7 +135,7 @@ header a:hover {
     display: flex;
 
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 
     /* border: 2px solid yellow; */
 
