@@ -1,6 +1,6 @@
 <div class="contenedor_perfil">
     <div class="cabecera">
-        <img src="{{profile.photo}}" alt="" class="profilePhoto">
+        <img src="{{profile.photo || 'assets/img/sirena.png'}}" alt="" class="profilePhoto">
         <div class="info_perfil">
             <div>
                 <h4>{{profile.user}}</h4>
@@ -23,9 +23,15 @@
                     </ng-template>    
                 </div>
                 <div class="iconos_rrss">
-                    <a href=""><img class="img_rrss" src="assets/img/icono-facebook-morado.png" alt=""></a>
-                    <a href=""><img class="img_rrss" src="assets/img/icono-instagram-morado.png" alt=""></a>
-                    <a href=""><img class="img_rrss" src="assets/img/icono-twitter-morado.png" alt=""></a>
+                    <ng-container *ngIf="profile.facebook">
+                        <a href="{{profile.facebook}}" target="_blank"><img class="img_rrss" src="assets/img/icono-facebook-morado.png" alt=""></a>
+                    </ng-container>
+                    <ng-container *ngIf="profile.instagram">
+                        <a href="{{profile.instagram}}" target="_blank"><img class="img_rrss" src="assets/img/icono-instagram-morado.png" alt=""></a>
+                    </ng-container>
+                    <ng-container *ngIf="profile.twitter">
+                        <a href="{{profile.twitter}}" target="_blank"><img class="img_rrss" src="assets/img/icono-twitter-morado.png" alt=""></a>
+                    </ng-container>
                 </div>
             </div>
         </div>

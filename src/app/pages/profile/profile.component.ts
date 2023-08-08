@@ -14,6 +14,7 @@ export class ProfileComponent {
 
   public profile: User;
 
+
   //con este atributo sabemos si el usuario que hay que mostrar en el perfil es el mismo que esta logueado
   //si es el mismo muestra los botones de añadir publicacion y editar perfil
   //si no muestra el boton seguir/dejar de seguir
@@ -34,6 +35,10 @@ export class ProfileComponent {
   //si le sigue inicializa this.seguiendo a true y muestra el boton dejar de seguir
   //si no, inicializa this.siguiendo a false y muestra el boton seguir
   public inicializarSiguiendo(){
+    console.log("-------------------->");
+    
+    console.log(this.userService.profile);
+    
     this.userService.consultar_seguidor().subscribe((data) => {      
       if (data[0].length > 0){        
         this.siguiendo = true;

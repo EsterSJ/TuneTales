@@ -18,7 +18,7 @@ export class UserService {
  
 
   constructor(private http:HttpClient) { 
-
+    this.profile = this.user;
   }
 
 

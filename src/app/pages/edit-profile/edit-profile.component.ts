@@ -18,12 +18,12 @@ export class EditProfileComponent {
   }
 
   ngOnInit(): void {    
-    const fechaInput = document.getElementById('fechaNacimiento') as HTMLInputElement;
-    const year = this.profile.birth_date.getFullYear();
-    const month = (this.profile.birth_date.getMonth() + 1).toString().padStart(2, '0');
-    const day = this.profile.birth_date.getDate().toString().padStart(2, '0');
-    const fechaPlaceholder = year + "-" + month + "-" + day;
-    fechaInput.value = fechaPlaceholder;
+    // const fechaInput = document.getElementById('fechaNacimiento') as HTMLInputElement;
+    // const year = this.profile.birth_date.getFullYear();
+    // const month = (this.profile.birth_date.getMonth() + 1).toString().padStart(2, '0');
+    // const day = this.profile.birth_date.getDate().toString().padStart(2, '0');
+    // const fechaPlaceholder = year + "-" + month + "-" + day;
+    // fechaInput.value = fechaPlaceholder;
 
     const defaultPhoto = "assets/img/sirena.png";
     const fileInput = document.getElementById('photo') as HTMLInputElement;
@@ -43,16 +43,15 @@ export class EditProfileComponent {
         img.src = defaultPhoto;
       }
     });
-
-    
-    
   }
 
   public editProfile(user_name: String, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String, photo: String){    
-    let update_user = new User (null,user_name, email, password, instagram, facebook, twitter, birth_date, music_type, description, photo);
+    let imagen_perfil = photo;
+    let update_user = new User (this.userService.user.id_user,user_name, email, password, instagram, facebook, twitter, birth_date, music_type, description, imagen_perfil);
     
     this.userService.editProfile(update_user).subscribe((data: User) => {
-        this.profile = data; 
+        this.userService.user = data;         
+        this.userService.profile = data;
         Swal.fire({
           text: "Tu perfil ha sido editado con éxito",
           icon: 'success',
