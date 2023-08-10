@@ -2,12 +2,12 @@
     <div class="buscador">
         <form>
             <input type="search" aria-label="Search" #buscar>
-            <button type="reset"><img class="lupa" src="assets/img/lupa.png" alt=""></button>
+            <button type="reset" (click)="getPublicaciones(buscar.value);"><img class="lupa" src="assets/img/lupa.png" alt=""></button>
         </form>
     </div>
     <div class="cards">
-        <div *ngFor="let number of [0,1,2,3,4,5,6,7]">
-            <img class="img_card" src="https://www.adobe.com/es/express/create/cover/media_1a853fd182c6e60cdbc8d24538ff63f378b5181c8.jpeg?width=400&format=jpeg&optimize=medium" alt="">
+        <div *ngFor="let publi of publicaciones; let i = index">
+            <app-publi-card [publicacion] = "publi" (click)="verPublicacion(publi)"></app-publi-card>
         </div>
     </div>
 </div>

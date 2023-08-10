@@ -63,6 +63,10 @@ export class ProfileComponent {
     this.router.navigateByUrl('/editProfile');
   }
 
+  public nuevoEvento(){
+    this.router.navigateByUrl('/editEvent');
+  }
+
   public seguir(){
     if (this.siguiendo){
       this.siguiendo = false;
