@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class PublicationService {
 
 
-  private url: string = 'http://localhost:3000';
+  private url: string = 'http://localhost:3000/';
 
   public publicacion: Publicacion;
 
@@ -28,4 +28,9 @@ export class PublicationService {
   deletePublication(id_publicacion:Publicacion):Observable<Object>{
     return this.http.request('delete', this.url, {body:{id_publicacion:id_publicacion}});
   }
+  getTop3Publicaciones() {
+    return this.http.get('http://localhost:3000/top3publicaciones');
+  }
+
 }
+
