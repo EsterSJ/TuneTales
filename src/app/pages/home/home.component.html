@@ -19,16 +19,13 @@
             <input type="radio" name="slider" id="item2">
             <input type="radio" name="slider" id="item3">
 
-            <div class="cards">
-                <label class="card" for="item1" id="selector1">
-                    <img src="https://edit.org/images/cat/caratulas-cd-big-2019090615.jpg">
-                </label>
-                <label class="card" for="item2" id="selector2">
-                    <img src="https://edit.org/photos/img/blog/how-caratulas-de-discos.jpg-840.jpg">
-                </label>
-                <label class="card" for="item3" id="selector3">
-                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/186737659/original/5bbf057aecc23f24deab6b4112f87150f3a59149/con-un-poco-de-arte-el-mundo-sera-mejor.jpg">
-                </label>
+                <div class="cards">
+                <ng-container *ngFor="let publicacion of top3Publicaciones; let i = index">
+                    <label class="card" [for]="'item' + (i + 1)" [id]="'selector' + (i + 1)">
+                      <app-publi-card [publicacion]="publicacion"></app-publi-card>
+                    </label>
+                  </ng-container>
+               
             </div>
         </div>
     </div>
