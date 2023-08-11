@@ -9,13 +9,13 @@
         <img src="assets/img/Logo.png" alt="">
         <p>
             En nuestra comunidad de artistas encontrarás la mejor música del panorama actual<br>
-            ¡Regístrate y empieza a descubrir todas lo que TuneTales te ofrece!
+            ¡Sumérgete y empieza a descubrir todas lo que TuneTales te ofrece!
         </p>
     </div>
 
     <div class="cards">
         <div *ngFor="let publi of publicaciones; let i = index">
-            <app-publi-card class="card" (click)="mostrarInfo(i)"></app-publi-card>
+            <app-publi-card [publicacion] = "publi" (click)="mostrarInfo(i)"></app-publi-card>
         </div>          
     </div>
     

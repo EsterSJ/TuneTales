@@ -12,6 +12,7 @@
                     <ng-template [ngIf]= "this.mostrar_logueado">
                         <button type="reset" (click)="publicar();">Añadir publicación</button>
                         <button type="reset" (click)="goEditProfile();">Editar perfil</button>
+                        <button type="reset" (click)="nuevoEvento();">Nuevo evento</button>
                     </ng-template>
                     <ng-template [ngIf] = "!this.mostrar_logueado">
                         <ng-template [ngIf] = "this.siguiendo">
@@ -47,14 +48,14 @@
     <div class="vista_cards">
         <ng-template [ngIf]= "botonSeleccionado === 0">
             <div *ngFor = "let publicacion of publicaciones">
-                <app-publi-card></app-publi-card>
+                <app-publi-card [publicacion] = "publicacion"></app-publi-card>
             </div>
         </ng-template>
 
         <ng-template [ngIf]= "botonSeleccionado === 1">
             <div *ngFor = "let evento of eventos">
                 <div class="img_card">
-                    <app-tarjeta-evento-perfil></app-tarjeta-evento-perfil>
+                    <app-tarjeta-evento-perfil [evento] = "evento"></app-tarjeta-evento-perfil>
                 </div>
             </div>
         </ng-template>
