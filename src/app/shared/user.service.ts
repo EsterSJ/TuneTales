@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 Observable
 import { User } from '../models/user';
+import { Evento } from '../models/evento';
 
 @Injectable({
   providedIn: 'root'
@@ -51,4 +52,5 @@ export class UserService {
   }
 
 
+ 
 }

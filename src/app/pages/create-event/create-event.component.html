@@ -1,10 +1,13 @@
 
   <div class="create-event-container">
     <h2 class="create-event-title">CREAR EVENTO</h2>
-    <form [formGroup]="createForm">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
       <div class="form-item event-container"> 
         <label for="eventName" class="event-label">Evento</label>
-        <input type="text" id="eventName" formControlName="eventName">
+        <input type="text" id="eventName" placeholder="" formControlName="eventName" [ngClass]="{'is-invalid': (createForm.get('eventName').dirty || createForm.get('eventName').touched) && !createForm.get('eventName').valid}">
+        <div class="invalid-feedback" *ngIf="!createForm.get('eventName').valid">
+          El nombre del evento es obligatorio
+    </div>
       </div>
       <div class="form-row">
         <div class="form-item">
@@ -15,21 +18,30 @@
         </div>
         <div class="form-item">
           <label for="location">Lugar</label>
-          <input type="location" id="location" formControlName="location">
+          <input type="location" id="location" formControlName="location" [ngClass]="{'is-invalid': (createForm.get('location').dirty || createForm.get('location').touched) && !createForm.get('location').valid}">
+          <div class="invalid-feedback" *ngIf="!createForm.get('location').valid">
+            El lugar del evento es obligatorio
+      </div>
         </div>
         <div class="form-item">
           <label class="date-label" for="date">Fecha</label>
-          <input type="date" id="date" formControlName="date">
+          <input type="date" id="date" formControlName="date" [ngClass]="{'is-invalid': (createForm.get('date').dirty || createForm.get('date').touched) && !createForm.get('date').valid}">
+          <div class="invalid-feedback" *ngIf="!createForm.get('date').valid">
+            La fecha del evento es obligatoria
+      </div>
         </div>
         <div class="form-item">
           <label for="time">Hora</label>
-          <input type="time" id="time" formControlName="time">
+          <input type="time" id="time" formControlName="time" [ngClass]="{'is-invalid': (createForm.get('time').dirty || createForm.get('time').touched) && !createForm.get('time').valid}">
+          <div class="invalid-feedback" *ngIf="!createForm.get('time').valid">
+            La hora del evento es obligatoria
+      </div>
         </div>
       </div>
       <div class="form-item description-container">
         <label for="description" class="description-label">Descripción</label>
         <input type="text" id="description" formControlName="description">
       </div>
-      <button type="submit">Publicar</button>
+      <button type="submit" click= "onSubmit()">Publicar</button>
     </form>
   </div>

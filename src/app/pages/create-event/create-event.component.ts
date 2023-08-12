@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Evento } from 'src/app/models/evento';
+import {EventsService} from '../../shared/events.service';
+
 
 @Component({
   selector: 'app-create-event',
@@ -7,18 +11,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
-  createForm: FormGroup;
+  public createForm: FormGroup;
+  public event: Evento;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private eventsService: EventsService, public router: Router) { }
 
   ngOnInit() {
-    this.createForm = this.formBuilder.group({
-      eventName: ['', Validators.required],
-      image: ['', Validators.required],
-      location: ['', Validators.required],
-      date: ['', Validators.required],
-      time: ['', Validators.required],
-      description: ['', Validators.required]
+    this.createForm = new FormGroup({
+      'eventName': new FormControl(null, [Validators.required,]),
+      'image': new FormControl(null, [Validators.required]),
+      'location': new FormControl(null, [Validators.required]),
+      'date': new FormControl(null, [Validators.required]),
+      'time': new FormControl(null, [Validators.required]),
+      'description': new FormControl(null, [Validators.required]),
     });
   }
 
@@ -27,9 +32,25 @@ export class CreateEventComponent implements OnInit {
    
   }
 
-  onSubmit(): void {
-    // logica para enviar el formulario
-  }
+  onSubmit(){
+    
+    let name_event = this.createForm.get('eventName').value;
+    let place = this.createForm.get('location').value;
+    let date = this.createForm.get('date').value;
+    let hour = this.createForm.get('time').value;
+    let photo = this.createForm.get('image').value;
+    let description = this.createForm.get('description').value;
+  
+    
+    this.event = new Evento (null, null, name_event, date, hour, place, null, photo, description)
+    console.log(this.event);
+   
+    
+       this.eventsService.addEvent(this.event).subscribe((data:Response)=>{
+         console.log(data);
+       })   
+     }
+  
 
 
   // manejar la selección de la imagen
