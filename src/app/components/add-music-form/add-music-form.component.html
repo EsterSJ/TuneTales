@@ -1,16 +1,20 @@
-<form [formGroup]="addMusicForm" class="formulario">
+<form [formGroup]="addMusicForm" class="formulario" (ngSubmit)="sendPubli()">
     <!-- input para introducir el enlace al archivo de música de SoundCloud (obligatoria)-->
-    <input type="archivo" placeholder="Archivo de audio (enlace de SoundCloud)*" formControlName="archivo"
-        [ngClass]="{is_invalid: (addMusicForm.get('archivo').dirty || addMusicForm.get('archivo').touched) && !addMusicForm.get('archivo').valid}">
+        <input #link_soundCloud type="text" placeholder="Archivo de audio (enlace de SoundCloud)*" formControlName="link_soundCloud"
+        [ngClass]="{is_invalid: (addMusicForm.get('link_soundCloud').dirty || addMusicForm.get('link_soundCloud').touched) && !addMusicForm.get('link_soundCloud').valid}">
     
+    <!-- caja de texto para introducir el nombre de la letra de la cancion (opcional)-->
+        <label #name_letter for="name_letter">Nombre de la letra</label>
+        <textarea rows="3" cols="20" name="name_letter" formControlName="name_letter"></textarea>
+
     <!-- caja de texto para introducir la letra de la cancion (opcional)-->
-    <label for="label">Letra</label>
-    <textarea rows="3" cols="40" name="letra" formControlName="letra"></textarea>
+        <label #letter for="label">Letra</label>
+        <textarea rows="3" cols="40" name="letter" formControlName="letter"></textarea>
     
     <!-- caja de texto para introducir una breve historia de la composición (opcional) -->
-    <label for="historia">Historia de la composición</label>
-    <textarea rows="3" cols="40" name="historia" formControlName="historia"></textarea>
+        <label #history for="history">Historia de la composición</label>
+        <textarea rows="3" cols="40" name="history" formControlName="history"></textarea>
 
-    <button type="reset" class="boton" [disabled]="addMusicForm.invalid">Publicar</button>
+    <button type="reset" class="boton" (click)="sendPubli()" [disabled]="addMusicForm.invalid">Publicar</button>
 
 </form>
