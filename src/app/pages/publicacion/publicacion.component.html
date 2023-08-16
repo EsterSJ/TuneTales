@@ -1,11 +1,12 @@
 <body>    
     <div class="first_section">
-        <div class="name_artist">
-            @ artista
+        <div class="name_artist" #user>
+            @ artista 
+            <!-- {{user.user}} -->
         </div>
 
         <div class="soundcloud_card">
-            <img src="" alt="">
+            {{publicacion.link_soundCloud}}
         </div>
         <div class="button_container">
             <button class="button_añadirPlaylist">Añadir a myPlaylist</button>
@@ -17,17 +18,23 @@
             </button>
         </div>
 
+        <!-- LETRA -->
+        
         <div class="letra_container">
             <div class="button_letraHistoria_container">
-                <button class="button_letra">Letra</button>
-                <button class="button_historia">Historia</button>
+                <button #letter class="button_letra" [ngClass]="{'selected': selectedItem === 0}" (click)="selectElement(0)">Letra</button>
+                <button #history class="button_historia" [ngClass]="{'selected': selectedItem === 1}" (click)="selectElement(1)">Historia</button>
             </div>
         </div>
-        <div class="titulo_letra">Letra</div>
-        <div class="textoLetra">
-            
-            <div class="texto"></div>
-        </div>
+        <ng-container *ngIf="selectedItem !== null">
+            <div class="titulo_letra">{{selectedItem === 0 ? publicacion.name_letter : 'Historia'}}</div>
+            <div class="textoLetra"> 
+                <div [ngClass]="{'letter-size textBoxLetter-size': selectedItem === 0, 'history-size textBoxHistory-size': selectedItem === 1}">
+                    {{selectedItem === 0 ? publicacion.letter : publicacion.history}}
+                    <!-- <div [ngClass]="{'letra-size': selectedItem === 0, 'historia-size': selectedItem === 1}">{{selectedItem === 0 ? publicacion.letter : publicacion.history}}</div> -->
+                </div>
+            </div>
+    </ng-container>
     </div>
 
     <div class="second_section">

@@ -22,7 +22,7 @@ body {
     /* border: 3px solid pink; */
 
     width: 60%;
-    height: 160vh;
+    height: 180vh;
 }
 
 
@@ -194,7 +194,7 @@ body {
     height: 50px;
 
     font-family: FuenteTuneTales;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
 
     border: none;
@@ -220,6 +220,23 @@ body {
     border-top: 2px solid #CE9CFF;
     background-color: transparent;
     font-weight: bold;
+}
+
+
+.button_letra.selected, .button_historia.selected {
+
+    color: #CE9CFF;
+    border-top: 2px solid #CE9CFF;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.letter-size {
+    font-size: 20px; 
+}
+
+.history-size {
+    font-size: 20px; 
 }
 
 
@@ -254,12 +271,12 @@ body {
     display: flex;
 
     width: 99%;
-    height: 100vh;
+    height: 130vh;
 
     /* border: solid 4px goldenrod; */
 
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 
@@ -269,29 +286,58 @@ body {
 
     color: white;
     font-family: FuenteTuneTales;
-    font-size: 20px;
+    font-size: 28px;
+
+    margin-bottom: 1%;
 
     justify-content: center;
 }
 
 
 
-.texto {
+.textBoxLetter-size {
 
     display: flex;
 
-    width: 50%;
-    height: 90%;
+    width: 60%;
+    height: 100vh;
     background-color: transparent;
-    border: 3px solid grey;
+    /* border: 3px solid grey; */
 
     resize: none;
 
     color: white;
-    font-size: 16;
+    font-size: 24px;
+    /* letter-spacing: 1px; */
+    text-align: center;
 
     text-decoration: none;
-    margin-bottom: 3%;
+    line-height: 2.0;
+
+    margin-top: 2%;
+
+    justify-content: center;
+
+}
+
+.textBoxHistory-size {
+
+    display: flex;
+
+    width: 70%;
+    height: 80vh;
+    background-color: transparent;
+    /* border: 3px solid grey; */
+
+    resize: none;
+
+    color: white;
+    font-size: 20px;
+    text-align: start;
+
+    margin-top:2%;
+    text-decoration: none;
+    /* margin-bottom: 3%; */
     justify-content: center;
 
 }

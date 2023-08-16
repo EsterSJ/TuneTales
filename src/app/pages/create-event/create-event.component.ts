@@ -29,7 +29,6 @@ export class CreateEventComponent implements OnInit {
 
   onImageClick(): void {
     // logica para el  hacer clic en la imagen
-   
   }
 
   onSubmit(){
