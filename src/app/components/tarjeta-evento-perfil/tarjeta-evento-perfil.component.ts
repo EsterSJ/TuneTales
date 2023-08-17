@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { EventsService } from 'src/app/shared/events.service';
+import { Evento } from 'src/app/models/evento';
 
 @Component({
   selector: 'app-tarjeta-evento-perfil',
@@ -7,6 +8,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./tarjeta-evento-perfil.component.css']
 })
 export class TarjetaEventoPerfilComponent {
-  @Input() evento: any; // Recibes los datos del evento desde el componente padre
+  @Input() evento: Evento; // Recibes los datos del evento desde el componente padre
+  @Output() id_evento = new EventEmitter<number>();
+
+
+
+  deleteEvent(): void{
+      this.id_evento.emit(this.evento.id_event);
+  }
 
 }

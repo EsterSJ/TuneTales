@@ -1,9 +1,24 @@
 <div class="tarjeta-evento">
   <div class="contenido-superior">
     <img [src]="evento.photo" alt="Imagen del evento" class="imagen-evento">
+    
     <div class="titulo-evento">
       <span>{{ evento.name_event }}</span>
     </div>
+
+      <div class="botones">
+        <button class="botonBorrar" type="button" (click)="deleteEvent()">
+
+          <img src="assets/img/delete_remove_bin_icon-icons.com_72400.png" alt="papelera">
+          
+       </button>
+
+        <button class="botonEditar" type="button">
+
+         <img src="assets/img/editar.png" alt="editar" >
+
+        </button>
+      </div>
   </div>
   <div class="contenido-central">
     <div class="detalle-evento fecha">{{ evento.date }}</div>
