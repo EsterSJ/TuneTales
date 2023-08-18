@@ -42,15 +42,17 @@ setPublicacion(publicacion: Publicacion): void {
 //   return this.publicaciones;
 // }
 
-getPublicacion():Publicacion {
-  return this.publicacion;
-}
+
+
+  getPublicacion():Publicacion {
+    return this.publicacion;
+  }
 
 
   getPublicationById(id_publicacion: Number) {
     let url = `http://localhost:3000/publicacion/${id_publicacion}`;
     return this.http.get(url);
-}
+  }
 
   postPublication(publicacion:Publicacion):Observable<Object>{
     return this.http.post(this.url, publicacion);
