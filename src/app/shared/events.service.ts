@@ -50,7 +50,7 @@ getAllEvent(){
 
 //ELIMINAR UN EVENTO
 deleteEvent(id_evento: number){    
-  return this.http.delete(this.url + "/events",{body:{id_event:id_evento}})
+  return this.http.delete(this.url + "/events",{body:{id_evento:id_evento}})
 }
 
 }

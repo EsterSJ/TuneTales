@@ -14,7 +14,9 @@ export class TarjetaEventoPerfilComponent {
 
 
   deleteEvent(): void{
-      this.id_evento.emit(this.evento.id_event);
+      this.id_evento.emit(this.evento.id_evento);
   }
+
+  editEvent(){}
 
 }
