@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
+import { EventsService } from 'src/app/shared/events.service';
 
 @Component({
   selector: 'app-profile',
@@ -24,7 +25,7 @@ export class ProfileComponent {
   public publicaciones = [];
   public eventos = [];
 
-  constructor (private router: Router, public userService: UserService, public http: HttpClient){
+  constructor (private router: Router, public userService: UserService, public http: HttpClient, public eventService: EventsService){
     this.botonSeleccionado = 0;
     this.profile = this.userService.profile;
     this.mostrar_logueado = this.profile == this.userService.user;
@@ -65,6 +66,14 @@ export class ProfileComponent {
 
   public nuevoEvento(){
     this.router.navigateByUrl('/editEvent');
+  }
+
+  public deleteEvent(id_evento:number): void{
+    console.log(id_evento);
+    this.eventService.deleteEvent(id_evento).subscribe((res:any)=>{
+      console.log(res);
+  
+    })
   }
 
   public seguir(){

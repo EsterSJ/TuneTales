@@ -2,17 +2,17 @@ import { Time } from "@angular/common";
 
 export class Evento {
 
-    public id_event: Number;
-    public id_user: Number;
-    public name_event: String;
+    public id_event: number;
+    public id_user: number;
+    public name_event: string;
     public date: Date;
     public hour: Time; 
-    public place: String;
-    public tickets: String;
-    public photo: String;
-    public description: String;
+    public place: string;
+    public tickets: string;
+    public photo: string;
+    public description: string;
 
-    constructor(id_event: Number, id_user: Number, name_event: String, date: Date, hour: Time, place: String, tickets: String, photo:String, description:String){
+    constructor(id_event: number, id_user: number, name_event: string, date: Date, hour: Time, place: string, tickets: string, photo:string, description:string){
         this.id_event = id_event;
         this.id_user = id_user;
         this.name_event = name_event;
