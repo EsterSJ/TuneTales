@@ -44,8 +44,8 @@ getAllEvent(){
 
 //MODIFICAR UN EVENTO
 
- editEvent(event: Evento):Observable<Object>{    
-  return this.http.put(this.url, event);
+ editEvent(event: Evento):Observable<Object>{      
+  return this.http.put(this.url + "/events", event);  
 }
 
 //ELIMINAR UN EVENTO

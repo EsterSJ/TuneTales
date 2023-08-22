@@ -22,6 +22,7 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
 import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { PubliCardComponent } from './components/publi-card/publi-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
 
 
@@ -46,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommunityComponent,
     PublicacionComponent,
     PlaylistComponent,
-    PubliCardComponent
+    PubliCardComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

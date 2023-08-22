@@ -15,6 +15,7 @@ import { PublicacionComponent } from './pages/publicacion/publicacion.component'
 import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { TarjetaEventoPerfilComponent } from './components/tarjeta-evento-perfil/tarjeta-evento-perfil.component';
 import { EventsCardComponent } from './components/events-card/events-card.component';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path: 'paraTi', component:ForYouComponent},
   {path: 'login', component:LoginComponent},
   {path: 'events', component:EventsComponent},
-  {path: 'editEvent', component:CreateEventComponent},
+  {path: 'createEvent', component:CreateEventComponent},
   {path: 'comunidad', component:CommunityComponent},
   {path: 'addMusic', component:AddMusicComponent},
   {path: 'editProfile', component:EditProfileComponent},
@@ -30,7 +31,9 @@ const routes: Routes = [
   {path: 'publicacion', component:PublicacionComponent},
   {path: 'myPlaylist', component:PlaylistComponent},
   {path: 'tarjetaEvento', component:TarjetaEventoPerfilComponent},
-  {path: 'EventsCard', component: EventsCardComponent}
+  {path: 'EventsCard', component: EventsCardComponent},
+  {path: 'editEvent/:id_evento', component: EditEventComponent}
+
 ]
 
 

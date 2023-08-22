@@ -3,20 +3,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Evento } from 'src/app/models/evento';
 import {EventsService} from '../../shared/events.service';
-import { UserService } from 'src/app/shared/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
 @Component({
-  selector: 'app-create-event',
-  templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.css']
+  selector: 'app-edit-event',
+  templateUrl: './edit-event.component.html',
+  styleUrls: ['./edit-event.component.css']
 })
-export class CreateEventComponent implements OnInit {
+export class EditEventComponent implements OnInit {
   public createForm: FormGroup;
   public event: Evento;
+  public id_evento: number;
 
-  constructor(private eventsService: EventsService, public userService: UserService, public router: Router) { }
+  constructor(private eventsService: EventsService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.createForm = new FormGroup({
@@ -27,6 +28,13 @@ export class CreateEventComponent implements OnInit {
       'time': new FormControl(null, [Validators.required]),
       'description': new FormControl(null, [Validators.required]),
     });
+    let id_evento:number;
+
+    this.route.params.subscribe(params => {
+      id_evento = params['id_evento'];
+      this.id_evento = id_evento;
+    });
+    
   }
 
   onImageClick(): void {
@@ -40,21 +48,20 @@ export class CreateEventComponent implements OnInit {
     let date = this.createForm.get('date').value;
     let hour = this.createForm.get('time').value;
     let photo = this.createForm.get('image').value;
-    let id_user = this.userService.user.id_user;
     let description = this.createForm.get('description').value;
-
+    let id_evento = this.id_evento;
   
     
-    this.event = new Evento (null, id_user, name_event, date, hour, place, null, photo, description)
-    console.log(this.event);
+    this.event = new Evento (id_evento, null, name_event, date, hour, place, null, photo, description)
+    console.log(this.event);    
    
     
-       this.eventsService.addEvent(this.event).subscribe((data:Response)=>{
+       this.eventsService.editEvent(this.event).subscribe((data:Response)=>{
          console.log(data);
        });
+       alert("Evento actualizado correctamente")
+       this.router.navigateByUrl('/profile');   
 
-       alert("Evento creado correctamente");
-       this.router.navigateByUrl('/profile');
      }
   
 

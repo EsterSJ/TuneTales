@@ -65,7 +65,7 @@ export class ProfileComponent {
   }
 
   public nuevoEvento(){
-    this.router.navigateByUrl('/editEvent');
+    this.router.navigateByUrl('/createEvent');
   }
 
   public deleteEvent(id_evento:number): void{
