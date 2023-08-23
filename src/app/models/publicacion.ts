@@ -1,6 +1,6 @@
 export class Publicacion {
 
-    public id_publicacion: Number;
+    public id_publicacion: number;
     public id_user: Number;
     public link_soundCloud: String;
     public name_letter: String;
@@ -8,7 +8,7 @@ export class Publicacion {
     public history: String;
     public likes: Number;
 
-    constructor(id_publicacion: Number, id_user: Number, link_soundCloud: String, name_letter: String, letter: String, history: String, likes: Number){
+    constructor(id_publicacion: number, id_user: Number, link_soundCloud: String, name_letter: String, letter: String, history: String, likes: Number){
         this.id_publicacion = id_publicacion;
         this.id_user = id_user;
         this.link_soundCloud = link_soundCloud;

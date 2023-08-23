@@ -31,7 +31,8 @@ export class AddMusicFormComponent {
         link_soundCloud: [,Validators.required],
         name_letter: '',
         letter: '',
-        history: ''
+        history: '',
+        id_user: this.UserService.user.id_user
       });
     }
 

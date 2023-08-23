@@ -1,10 +1,16 @@
 import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormsModule, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Comentario } from 'src/app/models/comentario';
+import { Like } from 'src/app/models/likes';
 import { Publicacion } from 'src/app/models/publicacion';
+import { User } from 'src/app/models/user';
+import { CommentsService } from 'src/app/shared/comments.service';
+import { LikesService } from 'src/app/shared/likes.service';
 import { PublicationService } from 'src/app/shared/publication.service';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-publicacion',
@@ -15,23 +21,133 @@ export class PublicacionComponent implements OnInit{
 
   public letra:boolean = false;
   public publicacion:Publicacion;
+  public comentario:Comentario;
   public id_publicacion:number;
   public selectedItem: number = null;
+  public comentarios: Comentario [] = [];
+  public newComment:string = '';
+  public characterCount: number = 400; 
+  public likeCount: number = 0;
+  public user: User;
+  public liked: boolean = false; 
+  public id_like:number;
+  public like: Like;
 
 
-
-  constructor(private router: Router, public publicationService:PublicationService, private formBuilder: FormBuilder,public Http:HttpClient, public activatedRoute: ActivatedRoute) {
-    }
+  constructor(private router: Router, public publicationService:PublicationService, private formBuilder: FormBuilder,public Http:HttpClient, private CommentsService:CommentsService, public FormsModule:FormsModule, public UserService:UserService, private likeService:LikesService) {
+  }
   
-    ngOnInit(): void {
-      this.publicacion = this.publicationService.getPublicacion()
+
+
+ngOnInit(): void {
+
+  this.user = this.UserService.user;
+
+  this.publicacion = this.publicationService.getPublicacion();
+  this.publicationService.setPublicacion(this.publicacion);
+  if (this.publicacion) {
+    this.id_publicacion = this.publicacion.id_publicacion;
+    console.log('ID de publicación:', this.id_publicacion);
+    this.loadComments();
+    this.loadLikeCount(this.id_publicacion);
+  }
+}
+
+publishComment() {
+  if (!this.newComment) {
+    return; // No se permite un comentario vacío
+  }
+
+  const comentario = {
+    id_publicacion: this.publicacion.id_publicacion,
+    comentario: this.newComment,
+    id_user_comment: this.user.id_user // Cambia esto según el usuario actual
+  };
+
+  this.CommentsService.postComment(comentario).subscribe(
+    (response) => {
+      console.log('Comentario publicado con éxito', response);
+      this.newComment = ''; // Limpiar el campo de comentario después de publicar
+      this.loadComments(); // Recargar los comentarios después de publicar uno nuevo
+    },
+    (error) => {
+      console.error('Error al publicar el comentario', error);
     }
+  );
+
+  // Después de enviar el comentario, restablece el campo y reinicia el contador
+  this.newComment = '';
+  this.characterCount = 400;
+}
+
+loadComments() {
+  this.CommentsService.getComments(this.id_publicacion).subscribe(
+    (comentarios) => {
+      this.comentarios = comentarios;
+    },
+    (error) => {
+      console.error('Error al cargar los comentarios', error);
+    }
+  );
+}
+
+updateCharacterCount() {
+  const commentLength = this.newComment.length;
+  this.characterCount = 400 - commentLength;
+}
+
+likePost() {
+    if (!this.user) {
+      return;
+    }
+
+    const id_publicacion = this.id_publicacion; 
+
+    if (this.liked) {
+      // Si ya le dio like, quita el like
+      this.likeService.unlikePublication(id_publicacion).subscribe(
+        () => {
+          this.liked = false;
+          this.likeCount--;
+        },
+        error => {
+          console.error('Error al quitar el like', error);
+        }
+      );
+    } else {
+      // Si no le ha dado like, agrega el like
+      this. likeService.likePublication(id_publicacion).subscribe(
+        () => {
+          this.liked = true;
+          this.likeCount++;
+        },
+        error => {
+          console.error('Error al dar like', error);
+        }
+      );
+    }
+  }
+
+
+loadLikeCount(id_publicacion: number) {
+  this.likeService.getLikeCount(id_publicacion).subscribe((data: )=>
+  {
+    this.id_publicacion = data;
+  });   
+}
+
+loadPublication(id_publicacion: number): void {
+  this.publicationService.getPublicationById(id_publicacion).subscribe((data: Publicacion) => {
+    this.publicacion = data;
+  });
+}
+
+public selectElement(element:number): void {
+    this.selectedItem = element;
+}
   
-    loadPublication(id_publicacion: number): void {
-      this.publicationService.getPublicationById(id_publicacion).subscribe((data: Publicacion) => {
-        this.publicacion = data;
-      });
-    }
+  }
+
     //   0,
     //   0,
     //   "https://soundcloud.com/officialpinkfloyd/coming-back-to-life-2011?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
@@ -43,12 +159,3 @@ export class PublicacionComponent implements OnInit{
   //   this.publicationService.getPublication(this.id_publicacion);
   // }
 
-  // ngOnInit(): void {
-
-  // }
-
-  public selectElement(element:number): void {
-    this.selectedItem = element;
-  }
-
-}
