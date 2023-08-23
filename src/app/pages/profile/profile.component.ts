@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
 import { EventsService } from 'src/app/shared/events.service';
+import { Evento } from 'src/app/models/evento';
 
 @Component({
   selector: 'app-profile',
@@ -23,13 +24,24 @@ export class ProfileComponent {
 
   public siguiendo: Boolean;
   public publicaciones = [];
-  public eventos = [];
+  public eventos: any = [];
 
   constructor (private router: Router, public userService: UserService, public http: HttpClient, public eventService: EventsService){
     this.botonSeleccionado = 0;
     this.profile = this.userService.profile;
     this.mostrar_logueado = this.profile == this.userService.user;
     this.inicializarSiguiendo();
+  }
+
+  
+  ngOnInit(): void {
+    this.loadEvents(this.profile.id_user);
+  }
+
+  loadEvents(id_user:Number): void {
+    this.eventService.getEvent(id_user).subscribe(events => {
+      this.eventos = events;
+    }); 
   }
 
   //funcion que consulta si el usuario logueado sigue al que hay que mostrar en el perfil
@@ -70,8 +82,8 @@ export class ProfileComponent {
 
   public deleteEvent(id_evento:number): void{
     console.log(id_evento);
-    this.eventService.deleteEvent(id_evento).subscribe((res:any)=>{
-      console.log(res);
+    this.eventService.deleteEvent(id_evento).subscribe(() => {
+      this.loadEvents(this.profile.id_user);
   
     })
   }

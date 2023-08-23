@@ -13,13 +13,14 @@ export class TarjetaEventoPerfilComponent {
   @Input() evento: Evento; // Recibes los datos del evento desde el componente padre
   @Output() id_evento = new EventEmitter<number>();
 
-constructor(public router: Router){}
+constructor(public router: Router, public eventsService: EventsService){}
 
   deleteEvent(): void{
       this.id_evento.emit(this.evento.id_evento);
       alert("Evento borrado correctamente");
       this.router.navigateByUrl('/profile');
   }
+
 
   editEvent():void{
     const id_evento = this.evento.id_evento;

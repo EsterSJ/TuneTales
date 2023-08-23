@@ -23,7 +23,7 @@ export class EventsService {
 
 //MOSTRAR EVENTOS DE UN USUARIO
 
-getEvent(id_user:number){
+getEvent(id_user:Number){
   return this.http.get(this.url + '/events' + '?id_user=' + id_user);
 }
 
