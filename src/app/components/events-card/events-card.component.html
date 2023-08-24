@@ -20,15 +20,15 @@
 </div>
 
 <div class="filasTabla">
-    <div>
-        {{ evento.photo }}
+    <div class="imagen-evento">
+        <img [src]="evento.photo" alt="Imagen del evento">
     </div>
     <p class="nameEvento">
         {{ evento.name_event }}
     </p>
     <div class="fecha">
         <p>
-            {{ evento.date }}
+            {{ evento.date | date:'dd-MM-yyyy' }}
         </p>
         <p>
             {{ evento.hour }}

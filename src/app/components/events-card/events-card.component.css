@@ -110,3 +110,13 @@ input {
     display: flex;
     align-items: center;
 }
+
+.imagen-evento {
+    width: 120px;
+    height:130px;
+  }
+
+  .imagen-evento img{
+    height: 100%;
+    width: 100%;
+  }
