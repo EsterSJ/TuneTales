@@ -22,7 +22,7 @@ export class PublicacionComponent implements OnInit{
   public letra:boolean = false;
   public publicacion:Publicacion;
   public comentario:Comentario;
-  public id_publicacion:number;
+  public id_publicacion: number;
   public selectedItem: number = null;
   public comentarios: Comentario [] = [];
   public newComment:string = '';
@@ -32,12 +32,12 @@ export class PublicacionComponent implements OnInit{
   public liked: boolean = false; 
   public id_like:number;
   public like: Like;
+  public likes: Like [] = [];
 
 
   constructor(private router: Router, public publicationService:PublicationService, private formBuilder: FormBuilder,public Http:HttpClient, private CommentsService:CommentsService, public FormsModule:FormsModule, public UserService:UserService, private likeService:LikesService) {
   }
   
-
 
 ngOnInit(): void {
 
@@ -47,7 +47,7 @@ ngOnInit(): void {
   this.publicationService.setPublicacion(this.publicacion);
   if (this.publicacion) {
     this.id_publicacion = this.publicacion.id_publicacion;
-    console.log('ID de publicación:', this.id_publicacion);
+    console.log(this.id_publicacion)
     this.loadComments();
     this.loadLikeCount(this.id_publicacion);
   }
@@ -58,35 +58,28 @@ publishComment() {
     return; // No se permite un comentario vacío
   }
 
-  const comentario = {
+  let comentario = {
     id_publicacion: this.publicacion.id_publicacion,
     comentario: this.newComment,
     id_user_comment: this.user.id_user // Cambia esto según el usuario actual
   };
-
+  console.log(this.publicacion)
   this.CommentsService.postComment(comentario).subscribe(
-    (response) => {
-      console.log('Comentario publicado con éxito', response);
+    (data: Comentario) => {
+      this.comentario = data;
+      console.log('Comentario publicado con éxito');
       this.newComment = ''; // Limpiar el campo de comentario después de publicar
       this.loadComments(); // Recargar los comentarios después de publicar uno nuevo
-    },
-    (error) => {
-      console.error('Error al publicar el comentario', error);
     }
   );
-
   // Después de enviar el comentario, restablece el campo y reinicia el contador
   this.newComment = '';
   this.characterCount = 400;
 }
 
 loadComments() {
-  this.CommentsService.getComments(this.id_publicacion).subscribe(
-    (comentarios) => {
-      this.comentarios = comentarios;
-    },
-    (error) => {
-      console.error('Error al cargar los comentarios', error);
+  this.CommentsService.getComments(this.id_publicacion).subscribe((data:Comentario[]) => {
+      this.comentarios = data;
     }
   );
 }
@@ -105,24 +98,16 @@ likePost() {
 
     if (this.liked) {
       // Si ya le dio like, quita el like
-      this.likeService.unlikePublication(id_publicacion).subscribe(
-        () => {
+          this.likeService.unlikePublication(id_publicacion).subscribe((data:Publicacion) => {
           this.liked = false;
           this.likeCount--;
         },
-        error => {
-          console.error('Error al quitar el like', error);
-        }
       );
     } else {
       // Si no le ha dado like, agrega el like
-      this. likeService.likePublication(id_publicacion).subscribe(
-        () => {
+      this. likeService.likePublication(id_publicacion).subscribe((data:Publicacion) => {
           this.liked = true;
           this.likeCount++;
-        },
-        error => {
-          console.error('Error al dar like', error);
         }
       );
     }
@@ -130,7 +115,7 @@ likePost() {
 
 
 loadLikeCount(id_publicacion: number) {
-  this.likeService.getLikeCount(id_publicacion).subscribe((data: )=>
+  this.likeService.getLikeCount(id_publicacion).subscribe((data:number)=>
   {
     this.id_publicacion = data;
   });   
