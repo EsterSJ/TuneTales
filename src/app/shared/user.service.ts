@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 Observable
 import { User } from '../models/user';
@@ -33,8 +33,14 @@ export class UserService {
   }
 
   //funcion que edita el perfil de un usuario
-  public editProfile(update_user: User){    
-    return this.http.put(this.url + '/editProfile',update_user);
+  // public editProfile(update_user: User){    
+  //   return this.http.put(this.url + '/editProfile', update_user);
+  // }
+  // public editProfile(body: FormData){    
+  //   return this.http.put(this.url + '/editProfile', body);
+  // }
+  public editProfile(body: FormData){      
+    return this.http.put(this.url + '/editProfile', body);
   }
 
   //funcion que consulta si el usuario logueado sigue al usuario del que se va a mostrar el perfil

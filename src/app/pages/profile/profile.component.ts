@@ -36,9 +36,9 @@ export class ProfileComponent {
   //si le sigue inicializa this.seguiendo a true y muestra el boton dejar de seguir
   //si no, inicializa this.siguiendo a false y muestra el boton seguir
   public inicializarSiguiendo(){
-    console.log("-------------------->");
+    // console.log("-------------------->");
     
-    console.log(this.userService.profile);
+    // console.log(this.userService.profile);
     
     this.userService.consultar_seguidor().subscribe((data) => {      
       if (data[0].length > 0){        

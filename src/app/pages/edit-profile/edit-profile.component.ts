@@ -13,6 +13,8 @@ export class EditProfileComponent {
 
   public profile: User;
 
+  public fileTmp: any;
+
   constructor (public userService: UserService, public router: Router){
     this.profile = this.userService.user;
   }
@@ -31,11 +33,12 @@ export class EditProfileComponent {
 
     fileInput.addEventListener('change', e => {
       const inputElement = e.target as HTMLInputElement;
-      if (inputElement.files && inputElement.files[0]) {
+      if (inputElement.files && inputElement.files[0]) {     
+        
         const reader = new FileReader();
         reader.onload = function (e) {
           if (typeof e.target.result === 'string') {
-            img.src = e.target.result;
+            img.src = e.target.result;        
           }
         };
         reader.readAsDataURL(inputElement.files[0]);
@@ -45,19 +48,28 @@ export class EditProfileComponent {
     });
   }
 
-  public editProfile(user_name: String, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String, photo: String){    
-    let imagen_perfil = photo;
-    let update_user = new User (this.userService.user.id_user,user_name, email, password, instagram, facebook, twitter, birth_date, music_type, description, imagen_perfil);
-    
-    this.userService.editProfile(update_user).subscribe((data: User) => {
-        this.userService.user = data;         
-        this.userService.profile = data;
-        Swal.fire({
-          text: "Tu perfil ha sido editado con éxito",
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        });
-        this.router.navigateByUrl('/profile');
+  public getFile($event: any): void{
+    const file = $event.target.files[0];
+    this.fileTmp = file;
+  }
+
+  public editProfile(user_name: String, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String){    
+    let update_user = new User (this.userService.user.id_user,user_name, email, password, instagram, facebook, twitter, birth_date, music_type, description, null);
+    const body = new FormData();
+    body.append('photo', this.fileTmp);
+    body.append('update_user', JSON.stringify(update_user));
+
+    // this.userService.editProfile(update_user).subscribe((data: User) => {
+    this.userService.editProfile(body).subscribe((data: User) => {
+      this.userService.user = data;         
+      this.userService.profile = data;
+      
+      Swal.fire({
+        text: "Tu perfil ha sido editado con éxito",
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      });
+      this.router.navigateByUrl('/profile');
     });
   }
 
