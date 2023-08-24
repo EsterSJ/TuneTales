@@ -59,7 +59,6 @@ export class EditProfileComponent {
     body.append('photo', this.fileTmp);
     body.append('update_user', JSON.stringify(update_user));
 
-    // this.userService.editProfile(update_user).subscribe((data: User) => {
     this.userService.editProfile(body).subscribe((data: User) => {
       this.userService.user = data;         
       this.userService.profile = data;
