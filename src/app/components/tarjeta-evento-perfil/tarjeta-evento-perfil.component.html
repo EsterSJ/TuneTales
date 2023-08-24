@@ -4,6 +4,8 @@
     
     <div class="titulo-evento">
       <span>{{ evento.name_event }}</span>
+      <br>
+      <br>
     </div>
 
       <div class="botones">
@@ -21,10 +23,13 @@
       </div>
   </div>
   <div class="contenido-central">
-    <div class="detalle-evento fecha">{{ evento.date }}</div>
+   
+    <div class="detalle-evento fecha">{{ evento.date | date:'dd-MM-yyyy' }}</div>
     <div class="detalle-evento hora">{{ evento.hour }}</div>
   </div>
   <div class="contenido-inferior">
+    <br>
+    <br>
     <div class="detalle-evento lugar">{{ evento.place }}</div>
   </div>
 </div>
