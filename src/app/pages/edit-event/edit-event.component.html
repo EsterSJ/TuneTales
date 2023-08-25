@@ -12,9 +12,9 @@
       <div class="form-row">
         <div class="form-item">
           <label for="image" class="image-label">
-            <img src="../../../assets/img/ImgEvento.png" alt="Imagen" class="image-input" (click)="onImageClick()">
+            <img src="{{ event?.photo || '../../../assets/img/ImgEvento.png' }}" alt="Imagen" id="foto_evento" class="image-input" (click)="onImageClick()">
           </label>
-          <input type="file" id="image" formControlName="image" style="display: none;">
+          <input type="file" id="image" placeholder="{{event.photo}}" formControlName="image" style="display: none;" (change)="getFile($event)" #photo>
         </div>
         <div class="form-item">
           <label for="location">Lugar</label>

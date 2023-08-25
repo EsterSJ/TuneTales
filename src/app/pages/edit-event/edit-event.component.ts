@@ -16,6 +16,8 @@ export class EditEventComponent implements OnInit {
   public createForm: FormGroup;
   public event: Evento;
   public id_evento: number;
+  public fileTmp: any;
+
 
   constructor(private eventsService: EventsService, public router: Router, private route: ActivatedRoute) { }
 
@@ -30,11 +32,38 @@ export class EditEventComponent implements OnInit {
     });
     let id_evento:number;
 
+    const defaultPhoto = "../../../assets/img/ImgEvento.png";
+    const fileInput = document.getElementById('image') as HTMLInputElement;
+    const img = document.getElementById('foto_evento') as HTMLImageElement;
+    console.log("esta es la foto" + this.event.photo);
+
+
+    fileInput.addEventListener('change', e => {
+      const inputElement = e.target as HTMLInputElement;
+      if (inputElement.files && inputElement.files[0]) {     
+        
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          if (typeof e.target.result === 'string') {
+            img.src = e.target.result;        
+          }
+        };
+        reader.readAsDataURL(inputElement.files[0]);
+      } else {
+        img.src = defaultPhoto;
+      }
+    });
+
+
     this.route.params.subscribe(params => {
       id_evento = params['id_evento'];
       this.id_evento = id_evento;
     });
     
+  }
+  public getFile($event: any): void{
+    const file = $event.target.files[0];
+    this.fileTmp = file;
   }
 
   onImageClick(): void {
