@@ -88,6 +88,11 @@ export class ProfileComponent {
     })
   }
 
+  handlePublicacionClick(id_publicacion: number) {
+    this.router.navigate(['/publicacion', id_publicacion]); // Navegar a la ruta de detalle con el ID de la publicación
+  
+}
+
   public seguir(){
     if (this.siguiendo){
       this.siguiendo = false;

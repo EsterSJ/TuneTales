@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
 
 
 @Component({
@@ -8,4 +9,10 @@ import { Component, Input } from '@angular/core';
 })
 export class PubliCardComponent {
   @Input() publicacion: any; // Recibes los datos de la publicación desde el componente padre
+  @Output() publicacionClicked: EventEmitter<number> = new EventEmitter<number>();
+
+
+  onPublicacionClick() {
+    this.publicacionClicked.emit(this.publicacion.id_publicacion); // Emitir el ID de la publicación al componente padre
+  }
 }

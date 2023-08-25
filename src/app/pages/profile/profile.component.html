@@ -48,7 +48,8 @@
     <div class="vista_cards">
         <ng-template [ngIf]= "botonSeleccionado === 0">
             <div *ngFor = "let publicacion of publicaciones">
-                <app-publi-card [publicacion] = "publicacion"></app-publi-card>
+                <app-publi-card [publicacion] = "publicacion" (publicacionClicked)="handlePublicacionClick($event)"></app-publi-card>
+        
             </div>
         </ng-template>
 

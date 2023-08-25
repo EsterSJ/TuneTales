@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'addMusic', component:AddMusicComponent},
   {path: 'editProfile', component:EditProfileComponent},
   {path: 'profile', component:ProfileComponent},
-  {path: 'publicacion', component:PublicacionComponent},
+  {path: 'publicacion/:id_publicacion', component:PublicacionComponent},
   {path: 'myPlaylist', component:PlaylistComponent},
   {path: 'tarjetaEvento', component:TarjetaEventoPerfilComponent},
   {path: 'EventsCard', component: EventsCardComponent},
