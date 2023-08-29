@@ -3,9 +3,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    height: 72vh;
+    margin-bottom: 60px;
 }
 
+#image {   
+    background-color: transparent;
+    color: white;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+  
 input, textarea{
     background-color: transparent;
     color: white;

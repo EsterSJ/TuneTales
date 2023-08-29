@@ -18,6 +18,9 @@ export class AddMusicFormComponent {
     public publicacion: Publicacion;
     public letra:boolean = false;
     public user:User;
+    public fileTmp: any;
+    //borrar si no va
+    public id_user: any;
 
 
 
@@ -28,22 +31,41 @@ export class AddMusicFormComponent {
     private buildForm (): void{
   
       this.addMusicForm = this.formBuilder.group({
-        link_soundCloud: [,Validators.required],
+        image: '',
+        multimedia: [,Validators.required],
         name_letter: '',
         letter: '',
         history: ''
       });
     }
 
-    sendPubli(){
-      const publi = this.addMusicForm.value;
-      console.log(publi)
+    //RECOJO EL ARCHIVO DE IMAGEN DEL FORMULARIO
+    public getFile($event: any): void{
+      const file = $event.target.files[0];
+      this.fileTmp = file;
+    }
 
-      this.publicationService.addPublicacion(publi).subscribe((data: Publicacion) => {
-        console.log(data);
-        this.publicationService.setPublicacion(publi);
-              this.router.navigateByUrl('/publicacion');
-        })
+    sendPubli(){
+      // const publi = this.addMusicForm.value;
+      //borrar si no va
+      this.id_user = this.UserService.user.id_user;
+      const body = new FormData();
+      //borrar si no va
+      body.append('id_user', this.id_user);
+      body.append('multimedia', this.addMusicForm.get('multimedia').value);
+      body.append('photo', this.fileTmp);
+      body.append('name_letter', this.addMusicForm.get('name_letter').value);
+      body.append('letter', this.addMusicForm.get('letter').value);
+      body.append('history', this.addMusicForm.get('history').value);
+
+      console.log("VAMOS A MOSTRAR EL BODY DE SENDPUBLI: ");
+      body.forEach((value, key) => {
+        console.log(key + ": " + value);
+      });
+      
+      this.publicationService.addPublicacion(body).subscribe(()=>{
+        this.router.navigateByUrl('/profile');
+      })        
     }
   }
 

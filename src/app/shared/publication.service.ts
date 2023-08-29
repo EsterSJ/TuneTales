@@ -3,6 +3,7 @@ import { Publicacion } from '../models/publicacion';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,18 +19,20 @@ export class PublicationService {
   public publicacion: Publicacion;
   public letra:boolean = false;
 
-  constructor(private http:HttpClient, private FormBuilder: FormBuilder) { 
+  constructor(private http:HttpClient, private FormBuilder: FormBuilder, private userService: UserService) { 
     this.addMusicForm = this.FormBuilder.group({
-      link_soundCloud: '',
+      id_user: '',
+      multimedia: '',
       name_letter: '',
       letter: '',
-      history: ''
+      history: '',
+      image: ''
     });
   }
 
 // agregar publicacion
 
-addPublicacion(publicacion: Publicacion): Observable<Object> {
+addPublicacion(publicacion: FormData) {
   return this.http.post(this.url, publicacion);
 }
 
