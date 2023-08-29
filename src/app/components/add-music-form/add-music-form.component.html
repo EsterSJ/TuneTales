@@ -1,11 +1,16 @@
 <form [formGroup]="addMusicForm" class="formulario" (ngSubmit)="sendPubli()">
+
+        <label for="image">Portada</label>
+        <input type="file" formControlName="image" id="image" (change)="getFile($event)" #image>
+        
     <!-- input para introducir el enlace al archivo de música de SoundCloud (obligatoria)-->
-        <input #link_soundCloud type="text" placeholder="Archivo de audio (enlace de SoundCloud)*" formControlName="link_soundCloud"
-        [ngClass]="{is_invalid: (addMusicForm.get('link_soundCloud').dirty || addMusicForm.get('link_soundCloud').touched) && !addMusicForm.get('link_soundCloud').valid}">
-    
+        <label for="multimedia">Pista SoundCloud</label>
+        <input type="text" formControlName="multimedia" id="multimedia"
+        [ngClass]="{is_invalid: (addMusicForm.get('multimedia').dirty || addMusicForm.get('multimedia').touched) && !addMusicForm.get('multimedia').valid}" #link_soundCloud>
+
     <!-- caja de texto para introducir el nombre de la letra de la cancion (opcional)-->
-        <label #name_letter for="name_letter">Nombre de la letra</label>
-        <textarea rows="3" cols="20" name="name_letter" formControlName="name_letter"></textarea>
+        <label for="name_letter">Título</label>
+        <input type="text" formControlName="name_letter" id="name_letter">
 
     <!-- caja de texto para introducir la letra de la cancion (opcional)-->
         <label #letter for="label">Letra</label>

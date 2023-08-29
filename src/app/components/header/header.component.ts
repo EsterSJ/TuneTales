@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
 
 @Component({
@@ -8,6 +9,13 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class HeaderComponent {
 
-  constructor (public UserService: UserService) {}
+  constructor (public UserService: UserService, public router: Router) {}
+
+  public log_out(){
+    this.UserService.user = null;
+    this.UserService.logueado = false;
+    this.router.navigateByUrl('/');
+
+  }
   
 }

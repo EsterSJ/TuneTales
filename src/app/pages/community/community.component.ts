@@ -34,10 +34,10 @@ export class CommunityComponent {
   public mostrarInfo(i: number){
 
           Swal.fire({
-            title: this.publicaciones[i].link_soundCloud,
-            imageUrl: 'assets/img/Logo.png',
-            imageWidth: 400,
-            imageHeight: 200,
+            title: this.publicaciones[i].name_letter,
+            imageUrl: this.publicaciones[i].image,
+            imageWidth: 300,
+            imageHeight: 300,
             confirmButtonText: 'Regístrate',
             showCancelButton: true,
             cancelButtonText: 'Cancelar'

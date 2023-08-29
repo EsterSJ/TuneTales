@@ -1,10 +1,4 @@
 <div class="contenedor_community">
-    <!-- <div class="buscador">
-        <form>
-            <input type="search" aria-label="Search" #buscar>
-            <button type="reset"><img class="lupa" src="assets/img/lupa.png" alt=""></button>
-        </form>
-    </div> -->
     <div class="intro">
         <img src="assets/img/Logo.png" alt="">
         <p>
@@ -17,7 +11,5 @@
         <div *ngFor="let publi of publicaciones; let i = index">
             <app-publi-card [publicacion] = "publi" (click)="mostrarInfo(i)"></app-publi-card>
         </div>          
-    </div>
-    
-      
+    </div>  
 </div>
