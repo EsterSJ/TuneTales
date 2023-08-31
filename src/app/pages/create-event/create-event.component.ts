@@ -29,7 +29,7 @@ export class CreateEventComponent implements OnInit {
   ngOnInit() {
     this.createForm = this.formBuilder.group({
       eventName: ['',[Validators.required,]],
-      image: ['' ,[Validators.required]],
+      image: File,
       location: ['',[Validators.required]],
       date: [null, [Validators.required]],
       time: [null, [Validators.required]],
@@ -38,8 +38,8 @@ export class CreateEventComponent implements OnInit {
 
     document.addEventListener('DOMContentLoaded', () => {
       const defaultPhoto = "assets/img/sirena.png";
-      const img = document.getElementById('foto_perfil') as HTMLImageElement;
-      const fileInput = document.getElementById('photo') as HTMLInputElement;
+      const img = document.getElementById('foto') as HTMLImageElement;
+      const fileInput = document.getElementById('image') as HTMLInputElement;
 
       fileInput.addEventListener('change', e => {
         const inputElement = e.target as HTMLInputElement;
@@ -58,22 +58,25 @@ export class CreateEventComponent implements OnInit {
     });
   }
 
-  public getFile($event: any): void{
+  public getFile($event: any): void {
     const file = $event.target.files[0];
-    this.fileTmp = file;
-    console.log(file);
+    this.createForm.patchValue({ image: file });
+  
+    const reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imgSrc = event.target.result;
+    };
+    reader.readAsDataURL(file);
   }
 
-  onImageClick(): void {
-    // Simula el clic en el input de tipo archivo al hacer clic en la imagen
-    const inputElement = document.getElementById('image') as HTMLInputElement;
-    inputElement.click();
-  }
+
 
   onSubmit(){
     
+    
     if (this.createForm.invalid) {
-      return;
+      console.log("Hola Marcel 2"); 
+      return ;
     }
 
     const name_event = this.createForm.value.eventName;
@@ -85,6 +88,8 @@ export class CreateEventComponent implements OnInit {
     const description = this.createForm.value.description;
 
     const event = new Evento(null, id_user, name_event, date, hour, place, null, null, description);
+    console.log("esta es la imagen :")
+    console.log(image)
 
 
     const body = new FormData();
@@ -97,6 +102,7 @@ export class CreateEventComponent implements OnInit {
          alert("Evento creado correctamente");
          this.router.navigateByUrl('/profile');
        });
+        
      }
   
 

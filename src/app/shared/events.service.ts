@@ -39,6 +39,7 @@ getAllEvent(){
 //AÑADIR UN EVENTO
 
   addEvent(body: FormData):Observable<Object>{
+    console.log("Hola desde el servicio");
     return this.http.post(this.url + "/events", body)
 }
 
