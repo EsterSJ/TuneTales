@@ -13,7 +13,7 @@
     margin: 0 auto;
     background-color: black;
     color: #fff;
-    padding-top: 18vh;
+    padding-top: 4vh;
     padding-bottom: 10vh;
   }
  
@@ -106,8 +106,11 @@ input[type="file"] {
   margin-bottom: 50px;
   cursor: pointer; 
   display: block;
-  border: none;
+  border: 4px solid var(--colorMoradoOscuro);
+  border-radius: 12px;
   outline: none; 
+  width: 240px;
+  height: 240px;
 
 }
 .image-label {
