@@ -38,8 +38,8 @@ getAllEvent(){
 
 //AÑADIR UN EVENTO
 
-  addEvent(event:Evento):Observable<Object>{
-    return this.http.post(this.url + "/events", event)
+  addEvent(body: FormData):Observable<Object>{
+    return this.http.post(this.url + "/events", body)
 }
 
 //MODIFICAR UN EVENTO

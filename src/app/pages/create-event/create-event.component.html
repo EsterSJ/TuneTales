@@ -1,20 +1,22 @@
 
   <div class="create-event-container">
     <h2 class="create-event-title">CREAR EVENTO</h2>
-    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
-      <div class="form-item event-container"> 
-        <label for="eventName" class="event-label">Evento</label>
-        <input type="text" id="eventName" placeholder="" formControlName="eventName" [ngClass]="{'is-invalid': (createForm.get('eventName').dirty || createForm.get('eventName').touched) && !createForm.get('eventName').valid}">
-        <div class="invalid-feedback" *ngIf="!createForm.get('eventName').valid">
+      <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="form-item event-container"> 
+
+            <label for="eventName" class="event-label">Evento</label>
+            <input type="text" id="eventName" placeholder="" formControlName="eventName" [ngClass]="{'is-invalid': (createForm.get('eventName').dirty || createForm.get('eventName').touched) && !createForm.get('eventName').valid}">
+         
+            <div class="invalid-feedback" *ngIf="!createForm.get('eventName').valid">
           El nombre del evento es obligatorio
-    </div>
-      </div>
+        </div>
+  </div>
       <div class="form-row">
         <div class="form-item">
           <label for="image" class="image-label">
-            <img src="../../../assets/img/ImgEvento.png" alt="Imagen" class="image-input" (click)="onImageClick()">
-          </label>
-          <input type="file" id="image" formControlName="image" style="display: none;">
+              <img [src]="imgSrc" alt="Imagen" class="image-input" (click)="onImageClick()">
+           </label>
+          <input type="file" name="image" id="image" style="display: none;" (change)="getFile($event)" #photo/>
         </div>
         <div class="form-item">
           <label for="location">Lugar</label>
@@ -42,6 +44,6 @@
         <label for="description" class="description-label">Descripción</label>
         <input type="text" id="description" formControlName="description">
       </div>
-      <button type="submit" click= "onSubmit()">Publicar</button>
+      <button type="submit">Publicar</button>
     </form>
   </div>

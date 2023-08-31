@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Evento } from 'src/app/models/evento';
 import {EventsService} from '../../shared/events.service';
@@ -13,59 +13,102 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
-  public createForm: FormGroup;
-  public event: Evento;
 
-  constructor(private eventsService: EventsService, public userService: UserService, public router: Router) { }
+  public evento: Evento;
+  public createForm: FormGroup;
+  public fileTmp: any;
+  imgSrc: string = "assets/img/ImgEvento.png";
+
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private eventsService: EventsService, 
+    public userService: UserService, 
+    public router: Router) { }
 
   ngOnInit() {
-    this.createForm = new FormGroup({
-      'eventName': new FormControl(null, [Validators.required,]),
-      'image': new FormControl(null, [Validators.required]),
-      'location': new FormControl(null, [Validators.required]),
-      'date': new FormControl(null, [Validators.required]),
-      'time': new FormControl(null, [Validators.required]),
-      'description': new FormControl(null, [Validators.required]),
+    this.createForm = this.formBuilder.group({
+      eventName: ['',[Validators.required,]],
+      image: ['' ,[Validators.required]],
+      location: ['',[Validators.required]],
+      date: [null, [Validators.required]],
+      time: [null, [Validators.required]],
+      description: ['', [Validators.required]]
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const defaultPhoto = "assets/img/sirena.png";
+      const img = document.getElementById('foto_perfil') as HTMLImageElement;
+      const fileInput = document.getElementById('photo') as HTMLInputElement;
+
+      fileInput.addEventListener('change', e => {
+        const inputElement = e.target as HTMLInputElement;
+        if (inputElement.files && inputElement.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            if (typeof e.target.result === 'string') {
+              img.src = e.target.result;        
+            }
+          };
+          reader.readAsDataURL(inputElement.files[0]);
+        } else {
+          img.src = defaultPhoto;
+        }
+      });
     });
   }
 
+  public getFile($event: any): void{
+    const file = $event.target.files[0];
+    this.fileTmp = file;
+    console.log(file);
+  }
+
   onImageClick(): void {
-    // logica para el  hacer clic en la imagen
+    // Simula el clic en el input de tipo archivo al hacer clic en la imagen
+    const inputElement = document.getElementById('image') as HTMLInputElement;
+    inputElement.click();
   }
 
   onSubmit(){
     
-    let name_event = this.createForm.get('eventName').value;
-    let place = this.createForm.get('location').value;
-    let date = this.createForm.get('date').value;
-    let hour = this.createForm.get('time').value;
-    let photo = this.createForm.get('image').value;
-    let id_user = this.userService.user.id_user;
-    let description = this.createForm.get('description').value;
+    if (this.createForm.invalid) {
+      return;
+    }
 
-  
-    
-    this.event = new Evento (null, id_user, name_event, date, hour, place, null, photo, description)
-    console.log(this.event);
+    const name_event = this.createForm.value.eventName;
+    const place = this.createForm.value.location;
+    const date = this.createForm.value.date;
+    const hour = this.createForm.value.time;
+    const image = this.createForm.value.image;
+    const id_user = this.userService.user.id_user;
+    const description = this.createForm.value.description;
+
+    const event = new Evento(null, id_user, name_event, date, hour, place, null, null, description);
+
+
+    const body = new FormData();
+    body.append('image', image);
+    body.append('add_event', JSON.stringify(event));
    
     
-       this.eventsService.addEvent(this.event).subscribe((data:Response)=>{
+       this.eventsService.addEvent(body).subscribe((data:Response)=>{
          console.log(data);
+         alert("Evento creado correctamente");
+         this.router.navigateByUrl('/profile');
        });
-
-       alert("Evento creado correctamente");
-       this.router.navigateByUrl('/profile');
      }
   
 
 
   // manejar la selección de la imagen
-  onImageSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input?.files?.length) {
-      const file = input.files[0];
-      //  archivo seleccionado
-      console.log('Archivo seleccionado:', file);
-    }
-  }
+  // onImageSelected(event: Event): void {
+  //   const input = event.target as HTMLInputElement;
+  //   if (input?.files?.length) {
+  //     const file = input.files[0];
+  //     //  archivo seleccionado
+  //     console.log('Archivo seleccionado:', file);
+  //     this.createForm.patchValue({ image: file });
+  //   }
+  // }
 }
