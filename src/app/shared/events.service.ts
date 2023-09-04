@@ -44,8 +44,13 @@ getAllEvent(){
 
 //MODIFICAR UN EVENTO
 
- editEvent(event: Evento):Observable<Object>{      
+ editEvent(event: FormData):Observable<Object>{    
+  console.log(event);
   return this.http.put(this.url + "/events", event);  
+}
+
+getEventDetails(id_evento: number){
+  return this.http.get(this.url + '/event' + '?id_evento=' + id_evento)
 }
 
 //ELIMINAR UN EVENTO

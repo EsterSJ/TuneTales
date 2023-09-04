@@ -68,6 +68,8 @@ export class CreateEventComponent implements OnInit {
     body.append('hour', this.createForm.get('time').value);
     body.append('description', this.createForm.get('description').value);
 
+    console.log(body);
+
     // console.log("VAMOS A MOSTRAR EL BODY DE SEND EVENT: ");
     // body.forEach((value, key) => {
     //   console.log(key + ": " + value);

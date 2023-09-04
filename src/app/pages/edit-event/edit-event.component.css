@@ -1,166 +1,169 @@
 @font-face {
-    font-family: 'FuenteTuneTales';
-    src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+  font-family: 'FuenteTuneTales';
+  src: url('../../../assets/fonts/DINNeuzeitGroteskLT-Light.ttf') format('truetype');
+}
+
+  .create-event-container {
+    display: grid; /* Cambiamos a grid layout /
+    grid-template-columns: 1fr; / Una columna /
+    justify-content: center; / Centrar en el eje horizontal /
+    align-items: center; / Centrar en el eje vertical */
+    max-width: 1200px;
+    height: 92vh;
+    margin: 0 auto;
+    background-color: black;
+    color: #fff;
+    padding-top: 4vh;
+    padding-bottom: 10vh;
+  }
+ 
+  .create-event-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto */
+    letter-spacing: 5px;
   }
   
-    .create-event-container {
-      display: grid; /* Cambiamos a grid layout /
-      grid-template-columns: 1fr; / Una columna /
-      justify-content: center; / Centrar en el eje horizontal /
-      align-items: center; / Centrar en el eje vertical */
-      max-width: 1200px;
-      height: 92vh;
-      margin: 0 auto;
-      background-color: black;
-      color: #fff;
-      padding-top: 18vh;
-      padding-bottom: 10vh;
-    }
-   
-    .create-event-title {
-      font-size: 30px;
-      margin-bottom: 20px;
-      text-align: center; /* Centrar el texto */
-      letter-spacing: 5px;
-    }
-    
-    .form-item {
-      display: grid;
-      grid-template-columns: 100px auto;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    
-    .form-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 20px;
-    }
-    
-    label {
-      display: inline-block;
-      width: 250px;
-      border-bottom: 2px solid var(--colorBlanco);
-      padding-bottom: 5px;
-      font-size: var(--fontBody);
-      font-family:'FuenteTuneTales';
-    }
-    
-    input[type="text"],
-    input[type="date"],
-    input[type="time"],
-    input[type="location"],
-    textarea {
-      margin-left: 20px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 0;
-      background-color:var(--colorFondo);
-      color:var(--colorBlanco);
-      margin-bottom: 15px;
-      width: 100%;
-      outline: none;
-      font-size: var(--fontBody);
-      font-family:'FuenteTuneTales';
-  
-    }
-    input[type="location"] {
-      margin-left:-25px;
-      font-size: var(--fontBody);
-      font-family:'FuenteTuneTales';
-    }
-    input[type="date"] {
-      margin-left:-1px;
-      font-size: var(--fontBody);
-      font-family:'FuenteTuneTales';
-    }
-    input[type="text"]{
-      margin-left: 20px;
-      font-size: var(--fontBody);
-      font-family:'FuenteTuneTales';
-    }
-    button {
-    margin-top: 40px;
-    width: var(--anchoBotonGrande);
-    height:var(--altoBotonGrande);
-    border-radius: var(--radiusBoton);
-    border: 1px;
-    font-family:'FuenteTuneTales';
-    background-color: var(--colorGris);
-    color:var(--colorBlanco);
-    font-size: var(--fontBoton);
-    margin-left:510px;
-    }
-  
-  
-    /* Estilo para el input tipo "file" oculto */
-  input[type="file"] {
-    display: none;
+  .form-item {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    margin-bottom: 15px;
   }
   
-  
-  .image-input {
-  
-    margin-left: 15px;
-    margin-top: -100px;
-    margin-bottom: 50px;
-    cursor: pointer; 
-    display: block;
-    border: none;
-    outline: none; 
-  
-  }
-  .image-label {
-   
-    margin-left: 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    display: block;
-    border: none;
-    padding: 0;
-    border-bottom: none;
-    background-color: transparent;
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
   }
   
-  
-  
-  .description-label {
-    font-family: 'FuenteTuneTales';
-    font-weight: 500;
-    font-size: var(--fontBody);
+  label {
     display: inline-block;
-    width: 1130px;
+    width: 250px;
     border-bottom: 2px solid var(--colorBlanco);
     padding-bottom: 5px;
-    
-  }
-  
-  .description-container {
-  
-    margin-left: 35px; 
-  }
-  
-  
-  
-  .event-label {
-    border-bottom: 2px solid var(--colorBlanco); 
-    padding-bottom: 5px;
-    width: 865px;
     font-size: var(--fontBody);
-  
+    font-family:'FuenteTuneTales';
   }
   
-  .event-container {
-  
-    margin-left: 300px; 
-  }
-  
-  .date-label {
-  
-    border-bottom: 2px solid var(--colorBlanco); 
-    padding-bottom: 5px;
-    width: 250px;
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  input[type="location"],
+  textarea {
+    margin-left: 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 0;
+    background-color:var(--colorFondo);
+    color:var(--colorBlanco);
+    margin-bottom: 15px;
+    width: 100%;
+    outline: none;
     font-size: var(--fontBody);
-  
-    margin-left:-10px;
+    font-family:'FuenteTuneTales';
+
   }
+  input[type="location"] {
+    margin-left:-25px;
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
+  }
+  input[type="date"] {
+    margin-left:-1px;
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
+  }
+  input[type="text"]{
+    margin-left: 20px;
+    font-size: var(--fontBody);
+    font-family:'FuenteTuneTales';
+  }
+  button {
+  margin-top: 40px;
+  width: var(--anchoBotonGrande);
+  height:var(--altoBotonGrande);
+  border-radius: var(--radiusBoton);
+  border: 1px;
+  font-family:'FuenteTuneTales';
+  background-color: var(--colorGris);
+  color:var(--colorBlanco);
+  font-size: var(--fontBoton);
+  margin-left:510px;
+  }
+
+
+  /* Estilo para el input tipo "file" oculto */
+input[type="file"] {
+  display: none;
+}
+
+
+.image-input {
+
+  margin-left: 15px;
+  margin-top: -100px;
+  margin-bottom: 50px;
+  cursor: pointer; 
+  display: block;
+  border: 4px solid var(--colorMoradoOscuro);
+  border-radius: 12px;
+  outline: none; 
+  width: 240px;
+  height: 240px;
+
+}
+.image-label {
+ 
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+  display: block;
+  border: none;
+  padding: 0;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+
+
+.description-label {
+  font-family: 'FuenteTuneTales';
+  font-weight: 500;
+  font-size: var(--fontBody);
+  display: inline-block;
+  width: 1130px;
+  border-bottom: 2px solid var(--colorBlanco);
+  padding-bottom: 5px;
+  
+}
+
+.description-container {
+
+  margin-left: 35px; 
+}
+
+
+
+.event-label {
+  border-bottom: 2px solid var(--colorBlanco); 
+  padding-bottom: 5px;
+  width: 865px;
+  font-size: var(--fontBody);
+
+}
+
+.event-container {
+
+  margin-left: 300px; 
+}
+
+.date-label {
+
+  border-bottom: 2px solid var(--colorBlanco); 
+  padding-bottom: 5px;
+  width: 250px;
+  font-size: var(--fontBody);
+
+  margin-left:-10px;
+}
