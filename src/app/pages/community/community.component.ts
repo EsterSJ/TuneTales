@@ -34,7 +34,7 @@ export class CommunityComponent {
   public mostrarInfo(i: number){
 
           Swal.fire({
-            title: this.publicaciones[i].link_soundCloud,
+            title: this.publicaciones[i].multimedia,
             imageUrl: 'assets/img/Logo.png',
             imageWidth: 400,
             imageHeight: 200,

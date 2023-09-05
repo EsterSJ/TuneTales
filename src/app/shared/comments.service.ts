@@ -18,11 +18,14 @@ export class CommentsService {
 
   }
   postComment(comentario: Comentario): Observable<Object> {
-    console.log("este es un" + comentario.id_publicacion);
+    console.log("dentro de  postComment");
+    console.log(comentario);
     return this.http.post(`${this.url}/comentario`, comentario);
   }
 
-  getComments(id_publicacion: number): Observable<Object> {
+  getComments(id_publicacion: number): Observable<Comentario[]> {
+    console.log("dentro de GET comments")
     return this.http.get<Comentario[]>(`${this.url}/comentarios?id_publicacion=${id_publicacion}`);
   }
+
 }

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { response } from 'express';
 import { Comentario } from 'src/app/models/comentario';
 import { Like } from 'src/app/models/likes';
 import { Publicacion } from 'src/app/models/publicacion';
@@ -19,68 +20,91 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class PublicacionComponent implements OnInit{
 
-  public letra:boolean = false;
+  // public letra:boolean = false;
   public publicacion:Publicacion;
   public comentario:Comentario;
-  public id_publicacion: number;
+  public id_publicacion:number;
   public selectedItem: number = null;
   public comentarios: Comentario [] = [];
   public newComment:string = '';
   public characterCount: number = 400; 
   public likeCount: number = 0;
   public user: User;
+
+
+  public newLike: number = 1;
   public liked: boolean = false; 
   public id_like:number;
   public like: Like;
-  public likes: Like [] = [];
 
 
   constructor(private router: Router, public publicationService:PublicationService, private formBuilder: FormBuilder,public Http:HttpClient, private CommentsService:CommentsService, public FormsModule:FormsModule, public UserService:UserService, private likeService:LikesService) {
   }
   
 
+
 ngOnInit(): void {
 
   this.user = this.UserService.user;
+  this.publicacion = this.publicationService.publicacion;
 
-  this.publicacion = this.publicationService.getPublicacion();
-  this.publicationService.setPublicacion(this.publicacion);
   if (this.publicacion) {
     this.id_publicacion = this.publicacion.id_publicacion;
-    console.log(this.id_publicacion)
+    console.log('ID de publicación:', this.id_publicacion);
     this.loadComments();
-    this.loadLikeCount(this.id_publicacion);
   }
 }
 
-publishComment() {
-  if (!this.newComment) {
-    return; // No se permite un comentario vacío
-  }
+publishComment( comentario2: string ) { 
+  console.log("hola estoy dentro de publishcoment")
+ 
 
-  let comentario = {
-    id_publicacion: this.publicacion.id_publicacion,
-    comentario: this.newComment,
-    id_user_comment: this.user.id_user // Cambia esto según el usuario actual
-  };
-  console.log(this.publicacion)
+  const comentario: Comentario = new Comentario (
+    null, 
+    114,
+    comentario2,
+    5
+    );
+    console.log("objeto comentario")
+    console.log(comentario);
+
+
   this.CommentsService.postComment(comentario).subscribe(
-    (data: Comentario) => {
-      this.comentario = data;
-      console.log('Comentario publicado con éxito');
+    (response) => {
+      console.log('Comentario publicado con éxito', response);
       this.newComment = ''; // Limpiar el campo de comentario después de publicar
       this.loadComments(); // Recargar los comentarios después de publicar uno nuevo
-    }
+    },
   );
-  // Después de enviar el comentario, restablece el campo y reinicia el contador
-  this.newComment = '';
-  this.characterCount = 400;
+}
+
+
+doLike(){
+  console.log("funcion like aqui")
+
+  const like = new Like (
+    null,
+    114,
+    10000
+  );
+
+  this.likeService.likePublication(like).subscribe((data:Response) => {
+    console.log("like publicado", response);
+    this.newLike = 0;
+  })
+} 
+
+updateLikeCount() {
+  const like = this.newLike;
+  this.likeCount = 0 + like;
 }
 
 loadComments() {
-  this.CommentsService.getComments(this.id_publicacion).subscribe((data:Comentario[]) => {
-      this.comentarios = data;
-    }
+  console.log('Cargando comentarios para la publicación con ID:', this.id_publicacion);
+  this.CommentsService.getComments(this.id_publicacion).subscribe(
+    (comentarios) => {
+      this.comentarios = comentarios;
+    },
   );
 }
 
@@ -89,40 +113,11 @@ updateCharacterCount() {
   this.characterCount = 400 - commentLength;
 }
 
-likePost() {
-    if (!this.user) {
-      return;
-    }
 
-    const id_publicacion = this.id_publicacion; 
-
-    if (this.liked) {
-      // Si ya le dio like, quita el like
-          this.likeService.unlikePublication(id_publicacion).subscribe((data:Publicacion) => {
-          this.liked = false;
-          this.likeCount--;
-        },
-      );
-    } else {
-      // Si no le ha dado like, agrega el like
-      this. likeService.likePublication(id_publicacion).subscribe((data:Publicacion) => {
-          this.liked = true;
-          this.likeCount++;
-        }
-      );
-    }
-  }
-
-
-loadLikeCount(id_publicacion: number) {
-  this.likeService.getLikeCount(id_publicacion).subscribe((data:number)=>
-  {
-    this.id_publicacion = data;
-  });   
-}
 
 loadPublication(id_publicacion: number): void {
   this.publicationService.getPublicationById(id_publicacion).subscribe((data: Publicacion) => {
+    console.log(data);
     this.publicacion = data;
   });
 }

@@ -42,8 +42,8 @@ export class AddMusicFormComponent {
 
       this.publicationService.addPublicacion(publi).subscribe((data: Publicacion) => {
         console.log(data);
-        this.publicationService.setPublicacion(publi);
-              this.router.navigateByUrl('/publicacion');
+        // this.publicationService.setPublicacion(publi);
+              this.router.navigateByUrl('/profile');
         })
     }
   }

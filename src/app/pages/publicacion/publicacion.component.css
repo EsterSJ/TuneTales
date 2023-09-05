@@ -372,12 +372,13 @@ body {
     /* height: 160vh; */
 
     justify-content: center;
+    text-align: left;
 
 }
 
 .comments_section {
 
-    /* display: inline-block; */
+    display: inline-block;
 
     height: 1400px;
     width: 556px;
@@ -389,10 +390,27 @@ body {
     background-color: #7D7979;
     font-family: FuenteTuneTales;
 
-    justify-content: center;
+    /* justify-content: center; */
 
     margin-top: 10%;
 
+}
+
+.seccion_oldComments {
+
+    display: block;
+
+    /* border: 3px solid orangered; */
+
+    padding:2%;
+
+    height: 80%;
+    width: 100%;
+
+    /* align-items: left; */
+
+    text-align: left;
+    /* justify-content: center; */
 }
 
 .old_comments {
@@ -400,31 +418,19 @@ body {
     display: flex;
 
     width: 99%;
-    height: 1100px;
 
-    justify-content: center;
+    padding: 1%;
+    margin-bottom: 6%;
+
+    /* justify-content: center; */
     margin-top: 2%;
     /* border: 3px solid bisque; */
+    /* text-align: left; */
+
+    max-height: 20vh;
+    overflow: auto;
 }
 
-
-.oneComment {
-
-    display: flex;
-
-    color: white;
-    font-size: 14px;
-
-    height: 15vh;
-    width: 80%;
-
-    /* border: 1.5px solid green; */
-    /* background-color: transparent; */
-
-    text-align: left;
-    
-
-}
 
 
 .title_ac {
@@ -452,6 +458,13 @@ body {
     justify-content: center;
 }
 
+.seccion_añadirComentario {
+
+    /* display: inline-block; */
+    /* border: 4px solid slateblue; */
+    height: 20%;
+    width: 100%;
+}
 .add_comment {
 
     display: flex;

@@ -6,12 +6,12 @@
         </div>
 
         <div class="soundcloud_card">
-            {{publicacion.link_soundCloud}}
+            {{publicacion.multimedia}} 
         </div>
         <div class="button_container">
             <button class="button_añadirPlaylist">Añadir a myPlaylist</button>
             <button class="button_like_container">
-                <div class="button_like" (click)="likePost()">
+                <div class="button_like" (click)="doLike()">
                     <!-- <i class="fa-solid fa-heart" style="color: #404345;"></i> -->
                     <!-- <img class="heart" src="/img//greyheart.png" alt=""> -->
                     <span class="like-count">{{ likeCount }}</span>
@@ -40,18 +40,21 @@
 
     <div class="second_section">
         <div class="comments_section">
-            <div class="old_comments">
-                <div class="oneComment" *ngFor="let comentario of comentarios">
+            <div class="seccion_oldComments">
+                <div class="old_comments" *ngFor="let comentario of comentarios">
+                    <!-- {{User.user}} -->
                     {{comentario.comentario}}
                 </div>
             </div>
-            <div class="title_ac">Añadir comentario</div>
+            <div class="seccion_añadirComentario">
+                <div class="title_ac">Añadir comentario</div>
             <div class="textarea_container">
-                <textarea class="add_comment" [(ngModel)]="newComment" name="add_comment" id="" cols="30" rows="10" (ngModelChange)="updateCharacterCount()"></textarea>
+                <textarea class="add_comment" [(ngModel)]="newComment" name="add_comment" id="" cols="30" rows="10" (ngModelChange)="updateCharacterCount()" #comentario></textarea>
             </div>
             <div class="caracteres"> {{characterCount}} caracteres</div>
             <div class="button_publicar_container">
-                <button class="publicar" (click)="publishComment()" type="reset">Publicar</button>
+                <button class="publicar" (click)="publishComment(comentario.value)" type="reset">Publicar</button>
+            </div>
             </div>
         </div>
     </div>

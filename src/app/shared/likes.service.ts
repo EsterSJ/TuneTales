@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Data } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Like } from '../models/likes';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +14,16 @@ export class LikesService {
   constructor(private http:HttpClient) { }
 
 
-  likePublication(id_publicacion: number):Observable<Object> {
-    const likeData = {
-      id_publicacion: id_publicacion,
-    };
-    return this.http.post(`${this.url}/likes`, likeData);
+  likePublication(like: Like):Observable<Object> {
+    return this.http.post(`${this.url}/likes`, like);
   }
 
-  unlikePublication(id_publicacion: number): Observable<Object> {
-    return this.http.delete(`${this.url}/likes/${id_publicacion}/`);
+  unlikePublication(id_like: number): Observable<Object> {
+    return this.http.delete(`${this.url}/likes/${id_like}/`);
   }
 
 
-  getLikeCount(id_publicacion: number): Observable<number> {
-    return this.http.get<number>(`${this.url}/like/${id_publicacion}`);
+  getLikeCount(id_like: number): Observable<number> {
+    return this.http.get<number>(`${this.url}/like/${id_like}`);
   }
 }
