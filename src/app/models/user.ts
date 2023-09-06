@@ -1,7 +1,7 @@
 export class User {
 
     public id_user: Number;
-    public user: String;
+    public user: string;
     public email: String;
     public password: String;
     public instagram: String;
@@ -12,7 +12,7 @@ export class User {
     public description: String;
     public photo: String;
 
-    constructor(id_user: Number, user: String, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String, photo: String){
+    constructor(id_user: Number, user: string, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String, photo: String){
         this.id_user = id_user;
         this.user = user;
         this.email = email;

@@ -53,7 +53,7 @@ export class EditProfileComponent {
     this.fileTmp = file;
   }
 
-  public editProfile(user_name: String, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String){    
+  public editProfile(user_name: string, email: String, password: String, instagram: String, facebook: String, twitter: String, birth_date: Date, music_type: String, description: String){    
     let update_user = new User (this.userService.user.id_user,user_name, email, password, instagram, facebook, twitter, birth_date, music_type, description, null);
     const body = new FormData();
     body.append('photo', this.fileTmp);
