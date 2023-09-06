@@ -23,6 +23,7 @@ import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { PubliCardComponent } from './components/publi-card/publi-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { ReproductorComponent } from './components/reproductor/reproductor.component';
 
 
 
@@ -48,7 +49,8 @@ import { EditEventComponent } from './pages/edit-event/edit-event.component';
     PublicacionComponent,
     PlaylistComponent,
     PubliCardComponent,
-    EditEventComponent
+    EditEventComponent,
+    ReproductorComponent
   ],
   imports: [
     BrowserModule,

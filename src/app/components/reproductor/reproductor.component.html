@@ -1,0 +1,26 @@
+
+<body>
+    
+<div class="music-player">
+    <!-- <h1 class="music-name">song one</h1> -->
+    <p class="artist-name">nombre de la canción</p>
+
+    <div class="song-slider">
+        <input type="range" [(ngModel)]="seekValue" class="seek-bar" (input)="seekTo($event)">
+        <span class="current-time">{{ currentTime }}</span>
+        <span class="song-duration">{{ duration }}</span>
+    </div>
+
+    <div class="volume-control">
+        <input type="range">
+    </div>
+    
+    <div class="controls">
+        <button class="play-btn" (click)="togglePlayPause()" [ngClass]="{'play': isPlaying, 'pause': !isPlaying}">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</div>
+
+</body>

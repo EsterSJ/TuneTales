@@ -16,6 +16,7 @@ import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { TarjetaEventoPerfilComponent } from './components/tarjeta-evento-perfil/tarjeta-evento-perfil.component';
 import { EventsCardComponent } from './components/events-card/events-card.component';
 import { EditEventComponent } from './pages/edit-event/edit-event.component';
+import { ReproductorComponent } from './components/reproductor/reproductor.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: 'myPlaylist', component:PlaylistComponent},
   {path: 'tarjetaEvento', component:TarjetaEventoPerfilComponent},
   {path: 'EventsCard', component: EventsCardComponent},
-  {path: 'editEvent/:id_evento', component: EditEventComponent}
+  {path: 'editEvent/:id_evento', component: EditEventComponent},
+  {path: 'reproductor', component:ReproductorComponent}
 
 ]
 
