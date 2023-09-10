@@ -6,8 +6,8 @@
         </form>
     </div>
     <div class="cards">
-        <div *ngFor="let publi of publicaciones; let i = index">
-            <app-publi-card [publicacion] = "publi" (click)="verPublicacion(publi)"></app-publi-card>
+        <div *ngFor="let publicacion of publicaciones; let i = index">
+            <app-publi-card [publicacion] = "publicacion" (publicacionClicked)="handlePublicacionClick($event)"></app-publi-card>
         </div>
     </div>
 </div>

@@ -5,50 +5,68 @@
 
 body {
     display: flex;
-    width: 100%;
     background-color: black;
-    padding-top: 20vh;
+    padding-top: 6vh;
     padding-bottom: 10vh;
-
 }
 
 .first_section {
 
-    display: inline-block;
-    border: 3px solid pink;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 60%;
-    /* height: 180vh; */
 }
 
-
+.titulo{
+    font-size: 38px;
+    padding-bottom: 8px;
+}
 
 .name_artist {
-
-    color: white;
-    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 
     font-family: "FuenteTuneTales";
 
-    /* border: 3px solid red; */
-    /* height: 35px;
-    width: 135px; */
-
     letter-spacing: 4px;
-    font-size: 24px;
+    font-size: 20px;
+    margin-top: 10px;
+}
 
-    margin-top: 10%;
-    margin-left: 20%;
+.imagen_usuario{
+    width: 38px;
+    height: 38px;
+    border-radius: 24px;
+    border: none;
+}
+
+.boton_artista{
+    background-color: transparent;
+    border: none;
+}
+
+    .boton_artista:hover{
+        color: #CE9CFF;
+    }
+
+.info{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-self: flex-start;
+    margin-left: 11%;
+    margin-bottom: 80px;
 }
 
 .soundcloud_card {
-
-    /* height: 240px;
-    width: 240px; */
-
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
-
-    margin-left: 20%;
     margin-top: 1%;
 }
 
@@ -59,20 +77,16 @@ img{
 
 
 .button_container {
-
     display: flex;
     justify-content: space-between;
-    height: 50px;
-    width: 280px;
     text-decoration: none;
-
-    margin-top: 30px;
-
-    /* border: 2px solid green; */
-    margin-left: 20%;
+    width: 240px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #2D2B2B;
 }
 
-.button_añadirPlaylist, .publicar {
+.publicar {
 
     height: 48px;
     width: 180px;
@@ -86,84 +100,34 @@ img{
     font-size: 14px;
 }
 
-.button_añadirPlaylist:hover {
-
-    background-color: #CE9CFF;
-}
-
-.button_like_container {
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    background-color: black;
+.icon-button {
+    background: none;
     border: none;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  .icon-button i {
+    color: white; /* Color inicial del icono */
+    transition: color 0.4s; /* Transición de color suave */
+  }
 
-    width: 50px;
-    height: 50px;
+  .icon-button:hover i {
+    transform: scale(1.2);
+  }
+  
+.num_likes{
+    font-size: 18px;
+    font-family: TuneTales;
+    padding-top: 14px;
 }
 
-.button_like {
-
-    /* border: solid 3px brown; */
-    background-color: var(--colorMoradoCLaro);
-    display: inline-block;
-    /* text-decoration: none; */
-    /* border: none; */
-    height: 27px;
-    width: 27px;
-    /* color: red; */
-    /* color: #2D2B2B; */
-
-    position: relative;
-    transform: rotate(45deg);
-    animation: beating 2s ease infinite;
-}
-
-
-
-
-.button_like::before, .button_like::after{
-    content: "";
-    height: 27px;
-    width: 27px;
-    border-radius: 50%;
-    background-color:#CE9CFF; 
-    position: absolute;
-}
-
-
-.button_like::before {
-    top: -15px;
-    left: 0;
-}
-
-
-.button_like::after {
-
-    left: -15px;
-    top: 0;
-}
-
-
-.button_like:hover {
-    
-        transform: rotate(45deg) scale(1.1);
-    
-}
-
-.like-count {
-
-    
-    color:#CE9CFF;
-    display: inline-block;
-
-    position: relative;
-    transform: rotate(45deg);
-    animation: beating 2s ease infinite;
-    
+.likes{
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    padding-top: 12px;
+    gap: 8px;
 }
 
 
@@ -175,10 +139,6 @@ img{
     display: flex;
     width: 99%;
     height: 90px;
-
-    /* border: 4px solid sienna; */
-
-    margin-top: 2%;
     justify-content: center;
 }
 
@@ -190,8 +150,6 @@ img{
     height: 50px;
 
     display: flex;
-    margin-top: 1%;
-
     justify-content: space-evenly;
 
 }
@@ -250,14 +208,9 @@ img{
 .textoLetra {
 
     display: flex;
-
     width: 99%;
-    height: 130vh;
-
-    /* border: solid 4px goldenrod; */
-
     justify-content: center;
-    /* align-items: center; */
+
 }
 
 
@@ -280,17 +233,14 @@ img{
 
     display: flex;
 
-    width: 60%;
-    height: 100vh;
+    width: 70%;
+
     background-color: transparent;
-    /* border: 3px solid grey; */
 
     resize: none;
 
     color: white;
-    font-size: 24px;
-    /* letter-spacing: 1px; */
-    text-align: center;
+    text-align: justify;
 
     text-decoration: none;
     line-height: 2.0;
@@ -306,19 +256,17 @@ img{
     display: flex;
 
     width: 70%;
-    height: 80vh;
     background-color: transparent;
-    /* border: 3px solid grey; */
+
 
     resize: none;
 
     color: white;
     font-size: 20px;
-    text-align: start;
+    text-align: justify;
 
     margin-top:2%;
     text-decoration: none;
-    /* margin-bottom: 3%; */
     justify-content: center;
 
 }
@@ -332,51 +280,39 @@ img{
 .second_section {
 
     display: flex;
+    flex-direction: column;
     width: 40%;
     justify-content: center;
-
-}
-
-.comments_section {
-
-    width: 556px;
-    border: 3px solid greenyellow;
-    border-radius: 22px;
     background-color: #7D7979;
-    font-family: FuenteTuneTales;
-    justify-content: center;
-    margin-top: 10%;
-    padding-bottom: 12px;
+    margin-left: 48px;
+    margin-right: 48px;
+    border-radius: 24px;
+    height: min-content;
+
 }
 
 .old_comments {
 
     display: flex;
     flex-direction: column;
-
-    width: 99%;
-    /* height: 1100px; */
-
     justify-content: flex-start;
     gap: 4px;
     margin-top: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
 
 .oneComment {
 
     display: flex;
+    gap: 4px;
     margin: 6px;
 
     color: white;
     font-size: 14px;
 
-    /* height: 15vh; */
-    /* width: 80%; */
-
     text-align: left;
-    
 
 }
 
@@ -385,24 +321,18 @@ img{
 
     display: flex;
 
-    width: 35%;
-    height: 24px;
-
     color: #EEEEEE;
     font-size: 16px;
 
-    /* border: solid 2px blue; */
-
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 32px;
 }
 
 .textarea_container {
-
     display: flex;
     height: 180px;
     width: 100%;
-
-    /* border: solid 3px lightblue; */
     justify-content: center;
 }
 
@@ -436,24 +366,15 @@ img{
 
     width: 95%;
     height: 15px;
-
-    /* border: 2px solid forestgreen; */
-
     justify-content: flex-end;
     margin-top: 3px;
-
-    /* margin-right: 90px; */
 }
 
 .button_publicar_container {
 
     display: flex;
-
     width: 99%;
     height: 50px;
-
-    /* border: 3px solid lavender; */
-
     justify-content: center;
 }
 

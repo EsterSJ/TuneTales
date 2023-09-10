@@ -20,12 +20,18 @@ export class EditProfileComponent {
   }
 
   ngOnInit(): void {    
-    // const fechaInput = document.getElementById('fechaNacimiento') as HTMLInputElement;
-    // const year = this.profile.birth_date.getFullYear();
-    // const month = (this.profile.birth_date.getMonth() + 1).toString().padStart(2, '0');
-    // const day = this.profile.birth_date.getDate().toString().padStart(2, '0');
-    // const fechaPlaceholder = year + "-" + month + "-" + day;
-    // fechaInput.value = fechaPlaceholder;
+    const fechaInput = document.getElementById('fechaNacimiento') as HTMLInputElement;
+
+    // Supongamos que this.profile.birth_day es una fecha en formato ISO 8601
+    const birthDateISO = this.profile.birth_date;
+    const birthDate = new Date(birthDateISO);
+    
+    const day = birthDate.getDate().toString().padStart(2, '0');
+    const month = (birthDate.getMonth() + 1).toString().padStart(2, '0');
+    const year = birthDate.getFullYear();
+    
+    const fechaFormateada = `${year}-${month}-${day}`;
+    fechaInput.value = fechaFormateada;    
 
     const defaultPhoto = "assets/img/sirena.png";
     const fileInput = document.getElementById('photo') as HTMLInputElement;
