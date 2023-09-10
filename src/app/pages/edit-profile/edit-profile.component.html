@@ -3,7 +3,6 @@
     <div class="bloque_form">
         <img src={{profile.photo}} alt="" id="foto_perfil" style="border-radius: 15px; border: 8px solid var(--colorMoradoOscuro);">
         <label for="photo" class="label_photo">Cambiar Foto</label>
-        <!-- <input type="file" name="photo" id="photo" placeholder="{{profile.photo}}" style="display: none;" #photo/>    -->
         <input type="file" name="photo" id="photo" placeholder="{{profile.photo}}" style="display: none;" (change)="getFile($event)" #photo/>   
 
 
@@ -29,7 +28,7 @@
         <input type="password" name="password" id="password" placeholder={{profile.password}} #password/>
         <input type="repeatPassword" name="repeatPassword" id="repeatPassword" placeholder={{profile.password}}/>
         <input type="email" name="email" id="email" placeholder={{profile.email}} #email/>
-        <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder={{profile.birth_date}} #birth_date/>
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder="Fecha de nacimiento" #birth_date/>
         <input type="genero" name="genero" id="genero" placeholder={{profile.music_type}} #music_type/>
         <label for="descripcion">Descripción</label>
         <textarea rows="3" cols="40" name="descripcion" id="descripcion" placeholder={{profile.description}} #description></textarea>

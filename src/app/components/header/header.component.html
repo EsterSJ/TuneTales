@@ -4,11 +4,10 @@
         
                 <div class="div_logoHeader"><img class="img_logo" src="/assets/img/logoHeader.png" alt=""></div>
                 <div class="div_a">
-                    <!-- <a routerLink="comunidad">comunidad</a> -->
                     <a routerLink="events">eventos</a>
                     <a routerLink="paraTi">para ti</a>
-                    <a routerLink="profile">perfil</a>
-                    <a routerLink="playlist">myPlaylist</a>
+                    <button class="boton_perfil" (click)="perfilLogueado();">perfil</button>
+                    <!-- <a routerLink="playlist">myPlaylist</a> -->
                 <div class="div_img_logOut">
                     <div class="div_button_logOut"><button class="button_logOut"><img class="img_logOut" src="/assets/img/log_out.png" alt="" (click)="log_out();"></button></div>
                 </div>
@@ -16,6 +15,7 @@
         </ng-template>
     
         <div class="div_a_b" *ngIf="!this.UserService.logueado; else logueado">
+            <a class="noLog" routerLink="comunidad">Comunidad</a>
             <a class="noLog" routerLink="register">Regístrate</a>
             <a class="noLog" routerLink="login">Login</a>
         </div>

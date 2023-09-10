@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Publicacion } from 'src/app/models/publicacion';
 import { UserService } from 'src/app/shared/user.service';
 import Swal from 'sweetalert2';
@@ -16,7 +17,7 @@ export class ForYouComponent {
 
   public publicaciones: Publicacion[];
 
-  constructor (private http: HttpClient, public userService: UserService){
+  constructor (private http: HttpClient, public userService: UserService, public router: Router){
     this.getAll().subscribe((data: Publicacion[]) => {
       this.publicaciones = data;
     });     
@@ -50,10 +51,9 @@ export class ForYouComponent {
       }
   }
 
-  public verPublicacion(publi: Publicacion){
-    //aqui nos lleva a la pagina publicacion
-    // this.publicacionService.publicacion = publi;
-    // this.router.navigateByUrl('/publicacion');
+  handlePublicacionClick(id_publicacion: number) {
+    this.router.navigate(['/publicacion', id_publicacion]); // Navegar a la ruta de detalle con el ID de la publicación
+  
   }
 
 }

@@ -17,5 +17,11 @@ export class HeaderComponent {
     this.router.navigateByUrl('/');
 
   }
+
+  public perfilLogueado(){
+    this.UserService.user = this.UserService.user;
+    this.UserService.profile = this.UserService.user;
+    this.router.navigateByUrl('/profile');
+  }
   
 }
