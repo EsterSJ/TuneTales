@@ -27,3 +27,27 @@
         width: 20px;
         height: 20px;
     }
+    .contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .headerTabla{
+        border:none;
+        font-weight: bold;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 180px;
+        border-bottom: 1px solid white;
+        width:80%;
+    
+    }
+
+    .Title{
+        width: 8%;
+        height:30px;
+        
+    }    

@@ -4,6 +4,25 @@
         <button type="reset"><img class="lupa" src="assets/img/lupa.png" alt=""></button>
     </form>
 </div>
-    
+<div class="contenedor">
+<div class="headerTabla">
+ 
+    <p class="Title">
+        Imagen
+    </p>
+    <p class="Title"> 
+        Evento
+    </p>
+    <p class="Title">
+        Fecha
+    </p>
+    <p class="Title">
+        Ubicación
+    </p>
+    <p class="Title">
+        Tickets
+    </p>
+</div>
+</div>
         <app-events-card *ngFor="let evento of eventos" [evento]="evento"></app-events-card>
     
