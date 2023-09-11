@@ -49,7 +49,7 @@ export class PublicationService {
   }
 
   getTop3Publicaciones() {
-    return this.http.get('http://localhost:3000/top3publicaciones');
+    return this.http.get('http://api-tune-tales-mgn163wti-marcelcoder01.vercel.app/top3publicaciones');
   }
 
 }
