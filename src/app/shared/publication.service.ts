@@ -11,7 +11,7 @@ import { UserService } from './user.service';
 export class PublicationService {
 
   public addMusicForm: FormGroup;
-  private url: string = 'http://localhost:3000/publicacion';
+  private url: string = 'http://api-tune-tales-mgn163wti-marcelcoder01.vercel.app/publicacion';
   public publicaciones: Publicacion [] = [];
   public publicacion: Publicacion;
   public letra:boolean = false;
