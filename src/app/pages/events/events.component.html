@@ -1,8 +1,8 @@
 <div class="buscador">
-    <form>
-        <input type="search" aria-label="Search" #buscar>
-        <button type="reset"><img class="lupa" src="assets/img/lupa.png" alt=""></button>
-    </form>
+    <form (submit)="buscarPorPlace()">
+        <input type="search" aria-label="Search" [(ngModel)]="place" name="place" placeholder="Buscar por localidad">
+        <button type="submit"><img class="lupa" src="assets/img/lupa.png" alt=""></button>
+      </form>
 </div>
 <div class="contenedor">
 <div class="headerTabla">
