@@ -97,4 +97,15 @@ body{
   font-size: var(--fontBoton);
 }
 
+.mensaje-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
 
+
+.form-input::placeholder {
+  color: var(--colorBlanco);
+  opacity: 0.8; /* Ajusta la opacidad según tus preferencias */
+  font-family:"DINNeuzeitGrotesk";
+}

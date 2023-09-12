@@ -11,7 +11,7 @@ import { UserService } from './user.service';
 export class PublicationService {
 
   public addMusicForm: FormGroup;
-  private url: string = 'https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app/publicacion';
+  private url: string = 'http://localhost:3000'
   public publicaciones: Publicacion [] = [];
   public publicacion: Publicacion;
   public letra:boolean = false;
@@ -49,7 +49,7 @@ export class PublicationService {
   }
 
   getTop3Publicaciones() {
-    return this.http.get('https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app/top3publicaciones');
+    return this.http.get('http://localhost:3000');
   }
 
 }
