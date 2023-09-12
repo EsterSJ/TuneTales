@@ -11,7 +11,7 @@ import { Evento } from '../models/evento';
 export class UserService {
 
 
-  private url: string = 'http://localhost:3000';
+  private url: string = 'https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app';
 
   public logueado:boolean = false;
   public user: User;
@@ -32,13 +32,6 @@ export class UserService {
     return this.http.post(`${this.url}/login`, user);
   }
 
-  //funcion que edita el perfil de un usuario
-  // public editProfile(update_user: User){    
-  //   return this.http.put(this.url + '/editProfile', update_user);
-  // }
-  // public editProfile(body: FormData){    
-  //   return this.http.put(this.url + '/editProfile', body);
-  // }
   public editProfile(body: FormData){      
     return this.http.put(this.url + '/editProfile', body);
   }
@@ -56,7 +49,4 @@ export class UserService {
   public delSeguido(id_user: Number, id_seguido: Number){
       return this.http.request('delete',this.url + '/profile',{body:{id_user: id_user, id_seguido: id_seguido}})
   }
-
-
- 
 }

@@ -13,7 +13,7 @@ import { Evento } from '../models/evento';
 })
 export class EventsService {
 
-  private url: string = 'http://localhost:3000';
+  private url: string = 'https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app';
 
   public evento: Evento;
 

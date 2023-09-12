@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LikesService {
 
-  private url = 'http://localhost:3000/'
+  private url = 'https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app/'
 
   constructor(private http:HttpClient) { }
 
@@ -27,14 +27,4 @@ export class LikesService {
     };
     return this.http.request('delete', `${this.url}likes`, { body: likeData });
   }
-
-  // cosas IVANA
-  // unlikePublication(id_publicacion: number): Observable<Object> {
-  //   return this.http.delete(${this.url}/likes/${id_publicacion}/);
-  // }
-
-
-  // getLikeCount(id_publicacion: number): Observable<number> {
-  //   return this.http.get<number>(${this.url}/like/${id_publicacion});
-  // }
 }
