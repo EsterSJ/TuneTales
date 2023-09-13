@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Publicacion } from '../models/publicacion';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from './user.service';
@@ -15,6 +15,11 @@ export class PublicationService {
   public publicaciones: Publicacion [] = [];
   public publicacion: Publicacion;
   public letra:boolean = false;
+  private httpOptions: { headers: HttpHeaders } = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private http:HttpClient, private FormBuilder: FormBuilder, private userService: UserService) { 
     this.addMusicForm = this.FormBuilder.group({
@@ -49,7 +54,7 @@ export class PublicationService {
   }
 
   getTop3Publicaciones() {
-    return this.http.get('https://api-tune-tales.vercel.app/top3publicaciones');
+    return this.http.get('https://api-tune-tales.vercel.app/top3publicaciones', this.httpOptions);
   }
 
 }
