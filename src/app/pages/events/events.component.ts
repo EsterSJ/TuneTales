@@ -12,6 +12,7 @@ import { Evento } from 'src/app/models/evento';
 export class EventsComponent {
   public eventos;
   public place: string = ''; // Propiedad para almacenar la localidad
+  public eventosTodos: Evento[] = [];
   
   constructor (public http: HttpClient, public eventService: EventsService){}
 
@@ -26,9 +27,12 @@ export class EventsComponent {
       // Llama a tu servicio para buscar eventos por "place" y actualiza this.eventos con los resultados.
       // Puedes usar un filtro para seleccionar eventos que coincidan con el "place".
       // Por ejemplo:
-      this.eventos = this.eventos.filter((evento: Evento) =>
-        evento.place.toLowerCase().includes(this.place.toLowerCase())
-      );
+      this.eventos = this.eventos.filter((evento: Evento) => {
+        if (evento && evento.place) {
+          return evento.place.toLowerCase().includes(this.place.toLowerCase());
+        }
+        return false;
+      });
     } else {
       // Si no se proporciona ningún "place", muestra todos los eventos.
       this.eventService.getAllEvent().subscribe(data => {
