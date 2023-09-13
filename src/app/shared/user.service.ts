@@ -11,7 +11,7 @@ import { Evento } from '../models/evento';
 export class UserService {
 
 
-  private url: string = 'https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app';
+  private url: string = 'https://api-tune-tales.vercel.app';
 
   public logueado:boolean = false;
   public user: User;

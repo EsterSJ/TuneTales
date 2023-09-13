@@ -9,7 +9,7 @@ import { PublicationService } from './publication.service';
 })
 export class CommentsService {
 
-  private url: string = 'https://api-tune-tales-mgn163wti-marcelcoder01.vercel.app'
+  private url: string = 'https://api-tune-tales.vercel.app'
   public comentario: Comentario;
   public id_publicacion:number;
   public comentarios: Comentario [] = [];
