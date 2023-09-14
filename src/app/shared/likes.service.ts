@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LikesService {
 
-  private url = 'apitunetales-production.up.railway.app/'
+  private url = 'https://apitunetales-production.up.railway.app/'
 
   constructor(private http:HttpClient) { }
 

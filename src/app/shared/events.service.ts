@@ -13,7 +13,7 @@ import { Evento } from '../models/evento';
 })
 export class EventsService {
 
-  private url: string = 'apitunetales-production.up.railway.app';
+  private url: string = 'https://apitunetales-production.up.railway.app';
 
   public evento: Evento;
 

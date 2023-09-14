@@ -11,7 +11,7 @@ import { UserService } from './user.service';
 export class PublicationService {
 
   public addMusicForm: FormGroup;
-  private url: string = 'apitunetales-production.up.railway.app/publicacion';
+  private url: string = 'https://apitunetales-production.up.railway.app/publicacion';
   public publicaciones: Publicacion [] = [];
   public publicacion: Publicacion;
   public letra:boolean = false;
@@ -54,7 +54,7 @@ export class PublicationService {
   }
 
   getTop3Publicaciones() {
-    return this.http.get('apitunetales-production.up.railway.app/top3publicaciones', this.httpOptions);
+    return this.http.get('https://apitunetales-production.up.railway.app/top3publicaciones', this.httpOptions);
   }
 
 }

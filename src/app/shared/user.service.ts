@@ -11,7 +11,7 @@ import { Evento } from '../models/evento';
 export class UserService {
 
 
-  private url: string = 'apitunetales-production.up.railway.app';
+  private url: string = 'https://apitunetales-production.up.railway.app';
 
   public logueado:boolean = false;
   public user: User;

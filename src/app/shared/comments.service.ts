@@ -9,7 +9,7 @@ import { PublicationService } from './publication.service';
 })
 export class CommentsService {
 
-  private url: string = 'apitunetales-production.up.railway.app'
+  private url: string = 'https://apitunetales-production.up.railway.app'
   public comentario: Comentario;
   public id_publicacion:number;
   public comentarios: Comentario [] = [];
