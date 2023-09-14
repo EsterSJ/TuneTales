@@ -13,7 +13,7 @@ export class CommunityComponent {
   // @Input() publi: Publicacion;
   @Input() i: number;
 
-  private url: string = 'http://localhost:3000/comunidad';
+  private url: string = 'https://apitunetales-production.up.railway.app/comunidad';
 
   public publicaciones: Publicacion[];
 
