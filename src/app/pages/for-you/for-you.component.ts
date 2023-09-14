@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class ForYouComponent {
   @Input() i: number;
 
-  private url: string = 'http://localhost:3000/paraTi';
+  private url: string = 'https://apitunetales-production.up.railway.app/paraTi';
 
   public publicaciones: Publicacion[];
 
