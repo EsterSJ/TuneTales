@@ -13,7 +13,7 @@ import { Evento } from '../models/evento';
 })
 export class EventsService {
 
-  private url: string = 'https://api-tune-tales.vercel.app';
+  private url: string = 'apitunetales-production.up.railway.app';
 
   public evento: Evento;
 
